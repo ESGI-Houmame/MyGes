@@ -1,0 +1,16 @@
+{
+  "name": "myges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass assets/scss/main.scss:dist/css/main.css",
+    "watch": "sass --watch assets/scss/main.scss:dist/css/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.58.0"
+  }
+}
