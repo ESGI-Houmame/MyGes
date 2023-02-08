@@ -23,6 +23,8 @@
   }
 }
 
+//borders for each color
+
 @for $i from 1 through length($colors){
   .hover\:bg-#{nth($color-names, $i)}:hover {
     background-color: bg-color($i);
@@ -40,5 +42,6 @@
     border-color: bg-color($i);
   }
 }
+
 
 
