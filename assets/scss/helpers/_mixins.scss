@@ -1,23 +1,22 @@
-
 @function bg-color($index) {
   $color-count: length($colors);
   $color-index: $index % $color-count;
   @return nth($colors, $color-index + 1);
 }
 
-@for $i from 1 through length($colors){
+@for $i from 1 through length($colors) {
   .bg-#{nth($color-names, $i)} {
     background-color: bg-color($i);
   }
 }
 
-@for $i from 1 through length($colors){
+@for $i from 1 through length($colors) {
   .text-#{nth($color-names, $i)} {
     color: bg-color($i);
   }
 }
 
-@for $i from 1 through length($colors){
+@for $i from 1 through length($colors) {
   .border-#{nth($color-names, $i)} {
     border-color: bg-color($i);
   }
@@ -25,25 +24,55 @@
 
 //borders for each color
 
-@for $i from 1 through length($colors){
+@for $i from 1 through length($colors) {
   .hover\:bg-#{nth($color-names, $i)}:hover {
     background-color: bg-color($i);
   }
 }
 
-@for $i from 1 through length($colors){
+@for $i from 1 through length($colors) {
   .hover\:text-#{nth($color-names, $i)}:hover {
     color: bg-color($i);
   }
 }
 
-@for $i from 1 through length($colors){
+@for $i from 1 through length($colors) {
   .hover\:border-#{nth($color-names, $i)}:hover {
     border-color: bg-color($i);
   }
 }
 
 //widths
+
+@for $i from 0 through 100 {
+  .w-#{$i} {
+    width: #{$i*2}px;
+  }
+}
+
+//heights
+
+@for $i from 0 through 100 {
+  .h-#{$i} {
+    height: #{$i*2}px;
+  }
+}
+
+// paddings
+
+@for $i from 0 through 100 {
+  .p-#{$i} {
+    padding: #{$i*2}px;
+  }
+}
+
+// margins
+
+@for $i from 0 through 100 {
+  .m-#{$i} {
+    margin: #{$i*2}px;
+  }
+}
 
 
 
