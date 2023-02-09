@@ -136,6 +136,9 @@
 }
 
 // margins
+.m-auto{
+  margin:auto;
+}
 
 @for $i from 0 through 100 {
   .m-#{$i} {
@@ -208,6 +211,4 @@
     @extend .border-bottom-left-radius-#{$i};
     @extend .border-bottom-right-radius-#{$i};
   }
-
-
 }
