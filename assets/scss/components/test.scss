@@ -1,0 +1,89 @@
+$padding-base: 0.25rem;
+$padding-sizes: (1: $padding-base, 2: $padding-base * 2, 3: $padding-base * 3, 4: $padding-base * 4, 5: $padding-base * 5, 6: $padding-base * 6);
+
+@each $key, $value in $padding-sizes {
+  .p#{$key} {
+    padding: $value;
+  }
+  
+  .px#{$key} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  
+  .py#{$key} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+
+
+@media screen and (min-width: 576px) {
+  .p#{$key}-sm {
+    @extend .p#{$key};
+  }
+  
+  .px#{$key}-sm {
+    @extend .px#{$key};
+  }
+  
+  .py#{$key}-sm {
+    @extend .py#{$key};
+  }
+}
+
+@media screen and  (min-width: 768px) {
+  .p#{$key}-md {
+    @extend .p#{$key};
+  }
+  
+  .px#{$key}-md {
+    @extend .px#{$key};
+  }
+  
+  .py#{$key}-md {
+    @extend .py#{$key};
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .p#{$key}-lg {
+    @extend .p#{$key};
+  }
+  
+  .px#{$key}-lg {
+    @extend .px#{$key};
+  }
+  
+  .py#{$key}-lg {
+    @extend .py#{$key};
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .p#{$key}-xl {
+    @extend .p#{$key};
+  }
+  
+  .px#{$key}-xl {
+    @extend .px#{$key};
+  }
+  
+  .py#{$key}-xl {
+    @extend .py#{$key};
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .p#{$key}-xxl {
+    @extend .p#{$key};
+  }
+  
+  .px#{$key}-xxl {
+    @extend .px#{$key};
+  }
+  
+  .py#{$key}-xxl {
+    @extend .py#{$key};
+  }
+}
+}

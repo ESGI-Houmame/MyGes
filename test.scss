@@ -1,0 +1,116 @@
+$padding-base: 0.25rem;
+$padding-sizes: (1: $padding-base, 2: $padding-base * 2, 3: $padding-base * 3, 4: $padding-base * 4, 5: $padding-base * 5, 6: $padding-base * 6);
+
+@mixin padding($key) {
+  .p#{$key} {
+    padding: map-get($padding-sizes, $key);
+  }
+  
+  .px#{$key} {
+    padding-left: map-get($padding-sizes, $key);
+    padding-right: map-get($padding-sizes, $key);
+  }
+  
+  .py#{$key} {
+    padding-top: map-get($padding-sizes, $key);
+    padding-bottom: map-get($padding-sizes, $key);
+  }
+}
+  
+
+@each $key, $value in $padding-sizes {
+    
+  .p#{$key} {
+    @include padding($key);
+  }
+  
+  .px#{$key} {
+    @include padding($key);
+
+  }
+  
+  .py#{$key} {
+    @include padding($key);
+  }
+
+
+
+@media screen and (min-width: 576px) {
+  .p#{$key}-sm {
+    @include padding('-sm-' + $key);
+
+  }
+  
+  .px#{$key}-sm {
+    @include padding('-sm-' + $key);
+
+  }
+  
+  .py#{$key}-sm {
+    @include padding('-sm-' + $key);
+
+  }
+}
+
+@media screen and  (min-width: 768px) {
+  .p#{$key}-md {
+    @include padding('-md-' + $key);
+  }
+  
+  .px#{$key}-md {
+    
+    @include padding('-md-' + $key);
+  }
+  
+  .py#{$key}-md {
+    
+    @include padding('-md-' + $key);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .p#{$key}-lg {
+    
+    @include padding('-lg-' + $key);
+  }
+  
+  .px#{$key}-lg {
+    
+    @include padding('-lg-' +$key);
+  }
+  
+  .py#{$key}-lg {
+    
+    @include padding('-lg-' + $key);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .p#{$key}-xl {
+    @include padding('-xl-' + $key);
+
+  }
+  
+  .px#{$key}-xl {
+    @include padding('-xl-' + $key);
+  }
+  
+  .py#{$key}-xl {
+    @include padding('-xl-' + $key);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .p#{$key}-xxl {
+    @include padding('-xxl-'+$key);
+  }
+  
+  .px#{$key}-xxl {
+    @include padding('-xxl-'+$key);
+  }
+  
+  .py#{$key}-xxl {
+    @include padding('-xxl-'+$key);
+  }
+}
+}
