@@ -48,6 +48,17 @@
   .w-#{$i} {
     width: #{$i*2}px;
   }
+
+  .mxw-#{$i} {
+    max-width: #{$i*2}px;
+  }
+
+  .mnw-#{$i} {
+    min-width: #{$i*2}px;
+  }
+  
+  
+  
 }
 
 //heights
@@ -55,6 +66,12 @@
 @for $i from 0 through 100 {
   .h-#{$i} {
     height: #{$i*2}px;
+  }
+  .mxh-#{$i} {
+    max-height: #{$i*2}px;
+  }
+  .mnh-#{$i} {
+    min-height: #{$i*2}px;
   }
 }
 
@@ -64,6 +81,31 @@
   .p-#{$i} {
     padding: #{$i*2}px;
   }
+  .pt-#{$i}{
+    padding-top: #{$i*2}px;
+  }
+  .pb-#{$i}{
+    padding-bottom: #{$i*2}px;;
+  }
+
+  .pr-#{$i}{
+    padding-right: #{$i*2}px;;
+
+  }
+
+  .pl-#{$i}{
+    padding-left: #{$i*2}px;;
+
+  }
+
+  .px-#{$i}{
+     @extend .pl-#{$i};
+     @extend .pr-#{$i};
+  }
+  .py-#{$i}{
+    @extend .pt-#{$i};
+    @extend .pb-#{$i};
+  }
 }
 
 // margins
@@ -72,12 +114,73 @@
   .m-#{$i} {
     margin: #{$i*2}px;
   }
+  .mt-#{$i}{
+    margin-top: #{$i*2}px;
+  }
+  .mb-#{$i}{
+    margin-bottom: #{$i*2}px;
+  }
+
+  .mr-#{$i}{
+    margin-right: #{$i*2}px;
+
+  }
+
+  .ml-#{$i}{
+    margin-left: #{$i*2}px;
+  }
+
+  .mx-#{$i}{
+     @extend .ml-#{$i};
+     @extend .mr-#{$i};
+  }
+  .my-#{$i}{
+    @extend .mt-#{$i};
+    @extend .mb-#{$i};
+  }
 }
 
 // border radius
 
 @for $i from 1 through 100 {
   .border-radius-#{$i} {
-    margin: #{$i*2}px;
+    border-radius: #{$i}+'%';
   }
+
+  .border-top-left-radius-#{$i}{
+      border-top-left-radius: #{$i}+"%";
+  }
+  .border-top-right-radius-#{$i}{
+
+    border-top-right-radius: #{$i}+"%";
+  }
+  .border-bottom-right-radius-#{$i}{
+
+    border-bottom-right-radius: #{$i}+"%";
+  }
+  .border-bottom-left-radius-#{$i}{
+    border-bottom-left-radius: #{$i}+"%";
+  }
+
+  .border-left-radius-#{$i}{
+      @extend .border-bottom-left-radius-#{$i};
+      @extend .border-top-left-radius-#{$i};
+  }
+
+  .border-right-radius-#{$i}{  
+    @extend .border-bottom-right-radius-#{$i};
+    @extend .border-top-right-radius-#{$i};
+  }
+
+  .border-top-radius-#{$i}{
+    @extend .border-top-left-radius-#{$i};
+    @extend .border-top-right-radius-#{$i};
+  }
+
+  .border-bottom-radius-#{$i}{
+    @extend .border-bottom-left-radius-#{$i};
+    @extend .border-bottom-right-radius-#{$i};
+  }
+
+
 }
