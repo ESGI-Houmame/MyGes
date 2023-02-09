@@ -74,7 +74,72 @@
   }
 }
 
+// border radius
+
+@for $i from 1 through 100 {
+  .border-radius-#{$i} {
+    margin: #{$i*2}px;
+  }
+}
+
+// display
+
+.d-flex {
+   display: flex;
+}
 
 
+.d-inline-flex {
+  display: inline-flex;
+}
 
+
+.d-inline-block {
+  display: inline-block;
+}
+
+
+.d-block {
+  display: inline-block;
+}
+
+.d-inline {
+  display : inline;
+}
+
+.d-grid {
+  display: grid;
+}
+
+// flex direction
+
+.f-row {
+  flex-direction: row;
+}
+
+
+.f-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.f-col {
+  flex-direction: column;
+}
+
+.f-col-reverse {
+  flex-direction: column-reverse;
+}
+
+// flex wrap
+.f-wrap {
+  flex-wrap: wrap;
+}
+
+.f-nowrap {
+  flex-wrap: nowrap;
+}
+
+.f-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
 
