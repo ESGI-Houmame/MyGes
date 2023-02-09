@@ -1,0 +1,177 @@
+//generate all helper classes for grid by classes
+
+.grid{
+  display: grid;
+}
+
+@for $i from 1 through 12 {
+  .grid-cols-#{$i} {
+    grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+  }
+}
+
+@for $i from 1 through 12 {
+  .grid-rows-#{$i} {
+    grid-template-rows: repeat(#{$i}, minmax(0, 1fr));
+  }
+}
+
+.grid-flow-row{
+  grid-auto-flow: row;
+}
+
+.grid-flow-col{
+  grid-auto-flow: column;
+}
+
+.grid-flow-row-dense{
+  grid-auto-flow: row dense;
+}
+
+.grid-flow-col-dense{
+  grid-auto-flow: column dense;
+}
+
+.grid-cols-none{
+  grid-template-columns: none;
+}
+
+.grid-rows-none{
+  grid-template-rows: none;
+}
+
+.col-auto{
+  grid-column: auto;
+}
+
+@for $i from 1 through 12 {
+  .col-span-#{$i} {
+    grid-column: span #{$i} / span #{$i};
+  }
+}
+
+.col-start-auto{
+  grid-column-start: auto;
+}
+
+@for $i from 1 through 12 {
+  .col-start-#{$i} {
+    grid-column-start: #{$i};
+  }
+}
+
+.col-end-auto{
+  grid-column-end: auto;
+}
+
+@for $i from 1 through 12 {
+  .col-end-#{$i} {
+    grid-column-end: #{$i};
+  }
+}
+
+.row-auto{
+  grid-row: auto;
+}
+
+@for $i from 1 through 12 {
+  .row-span-#{$i} {
+    grid-row: span #{$i} / span #{$i};
+  }
+}
+
+.row-start-auto{
+  grid-row-start: auto;
+}
+
+@for $i from 1 through 12 {
+  .row-start-#{$i} {
+    grid-row-start: #{$i};
+  }
+}
+
+.row-end-auto{
+  grid-row-end: auto;
+}
+
+@for $i from 1 through 12 {
+  .row-end-#{$i} {
+    grid-row-end: #{$i};
+  }
+}
+
+.justify-items-start {
+  justify-items: start;
+}
+
+.justify-items-end {
+  justify-items: end;
+}
+
+.justify-items-center {
+  justify-items: center;
+}
+
+.justify-items-stretch {
+  justify-items: stretch;
+}
+
+.align-items-start {
+  align-items: start;
+}
+
+.align-items-end {
+  align-items: end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+.justify-content-start {
+  justify-content: start;
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.align-content-start {
+  align-content: start;
+}
+
+.align-content-end {
+  align-content: end;
+}
+
+.align-content-center {
+  align-content: center;
+}
+
+.align-content-between {
+  align-content: space-between;
+}
+
+.align-content-around {
+  align-content: space-around;
+}
+
+.align-content-stretch {
+  align-content: stretch;
+}
