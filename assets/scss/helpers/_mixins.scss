@@ -20,6 +20,33 @@
   .border-#{nth($color-names, $i)} {
     border-color: bg-color($i);
   }
+
+  .border-top-#{nth($color-names, $i)} {
+    border-top-color: bg-color($i);
+  }
+  
+  .border-left-#{nth($color-names, $i)} {
+    border-left-color: bg-color($i);
+  }
+  
+  .border-right-#{nth($color-names, $i)} {
+    border-right-color: bg-color($i);
+  }
+  
+  .border-bottom-#{nth($color-names, $i)} {
+    border-bottom-color: bg-color($i);
+  }
+  
+  .border-x-color-#{nth($color-names, $i)} {
+    border-left-color: bg-color($i);
+    border-right-color: bg-color($i);
+  }
+  
+  .border-y-color-#{nth($color-names, $i)} {
+    border-top-color: bg-color($i);
+    border-bottom-color: bg-color($i);
+  }
+    
 }
 
 //borders for each color
