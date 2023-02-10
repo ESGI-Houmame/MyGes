@@ -6,7 +6,16 @@
         "helpers/typography.scss";
 
 
+// Définir notre typo montserrat par défaut
+* {
+    font-family: 'Montserrat',sans-serif;
+}
 
+// Supprimer les padding/margin du navigateur
+body {
+    margin:0;
+    padding:0;
+}
 /**************
  *  COMPONENT *
  **************/
