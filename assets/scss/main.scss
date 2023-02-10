@@ -9,6 +9,7 @@
 @import "components/cards";
 @import "components/navbar";
 @import "layouts/container";
+@import "components/footer";
 
 * {
   box-sizing: border-box;
@@ -19,5 +20,7 @@
   text-decoration: none;
 }
 
-// import components
-@import "components/footer";
+.pointer {
+  cursor: pointer;
+}
+

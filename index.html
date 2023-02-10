@@ -18,6 +18,11 @@
             LOGO
         </div>
         <nav class="header_nav">
+            <div class="header_nav_close pointer" id="header_nav_close">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-15 h-15">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </div>
             <ul class="header_nav_list">
                 <li class="header_nav_list_item"><a class="header_nav_list_item_link" href="#">Home</a></li>
                 <li class="header_nav_list_item"><a class="header_nav_list_item_link" href="#">About</a></li>
@@ -41,10 +46,8 @@
     <button class="btn btn-secondary-outline">Hello world</button>
     <button class="btn btn-accent-outline">Hello world</button>
 </div>
-
-
 <footer class="footer">
-<div class="grid grid-cols-3">
+    <div class="grid grid-cols-3">
         <div class="col-span-1">
             <p>Exemple</p>
         </div>
@@ -54,8 +57,18 @@
         <div class="col-span-1">
             <p>Exemple</p>
         </div>
-</div>
+    </div>
 </footer>
 
+<script type="text/javascript">
+    let close = document.getElementById("header_nav_close");
+    let toggle = document.getElementById("header_toggle");
+    close.addEventListener("click", function () {
+        document.querySelector(".header_nav").classList.remove("toggle");
+    });
+    toggle.addEventListener("click", function () {
+        document.querySelector(".header_nav").classList.add("toggle");
+    });
+</script>
 </body>
 </html>
