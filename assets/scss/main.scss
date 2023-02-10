@@ -1,39 +1,26 @@
 // import helpers
-@import "helpers/variables",
-        "helpers/mixins",
-        "helpers/flex",
-        "helpers/grid",
-        "helpers/typography.scss";
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/flex";
+@import "helpers/grid";
 
-
-// Définir notre typo montserrat par défaut
-* {
-    font-family: 'Montserrat',sans-serif;
-    box-sizing: border-box;
-
-}
-
-// Supprimer les padding/margin du navigateur
-body {
-    margin:0;
-    padding:0;
-}
-/**************
- *  COMPONENT *
- **************/
-
- // Boutons
+// import components
 @import "components/buttons";
-
-// Cards
 @import "components/cards";
-
-
-// Footer
+@import "components/navbar";
+@import "layouts/container";
 @import "components/footer";
 
-// Boite contenant les info d'un contact pour la liste déroulante
-@import "components/contactItem.scss";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
 
-// Liste scrollable
-@import "components/scrollList.scss";
+.pointer {
+  cursor: pointer;
+}
+

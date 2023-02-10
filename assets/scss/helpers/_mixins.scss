@@ -1,5 +1,5 @@
-@import './variables.scss';
 @function bg-color($index) {
+  $index: $index - 1;
   $color-count: length($colors);
   $color-index: $index % $color-count;
   @return nth($colors, $color-index + 1);
@@ -21,33 +21,6 @@
   .border-#{nth($color-names, $i)} {
     border-color: bg-color($i);
   }
-
-  .border-top-#{nth($color-names, $i)} {
-    border-top-color: bg-color($i);
-  }
-  
-  .border-left-#{nth($color-names, $i)} {
-    border-left-color: bg-color($i);
-  }
-  
-  .border-right-#{nth($color-names, $i)} {
-    border-right-color: bg-color($i);
-  }
-  
-  .border-bottom-#{nth($color-names, $i)} {
-    border-bottom-color: bg-color($i);
-  }
-  
-  .border-x-color-#{nth($color-names, $i)} {
-    border-left-color: bg-color($i);
-    border-right-color: bg-color($i);
-  }
-  
-  .border-y-color-#{nth($color-names, $i)} {
-    border-top-color: bg-color($i);
-    border-bottom-color: bg-color($i);
-  }
-    
 }
 
 //borders for each color
@@ -76,17 +49,6 @@
   .w-#{$i} {
     width: #{$i*2}px;
   }
-
-  .mxw-#{$i} {
-    max-width: #{$i*2}px;
-  }
-
-  .mnw-#{$i} {
-    min-width: #{$i*2}px;
-  }
-  
-  
-  
 }
 
 //heights
@@ -94,12 +56,6 @@
 @for $i from 0 through 100 {
   .h-#{$i} {
     height: #{$i*2}px;
-  }
-  .mxh-#{$i} {
-    max-height: #{$i*2}px;
-  }
-  .mnh-#{$i} {
-    min-height: #{$i*2}px;
   }
 }
 
@@ -109,107 +65,73 @@
   .p-#{$i} {
     padding: #{$i*2}px;
   }
-  .pt-#{$i}{
+  .px-#{$i} {
+    padding-left: #{$i*2}px;
+    padding-right: #{$i*2}px;
+  }
+  .py-#{$i} {
+    padding-top: #{$i*2}px;
+    padding-bottom: #{$i*2}px;
+  }
+  .pt-#{$i} {
     padding-top: #{$i*2}px;
   }
-  .pb-#{$i}{
-    padding-bottom: #{$i*2}px;;
+  .pb-#{$i} {
+    padding-bottom: #{$i*2}px;
   }
-
-  .pr-#{$i}{
-    padding-right: #{$i*2}px;;
-
+  .pl-#{$i} {
+    padding-left: #{$i*2}px;
   }
-
-  .pl-#{$i}{
-    padding-left: #{$i*2}px;;
-
-  }
-
-  .px-#{$i}{
-     @extend .pl-#{$i};
-     @extend .pr-#{$i};
-  }
-  .py-#{$i}{
-    @extend .pt-#{$i};
-    @extend .pb-#{$i};
+  .pr-#{$i} {
+    padding-right: #{$i*2}px;
   }
 }
+
 
 // margins
-.m-auto{
-  margin:auto;
-}
 
 @for $i from 0 through 100 {
   .m-#{$i} {
     margin: #{$i*2}px;
   }
-  .mt-#{$i}{
-    margin-top: #{$i*2}px;
+  .mx-#{$i} {
+    margin-left: #{$i*2}px;
+    margin-right: #{$i*2}px;
   }
-  .mb-#{$i}{
+  .my-#{$i} {
+    margin-top: #{$i*2}px;
     margin-bottom: #{$i*2}px;
   }
-
-  .mr-#{$i}{
-    margin-right: #{$i*2}px;
-
+  .mt-#{$i} {
+    margin-top: #{$i*2}px;
   }
-
-  .ml-#{$i}{
+  .mb-#{$i} {
+    margin-bottom: #{$i*2}px;
+  }
+  .ml-#{$i} {
     margin-left: #{$i*2}px;
   }
-
-  .mx-#{$i}{
-     @extend .ml-#{$i};
-     @extend .mr-#{$i};
-  }
-  .my-#{$i}{
-    @extend .mt-#{$i};
-    @extend .mb-#{$i};
+  .mr-#{$i} {
+    margin-right: #{$i*2}px;
   }
 }
-
-// border radius
-
-@for $i from 1 through 100 {
-  .border-radius-#{$i} {
-    border-radius: #{$i}+'%';
-  }
-
-  .border-top-left-radius-#{$i}{
-      border-top-left-radius: #{$i}+"%";
-  }
-  .border-top-right-radius-#{$i}{
-
-    border-top-right-radius: #{$i}+"%";
-  }
-  .border-bottom-right-radius-#{$i}{
-
-    border-bottom-right-radius: #{$i}+"%";
-  }
-  .border-bottom-left-radius-#{$i}{
-    border-bottom-left-radius: #{$i}+"%";
-  }
-
-  .border-left-radius-#{$i}{
-      @extend .border-bottom-left-radius-#{$i};
-      @extend .border-top-left-radius-#{$i};
-  }
-
-  .border-right-radius-#{$i}{  
-    @extend .border-bottom-right-radius-#{$i};
-    @extend .border-top-right-radius-#{$i};
-  }
-
-  .border-top-radius-#{$i}{
-    @extend .border-top-left-radius-#{$i};
-    @extend .border-top-right-radius-#{$i};
-  }
-
-  .border-bottom-radius-#{$i}{
-    @extend .border-bottom-left-radius-#{$i};
-    @extend .border-bottom-right-radius-#{$i};
-  }
+.m-auto{
+    margin: auto;
 }
+.ml-auto{
+    margin-left: auto;
+}
+.mr-auto{
+    margin-right: auto;
+}
+.mt-auto{
+    margin-top: auto;
+}
+.mb-auto{
+    margin-bottom: auto;
+}
+
+
+
+
+
