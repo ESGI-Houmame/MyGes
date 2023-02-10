@@ -4,7 +4,7 @@
   width: 100%;
   min-height: 300px;
   margin: 0;
-  padding: 0;
+  padding: 15px 0 0 30px;
 
   &-content {
     @extend .grid;
@@ -12,6 +12,41 @@
 
     &-col {
       @extend .col-span-1;
+
+      ul li{
+        padding: 5px;
+      }
+
+      h4{
+        margin-left: 50px;
+      }
+
+      &-logo{
+        width: 200px;
+        height: 200px;
+      }
+
+      &-full{
+        @extend .col-span-3;
+        justify-content: center;
+
+        &-socials{
+          text-align: center;
+          margin-right: 30px;
+
+          &-icon{
+            width: 20px;
+            height: 20px;
+            padding: 20px;
+          }
+        }
+
+        &-divider{
+          width: 900px;
+          height: 5px;
+          background-color: $default;
+        }
+      }
     }
   }
 }
@@ -24,6 +59,7 @@
       &-col {
         display: block;
         width: 100%;
+
       }
     }
   }
