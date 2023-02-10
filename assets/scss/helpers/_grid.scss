@@ -175,3 +175,19 @@
 .align-content-stretch {
   align-content: stretch;
 }
+
+
+@for $i from 0 through 100 {
+  .gap-#{$i} {
+     gap: $i*0.125em $i*0.125em;
+  }
+
+  .gap-x-#{$i}{
+    row-gap: $i*0.125em;
+  }
+  
+  .gap-y-#{$i}{
+    column-gap: $i*0.125em;
+  }
+  
+}

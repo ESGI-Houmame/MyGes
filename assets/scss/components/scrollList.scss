@@ -28,8 +28,9 @@
     }
 
     .scroll-list-body {
-        @extend .flex-grow,.p-5;
+        @extend .flex,.flex-col,.flex-grow,.p-5,.gap-y-10;
         overflow:hidden;
         overflow-y: auto;
+        
     }
 }
