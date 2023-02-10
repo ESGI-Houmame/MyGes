@@ -6,18 +6,45 @@
     <link rel="stylesheet" href="../dist/css/main.css">
 </head>
 <body>
-<h1>Buttons</h1>
-<button class="btn btn-primary">Primary</button>
-<button class="btn btn-secondary">Secondary</button>
-<button class="btn btn-accent">Accent</button>
+<header class="bg-default py-5">
+    <div class="container header">
+        <div class="header_brand">
+            LOGO
+        </div>
+        <div class="header_toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                 stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+            </svg>
+        </div>
+        <nav class="header_nav">
+            <ul class="header_nav_list">
+                <li class="header_nav_list_item"><a class="header_nav_list_item_link" href="#">Home</a></li>
+                <li class="header_nav_list_item"><a class="header_nav_list_item_link" href="#">About</a></li>
+                <li class="header_nav_list_item"><a class="header_nav_list_item_link" href="#">Contact</a>
+                <li><a href="#" class="toHideForMobile btn btn-primary">Connexion</a></li>
+            </ul>
+        </nav>
+        <div class="header_actions ml-auto">
+            <a href="#" class="btn btn-primary">Connexion</a>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <h1>Buttons</h1>
+    <button class="btn btn-primary">Primary</button>
+    <button class="btn btn-secondary">Secondary</button>
+    <button class="btn btn-accent">Accent</button>
 
-<button class="btn btn-default">Default</button>
-<button class="btn btn-default-outline hover:bg-accent">Default outline</button>
-<button class="btn btn-ghost">Hello world</button>
-<button class="btn btn-ghost-outline">Hello world</button>
-<button class="btn btn-primary-outline">Hello world</button>
-<button class="btn btn-secondary-outline">Hello world</button>
-<button class="btn btn-accent-outline">Hello world</button>
+    <button class="btn btn-default">Default</button>
+    <button class="btn btn-default-outline">Default outline</button>
+    <button class="btn btn-ghost">Hello world</button>
+    <button class="btn btn-ghost-outline">Hello world</button>
+    <button class="btn btn-primary-outline">Hello world</button>
+    <button class="btn btn-secondary-outline">Hello world</button>
+    <button class="btn btn-accent-outline">Hello world</button>
+</div>
+
 
 <footer class="footer">
 <div class="grid grid-cols-3">

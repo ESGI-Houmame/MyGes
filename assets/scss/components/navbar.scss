@@ -1,0 +1,36 @@
+.header {
+  background: $default;
+  display: flex;
+  align-items: center;
+
+  &_brand {
+    color: $light;
+  }
+
+  &_toggle {
+    display: none;
+  }
+
+  &_nav {
+    &_list {
+      display: flex;
+      list-style: none;
+
+      &_item {
+
+        &:hover > &_link{
+          color: $primary;
+          transition: color 0.5s ease-in-out;
+        }
+        &_link {
+          color: $light;
+          transition: color 0.5s ease-in-out;
+          text-decoration: none;
+          padding: 1rem;
+          font-weight: $font-weight-semibold;
+        }
+      }
+    }
+  }
+}
+
