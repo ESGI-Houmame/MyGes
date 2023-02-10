@@ -6,19 +6,21 @@
     width: 300px;
     @extend .flex,.p-12,.flex-col;
     
-
+    
     .scroll-list-header {
-        @extend .grid,.grid-cols-2;
+        @extend .grid,.grid-cols-12;
         height: 60px;
-        
+
+        & > div {
+            @extend .flex,.flex-items-center,.flex-justify-start, .p-5;
+        }
         & > div:nth-child(1) {
-            @extend .col-span-10;
+            @extend .col-span-9,.text-light,.ft-w-bold;
             background: red;
         }
 
         & > div:nth-child(2) {
-            
-            @extend .col-span-2;
+            @extend .col-span-3;
             background: #0000ff;
         }
     }
