@@ -1,0 +1,35 @@
+
+.scroll-list {
+    background: $ghost;
+    color:$light;
+
+    @extend .flex,.flex-col,.radius-xl;
+    
+    
+    .scroll-list-header {
+        @extend .grid,.grid-cols-12;
+        height: 60px;
+
+        border-bottom: 2px solid $accent;
+        & > div {
+            @extend .flex,.flex-items-center,.flex-justify-start, .p-5;
+        }
+        & > div:nth-child(1) {
+            @extend .col-span-9,.text-light,.ft-w-bold,.ft-size-lg;
+        }
+
+        & > div:nth-child(2) {
+            @extend .col-span-3,.p-0,.flex-justify-center;
+
+            & > .sl-icon {
+                @extend .ft-size-2xl,.text-accent,.pointer;
+            }
+        }
+    }
+
+    .scroll-list-body {
+        @extend .flex-grow,.p-5;
+        overflow:hidden;
+        overflow-y: auto;
+    }
+}
