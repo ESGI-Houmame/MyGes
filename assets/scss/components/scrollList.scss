@@ -1,0 +1,25 @@
+
+.scroll-list {
+    background: $ghost;
+    color:$light;
+    height: 500px;
+    width: 300px;
+    @extend .flex,.p-15,.flex-col;
+    > div {
+        @extend .p-5;
+    }
+
+    .scroll-list-header {
+        @extend .grid,.grid-cols-2;
+        height: 60px;
+        background-color: red;
+        
+        &:first-child{
+        }
+    }
+
+    .scroll-list-body {
+        @extend .flex-grow;
+        background-color: green;
+    }
+}
