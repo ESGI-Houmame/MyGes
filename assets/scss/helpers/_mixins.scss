@@ -186,22 +186,22 @@
 @for $i from 1 through length($lengths) {
     // border radius
     .radius-#{nth($lengths, $i)}{
-      border-radius: #{$i*$border-radius-start}+'%';
+      border-radius: #{$i*$border-radius-start};
     }
   
     .tl-radius-#{nth($lengths, $i)}{
-        border-top-left-radius: #{$i*$border-radius-start}+"%";
+        border-top-left-radius: #{$i*$border-radius-start};
     }
     .tr-radius-#{nth($lengths, $i)}{
   
-      border-top-right-radius: #{$i*$border-radius-start}+"%";
+      border-top-right-radius: #{$i*$border-radius-start};
     }
     .br-radius-#{nth($lengths, $i)}{
   
-      border-bottom-right-radius: #{$i*$border-radius-start}+"%";
+      border-bottom-right-radius: #{$i*$border-radius-start};
     }
     .bl-radius-#{nth($lengths, $i)}{
-      border-bottom-left-radius: #{$i*$border-radius-start}+"%";
+      border-bottom-left-radius: #{$i*$border-radius-start};
     }
   
     .l-radius-#{nth($lengths, $i)}{
