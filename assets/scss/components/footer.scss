@@ -1,9 +1,27 @@
 .footer{
-  @extend .grid;
   background-color: $ghost;
   color: $light;
   width: 100%;
   min-height: 300px;
   margin: 0;
   padding: 0;
+
+  &-content{
+    @extend .grid;
+
+    &-col{
+    @extend .grid-cols-3;
+  }
+  }
 }
+
+@media screen and (max-width: 600px){
+  .footer{
+
+    &-content{
+      display: block;
+    }
+  }
+}
+
+
