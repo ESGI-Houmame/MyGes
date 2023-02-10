@@ -10,7 +10,8 @@
   font-size: $font-size-md;
   border-radius: $border-radius;
   margin: 2px 0;
-
+  cursor: pointer;
+  
   &-primary {
     color: $light;
     background-color: $primary;
