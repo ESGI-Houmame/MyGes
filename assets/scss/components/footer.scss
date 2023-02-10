@@ -1,4 +1,4 @@
-.footer{
+.footer {
   background-color: $ghost;
   color: $light;
   width: 100%;
@@ -6,20 +6,25 @@
   margin: 0;
   padding: 0;
 
-  &-content{
+  &-content {
     @extend .grid;
-
-    &-col{
     @extend .grid-cols-3;
-  }
+
+    &-col {
+      @extend .col-span-1;
+    }
   }
 }
 
-@media screen and (max-width: 600px){
-  .footer{
-
-    &-content{
+@media screen and (max-width: 600px) {
+  .footer {
+    &-content {
       display: block;
+
+      &-col {
+        display: block;
+        width: 100%;
+      }
     }
   }
 }
