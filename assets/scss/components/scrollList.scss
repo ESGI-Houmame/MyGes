@@ -2,15 +2,15 @@
 .scroll-list {
     background: $ghost;
     color:$light;
-    height: 500px;
-    width: 300px;
-    @extend .flex,.p-5,.flex-col,.radius-xl;
+
+    @extend .flex,.flex-col,.radius-xl;
     
     
     .scroll-list-header {
         @extend .grid,.grid-cols-12;
         height: 60px;
 
+        border-bottom: 2px solid $accent;
         & > div {
             @extend .flex,.flex-items-center,.flex-justify-start, .p-5;
         }
@@ -28,7 +28,8 @@
     }
 
     .scroll-list-body {
-        @extend .flex-grow;
-        background-color: black;
+        @extend .flex-grow,.p-5;
+        overflow:hidden;
+        overflow-y: auto;
     }
 }

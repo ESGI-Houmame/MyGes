@@ -4,6 +4,15 @@
   $color-index: $index % $color-count;
   @return nth($colors, $color-index + 1);
 }
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  
+  @return $string;
+}
 
 @for $i from 1 through length($colors) {
   .bg-#{nth($color-names, $i)} {
@@ -73,32 +82,33 @@
 }
 
 //widths
-
 @for $i from 0 through 100 {
-  .w-#{$i} {
-    width: #{$i*2}px;
+  .w-#{$i * $width} {
+    width: #{$i*$width}+'%';
   }
 
-  .mxw-#{$i} {
-    max-width: #{$i*2}px;
+  .mxw-#{$i * $width} {
+     width: #{$i*$width}+'%';
   }
 
-  .mnw-#{$i} {
-    min-width: #{$i*2}px;
+  .mnw-#{$i * $width}{
+    width: #{$i*$width}+'%';
   }
 }
 
 //heights
 
 @for $i from 0 through 100 {
-  .h-#{$i} {
-    height: #{$i*2}px;
+  .h-#{$i * $height} {
+    height: #{$i*$height}+'%';
   }
-  .mxh-#{$i} {
-    max-height: #{$i*2}px;
+
+  .hxw-#{$i * $height} {
+    height: #{$i*$height}+'%';
   }
-  .mnh-#{$i} {
-    min-height: #{$i*2}px;
+
+  .hnw-#{$i * $height}{
+    height: #{$i*$height}+'%';
   }
 }
 
