@@ -4,22 +4,27 @@
     color:$light;
     height: 500px;
     width: 300px;
-    @extend .flex,.p-15,.flex-col;
-    > div {
-        @extend .p-5;
-    }
+    @extend .flex,.p-12,.flex-col;
+    
 
     .scroll-list-header {
         @extend .grid,.grid-cols-2;
         height: 60px;
-        background-color: red;
         
-        &:first-child{
+        & > div:nth-child(1) {
+            @extend .col-span-10;
+            background: red;
+        }
+
+        & > div:nth-child(2) {
+            
+            @extend .col-span-2;
+            background: #0000ff;
         }
     }
 
     .scroll-list-body {
         @extend .flex-grow;
-        background-color: green;
+        background-color: black;
     }
 }
