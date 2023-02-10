@@ -4,7 +4,7 @@
     color:$light;
     height: 500px;
     width: 300px;
-    @extend .flex,.p-5,.flex-col,.radius-md;
+    @extend .flex,.p-5,.flex-col,.radius-xl;
     
     
     .scroll-list-header {
