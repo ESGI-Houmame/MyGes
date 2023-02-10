@@ -4,7 +4,7 @@
     color:$light;
     height: 500px;
     width: 300px;
-    @extend .flex,.p-12,.flex-col;
+    @extend .flex,.p-5,.flex-col,.radius-md;
     
     
     .scroll-list-header {
@@ -15,13 +15,15 @@
             @extend .flex,.flex-items-center,.flex-justify-start, .p-5;
         }
         & > div:nth-child(1) {
-            @extend .col-span-9,.text-light,.ft-w-bold;
-            background: red;
+            @extend .col-span-9,.text-light,.ft-w-bold,.ft-size-lg;
         }
 
         & > div:nth-child(2) {
-            @extend .col-span-3;
-            background: #0000ff;
+            @extend .col-span-3,.p-0,.flex-justify-center;
+
+            & > .sl-icon {
+                @extend .ft-size-2xl,.text-accent,.pointer;
+            }
         }
     }
 
