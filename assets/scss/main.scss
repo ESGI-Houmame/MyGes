@@ -4,13 +4,23 @@
 @import "helpers/flex";
 @import "helpers/grid";
 
-
-
 // import components
 @import "components/buttons";
-
-// import components
 @import "components/cards";
-
-// import components
+@import "components/navbar";
+@import "layouts/container";
 @import "components/footer";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
