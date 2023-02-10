@@ -4,6 +4,8 @@
 @import "helpers/flex";
 @import "helpers/grid";
 
+
+
 // import components
 @import "components/buttons";
 @import "components/cards";
@@ -22,3 +24,6 @@
 .pointer {
   cursor: pointer;
 }
+
+// import components
+@import "components/footer";
