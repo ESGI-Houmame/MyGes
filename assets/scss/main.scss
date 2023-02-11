@@ -27,8 +27,21 @@
 }
 body {
     background-color: $default;
+
 }
+
+.main-container {
+    @extend .w-75;
+
+}
+
 .pointer {
   cursor: pointer;
 }
 
+//md
+@media screen and (max-width:768px) {
+    .main-container {
+        width: 100%;
+    }
+}

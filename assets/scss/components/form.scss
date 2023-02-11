@@ -20,7 +20,7 @@
             @extend .ft-size-xl;
         }
 
-        @extend .col-span-2,.p-2;
+        @extend .col-span-2,.p-2,.text-center;
     }
 
     & > input {

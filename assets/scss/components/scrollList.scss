@@ -28,7 +28,7 @@
     }
 
     .scroll-list-body {
-        @extend .flex,.flex-col,.flex-grow,.p-5,.gap-y-10;
+        @extend .flex,.flex-col,.flex-grow,.gap-y-10;
         overflow:hidden;
         overflow-y: auto;
         
