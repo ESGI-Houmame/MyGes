@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Contact</title>
     <link rel="stylesheet" href="../dist/css/main.css">
     <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    
 </head>
 <body>
     <header class="bg-ghost">
@@ -36,12 +39,12 @@
     <!-- container -->
     <main class = "container main-container">
         <div class = "flex flex-col">
-            <h1 class = "text-light text-center ft-size-6xl ft-w-bold">VOS <span class="text-primary ft-size-6xl ft-w-bold">CONTACTS</span></h1>
+            <h1 class = "text-light text-center ft-size-5xl ft-w-bold">VOS <span class="text-primary ft-size-5xl ft-w-bold">CONTACTS</span></h1>
             <p class="text-light text-center">Les absences qui apparaissent dans cette rubrique sont attribuées tant que vous n’avez pas fournis des justificatifs d'absences. En cas d'erreur concernant vos absences, veuillez contacter votre attachée de promotion.</p>
         </div>
 
         <div class = "grid grid-cols-12">
-            <div class = "col-span-4">
+            <div class = "contact-box">
                 <div class = "scroll-list">
 
                     <div class = "scroll-list-header">
@@ -60,23 +63,24 @@
                         </div>
                         <div class = "scroll-content">
                             <br/>
-                            <div class = "contact-item bg-default grid p-5 radius-md">
-                                <div class = "grid grid-cols-12">
-                                    <div class = " col-span-3">
-                                        <div >
-                                            <img src = "../assets/images/contact.jpg" class = "w-100 radius-4xl" style = "height:70px;width: 70px;">
+                            <div class = "contact-item bg-default grid  grid-rows-6 p-5 radius-6xl" style = "max-height: 100px;">
+                                <div class = "grid grid-cols-12 row-span-5">
+                                    <div class = "col-span-3">
+                                        <div class = "d-flex justify-content-center">
+                                            <img src = "../assets/images/contact.jpg" class = "w-100 radius-4xl" style = "height:60px;width: 60px;">
                                         </div>                               
                                     </div>
         
-                                    <div class = "col-span-9 flex flex-col pl-5">
+                                    <div class = "col-span-9 flex flex-col" style = "overflow:hidden;word-wrap: break-word;">
                                         <p class = "text-primary ft-w-bold">AHMINDACHE Jawad</p>
-                                        <p class = "text-accent ft-w-regular ft-size-sm">Professeur Conception base de donnée relationelle</p>
+                                        <p class = "text-accent ft-w-regular ft-size-sm"> Conception base de donnée relationelle</p>
                                     </div>
 
                                 </div>
-                                <div class = "flex  justify-content-end pr-5 ">
-                                    <button class = "ft-w-bold ft-size-sm bg-primary text-light p-4 border-0 tl-radius-xs b-radius-6xl tr-radius-6xl pointer">Message</button>
+                                <div class = "flex  justify-content-end align-items-center row-span-1 pb-5">
+                                    <button class = "ft-w-bold ft-size-sm bg-primary text-light p-3 px-6 border-0 tl-radius-xs b-radius-6xl tr-radius-6xl pointer">Message</button>
                                 </div>
+                          
                             </div>
                         </div>
 
