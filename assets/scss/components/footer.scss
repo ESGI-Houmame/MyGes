@@ -6,7 +6,7 @@
   margin: 0;
   padding: 15px 0 0 30px;
   position: relative;
-  @extend .flex-self-end;
+  @extend .flex;
   &-content {
     @extend .grid;
     @extend .grid-cols-3;
@@ -43,7 +43,7 @@
         }
 
         &-divider{
-          width: 900px;
+          width: 100%;
           height: 5px;
           background-color: $default;
         }
