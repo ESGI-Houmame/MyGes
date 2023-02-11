@@ -3,7 +3,9 @@ header {
 }
 
 .header {
-  background: $default;
+  @extend .container;
+  background: $ghost;
+  
   display: flex;
   align-items: center;
 
@@ -63,7 +65,7 @@ header {
       left: -100%;
       width: 100%;
       height: 100vh;
-      background: $default;
+      background: $ghost;
       flex-direction: column;
       align-items: center;
       transition: left 0.5s ease-in-out;

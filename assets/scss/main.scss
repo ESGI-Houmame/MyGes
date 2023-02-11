@@ -25,7 +25,9 @@
   scroll-behavior: smooth;
   
 }
-
+body {
+    background-color: $default;
+}
 .pointer {
   cursor: pointer;
 }
