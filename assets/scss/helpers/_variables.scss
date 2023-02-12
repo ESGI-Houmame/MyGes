@@ -7,9 +7,10 @@ $accent : #39C796;
 $ghost: #2A303C;
 $default:#242933;
 $light: #E8E8E8;
+$white: #FFFF;
 
-$colors: $primary, $secondary, $accent, $ghost, $default, $light;
-$color-names: "primary", "secondary", "accent", "ghost", "default", "light";
+$colors: $primary, $secondary, $accent, $ghost, $default, $light,$white;
+$color-names: "primary", "secondary", "accent", "ghost", "default", "light","white";
 
 $lengths: "xs","sm","md","lg","xl","2xl","3xl","4xl","5xl","6xl";
 
