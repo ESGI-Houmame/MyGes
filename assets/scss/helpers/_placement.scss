@@ -1,0 +1,140 @@
+
+// Mixins pour le overflow
+@mixin overflow-auto {
+  overflow: auto;
+  }
+  
+  @mixin overflow-hidden {
+  overflow: hidden;
+  }
+  
+  @mixin overflow-visible {
+  overflow: visible;
+  }
+  
+  @mixin overflow-scroll {
+  overflow: scroll;
+  }
+  
+  @mixin overflow-x-auto {
+  overflow-x: auto;
+  }
+  
+  @mixin overflow-y-auto {
+  overflow-y: auto;
+  }
+  
+  @mixin overflow-x-hidden {
+  overflow-x: hidden;
+  }
+  
+  @mixin overflow-y-hidden {
+  overflow-y: hidden;
+  }
+  
+  @mixin overflow-x-visible {
+  overflow-x: visible;
+  }
+  
+  @mixin overflow-y-visible {
+  overflow-y: visible;
+  }
+  
+  @mixin overflow-x-scroll {
+  overflow-x: scroll;
+  }
+  
+  @mixin overflow-y-scroll {
+  overflow-y: scroll;
+  }
+  
+  // Classe pour le overflow
+  .overflow-auto {
+  @include overflow-auto;
+  }
+  
+  .overflow-hidden {
+  @include overflow-hidden;
+  }
+  
+  .overflow-visible {
+  @include overflow-visible;
+  }
+  
+  .overflow-scroll {
+  @include overflow-scroll;
+  }
+  
+  .overflow-x-auto {
+  @include overflow-x-auto;
+  }
+  
+  .overflow-y-auto {
+  @include overflow-y-auto;
+  }
+  
+  .overflow-x-hidden {
+  @include overflow-x-hidden;
+  }
+  
+  .overflow-y-hidden {
+  @include overflow-y-hidden;
+  }
+  
+  .overflow-x-visible {
+  @include overflow-x-visible;
+  }
+  
+  .overflow-y-visible {
+  @include overflow-y-visible;
+  }
+  
+  .overflow-x-scroll {
+  @include overflow-x-scroll;
+  }
+  
+  .overflow-y-scroll {
+  @include overflow-y-scroll;
+  }
+
+// Mixins pour le positionnement
+@mixin static {
+  position: static;
+  }
+  
+  @mixin fixed {
+  position: fixed;
+  }
+  
+  @mixin absolute {
+  position: absolute;
+  }
+  
+  @mixin relative {
+  position: relative;
+  }
+  
+  @mixin sticky {
+  position: sticky;
+  }
+  
+  // Classe pour le positionnement
+  .static {
+  @include static;
+  }
+  
+  .fixed {
+  @include fixed;
+  }
+  
+  .absolute {
+  @include absolute;
+  }
+  
+  .relative {
+  @include relative;
+  }
+  
+  .sticky {
+  @include sticky;
+  }

@@ -1,150 +1,354 @@
-// font-size
-.ft-size-xxs {
+// font-size mixins
+@mixin ft-size-xxs {
   font-size: $font-size-xxs;
-}
-
-.ft-size-xs {
+  }
+  
+  @mixin ft-size-xs {
   font-size: $font-size-xs;
-}
-
-.ft-size-sm {
+  }
+  
+  @mixin ft-size-sm {
   font-size: $font-size-sm;
-}
-
-.ft-size-md {
+  }
+  
+  @mixin ft-size-md {
   font-size: $font-size-md;
-}
-
-.ft-size-lg {
+  }
+  
+  @mixin ft-size-lg {
   font-size: $font-size-lg;
-}
-
-.ft-size-xl {
+  }
+  
+  @mixin ft-size-xl {
   font-size: $font-size-xl;
-}
-
-.ft-size-2xl {
+  }
+  
+  @mixin ft-size-2xl {
   font-size: $font-size-2xl;
-}
-
-.ft-size-3xl {
+  }
+  
+  @mixin ft-size-3xl {
   font-size: $font-size-3xl;
-}
-
-.ft-size-4xl {
+  }
+  
+  @mixin ft-size-4xl {
   font-size: $font-size-4xl;
-}
-
-.ft-size-5xl {
+  }
+  
+  @mixin ft-size-5xl {
   font-size: $font-size-5xl;
-}
-
-.ft-size-6xl {
+  }
+  
+  @mixin ft-size-6xl {
   font-size: $font-size-6xl;
-}
-
-// font family
-.ft-primary {
-    font-family: $font-family;
-}
-// font weight
-.ft-w-thin {
+  }
+  
+  // font family mixin
+  @mixin ft-primary {
+  font-family: $font-family;
+  }
+  // font weight mixins
+  @mixin ft-w-thin {
   font-weight: $font-weight-thin;
-}
-
-.ft-w-light {
+  }
+  
+  @mixin ft-w-light {
   font-weight: $font-weight-light;
-}
-
-.ft-w-normal {
+  }
+  
+  @mixin ft-w-normal {
   font-weight: $font-weight-normal;
-}
-
-.ft-w-medium {
+  }
+  
+  @mixin ft-w-medium {
   font-weight: $font-weight-medium;
-}
-
-.ft-w-semibold {
+  }
+  
+  @mixin ft-w-semibold {
   font-weight: $font-weight-semibold;
-}
-
-.ft-w-bold {
+  }
+  
+  @mixin ft-w-bold {
   font-weight: $font-weight-bold;
-}
-
-.ft-w-extrabold {
+  }
+  
+  @mixin ft-w-extrabold {
   font-weight: $font-weight-extrabold;
-}
-
-.ft-w-black {
+  }
+  
+  @mixin ft-w-black {
   font-weight: $font-weight-black;
-}
-
-// line height
-.ln-height-none {
+  }
+  
+  // line height mixins
+  @mixin ln-height-none {
   line-height: $line-height-none;
-}
-
-.ln-height-tight {
+  }
+  
+  @mixin ln-height-tight {
   line-height: $line-height-tight;
-}
-
-.ln-height-snug {
+  }
+  
+  @mixin ln-height-snug {
   line-height: $line-height-snug;
-}
-
-.ln-height-normal {
+  }
+  
+  @mixin ln-height-normal {
   line-height: $line-height-normal;
-}
-
-.ln-height-relaxed {
+  }
+  
+  @mixin ln-height-relaxed {
   line-height: $line-height-relaxed;
-}
-
-.ln-height-loose {
+  }
+  
+  @mixin ln-height-loose {
   line-height: $line-height-loose;
-}
+  }
+  
+  
+  
+  
+  // letter-spacing mixins
+  @mixin letter-spacing-tighter {
+    letter-spacing: $letter-spacing-tighter;
+    }
+    
+    @mixin letter-spacing-tight {
+    letter-spacing: $letter-spacing-tight;
+    }
+    
+    @mixin letter-spacing-normal {
+    letter-spacing: $letter-spacing-normal;
+    }
+    
+    @mixin letter-spacing-wide {
+    letter-spacing: $letter-spacing-wide;
+    }
+    
+    @mixin letter-spacing-wider {
+    letter-spacing: $letter-spacing-wider;
+    }
+    
+    @mixin letter-spacing-widest {
+    letter-spacing: $letter-spacing-widest;
+    }
+    
+    // Mixin pour text align
+    @mixin text-center {
+    text-align: center;
+    }
+    
+    @mixin text-justify {
+    text-align: justify;
+    }
+    
+    @mixin text-left {
+    text-align: left;
+    }
+    
+    @mixin text-right {
+    text-align: right;
+    }
+    
 
-//letter spacing
-.letter-spacing-tighter {
-  letter-spacing: $letter-spacing-tighter;
-}
+// Classe pour la taille de police
+.ft-size-xxs {
+  @include ft-size-xxs;
+  }
+  
+  .ft-size-xs {
+  @include ft-size-xs;
+  }
+  
+  .ft-size-sm {
+  @include ft-size-sm;
+  }
+  
+  .ft-size-md {
+  @include ft-size-md;
+  }
+  
+  .ft-size-lg {
+  @include ft-size-lg;
+  }
+  
+  .ft-size-xl {
+  @include ft-size-xl;
+  }
+  
+  .ft-size-2xl {
+  @include ft-size-2xl;
+  }
+  
+  .ft-size-3xl {
+  @include ft-size-3xl;
+  }
+  
+  .ft-size-4xl {
+  @include ft-size-4xl;
+  }
+  
+  .ft-size-5xl {
+  @include ft-size-5xl;
+  }
+  
+  .ft-size-6xl {
+  @include ft-size-6xl;
+  }
+  
+  // Classe pour la famille de polices
+  .ft-primary {
+  @include ft-primary;
+  }
+  
+  // Classe pour la graisse de police
+  .ft-w-thin {
+  @include ft-w-thin;
+  }
+  
+  .ft-w-light {
+  @include ft-w-light;
+  }
+  
+  .ft-w-normal {
+  @include ft-w-normal;
+  }
+  
+  .ft-w-medium {
+  @include ft-w-medium;
+  }
+  
+  .ft-w-semibold {
+  @include ft-w-semibold;
+  }
+  
+  .ft-w-bold {
+  @include ft-w-bold;
+  }
+  
+  .ft-w-extrabold {
+  @include ft-w-extrabold;
+  }
+  
+  .ft-w-black {
+  @include ft-w-black;
+  }
+  
+  // Classe pour la hauteur de ligne
+  .ln-height-none {
+  @include ln-height-none;
+  }
+  
+  .ln-height-tight {
+  @include ln-height-tight;
+  }
+  
+  .ln-height-snug {
+  @include ln-height-snug;
+  }
+  
+  .ln-height-normal {
+  @include ln-height-normal;
+  }
+  
+  .ln-height-relaxed {
+  @include ln-height-relaxed;
+  }
+  
+  .ln-height-loose {
+  @include ln-height-loose;
+  }
+  
+  // Classe pour l'espacement des lettres
+  .letter-spacing-tighter {
+  @include letter-spacing-tighter;
+  }
+  
+  .letter-spacing-tight {
+  @include letter-spacing-tight;
+  }
+  
+  .letter-spacing-normal {
+  @include letter-spacing-normal;
+  }
+  
+  .letter-spacing-wide {
+    @include letter-spacing-wide;
+  }
+  .letter-spacing-wider{
+    @include letter-spacing-wider;
+  }
+  .letter-spacing-widest{
+    @include letter-spacing-widest;
+  }
 
-.letter-spacing-tight {
-  letter-spacing: $letter-spacing-tight;
-}
+// Classe pour le text align
+.text-center {
+  @include text-center;
+  }
+  
+  .text-justify {
+  @include text-justify;
+  }
+  
+  .text-left {
+  @include text-left;
+  }
+  
+  .text-right {
+  @include text-right;
+  }
 
-.letter-spacing-normal {
-  letter-spacing: $letter-spacing-normal;
-}
 
-.letter-spacing-wide {
-  letter-spacing: $letter-spacing-wide;
-}
 
-.letter-spacing-wider {
-  letter-spacing: $letter-spacing-wider;
-}
+// Mixin pour le text-transform
+@mixin text-lowercase {
+  text-transform: lowercase;
+  }
+  
+  @mixin text-uppercase {
+  text-transform: uppercase;
+  }
+  
+  @mixin text-capitalize {
+  text-transform: capitalize;
+  }
+  
+  @mixin text-normalcase {
+  text-transform: none;
+  }
+  
+  // Classe pour le text-transform
+  .text-lowercase {
+  @include text-lowercase;
+  }
+  
+  .text-uppercase {
+  @include text-uppercase;
+  }
+  
+  .text-capitalize {
+  @include text-capitalize;
+  }
+  
+  .text-normalcase {
+  @include text-normalcase;
+  }
 
-.letter-spacing-widest {
-  letter-spacing: $letter-spacing-widest;
-}
+// Classe pour le text-transform
+  .text-lowercase {
+    @include text-lowercase;
+  }
 
-.text-center{
+  .text-uppercase {
+    @include text-uppercase;
+  }
+  
+  .text-capitalize {
+    @include text-capitalize;
+  }
+  
+  .text-normalcase {
+  @include text-normalcase;
+  }
 
-  text-align: center;
-}
-
-.text-justify {
-
-  text-align: justify;
-}
-
-.text-left {
-
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}

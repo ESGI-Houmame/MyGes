@@ -12,6 +12,16 @@ $white: #FFFF;
 $colors: $primary, $secondary, $accent, $ghost, $default, $light,$white;
 $color-names: "primary", "secondary", "accent", "ghost", "default", "light","white";
 
+$colorsMap: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "accent": $accent,
+  "ghost": $ghost,
+  "default": $default,
+  "light": $light,
+  "white": $white
+);
+
 $lengths: "xs","sm","md","lg","xl","2xl","3xl","4xl","5xl","6xl";
 
 

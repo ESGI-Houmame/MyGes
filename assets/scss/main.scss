@@ -4,6 +4,7 @@
 @import "helpers/flex";
 @import "helpers/grid";
 @import "helpers/typography";
+@import "helpers/placement";
 
 // import components
 @import "components/form";
@@ -13,8 +14,8 @@
 @import "layouts/container";
 @import "components/footer";
 @import "components/scrollList";
-@import "components/contactList.scss";
-@import "components/page.scss";
+@import "components/contactList";
+@import "components/page";
 
 * {
 

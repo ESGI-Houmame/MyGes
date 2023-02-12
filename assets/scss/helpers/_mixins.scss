@@ -14,228 +14,381 @@
   @return $string;
 }
 
-
-@for $i from 1 through length($colors) {
-  .bg-#{nth($color-names, $i)} {
-    background-color: bg-color($i);
-  }
+// background color & text color & hover background and text color
+@mixin bg($color){
+  background-color: map-get($colorsMap,$color);
 }
-
-@for $i from 1 through length($colors) {
-  .text-#{nth($color-names, $i)} {
-    color: bg-color($i);
-  }
+@mixin text($color){
+  color: map-get($colorsMap,$color);
 }
-
-// border for each colors
-@for $i from 1 through length($colors) {
-  .border-#{nth($color-names, $i)} {
-    border-color: bg-color($i);
-  }
-
-  .border-top-#{nth($color-names, $i)} {
-    border-top-color: bg-color($i);
-  }
-  
-  .border-left-#{nth($color-names, $i)} {
-    border-left-color: bg-color($i);
-  }
-  
-  .border-right-#{nth($color-names, $i)} {
-    border-right-color: bg-color($i);
-  }
-  
-  .border-bottom-#{nth($color-names, $i)} {
-    border-bottom-color: bg-color($i);
-  }
-  
-  .border-x-color-#{nth($color-names, $i)} {
-    border-left-color: bg-color($i);
-    border-right-color: bg-color($i);
-  }
-  
-  .border-y-color-#{nth($color-names, $i)} {
-    border-top-color: bg-color($i);
-    border-bottom-color: bg-color($i);
-  }
-    
-
+@mixin border($color){
+  border-color: map-get($colorsMap,$color);
 }
 
 
+@each $get-color, $value in $colorsMap {
+  .bg-#{$get-color} {
+    @include bg($get-color);
+  }
+  .text-#{$get-color} {
+    @include text($get-color);
+  }
+
+  .hover\:bg-#{$get-color}:hover {
+    @include bg($get-color);
+  }
+  .hover\:text-#{$get-color}:hover {
+    @include text($get-color);
+  }
+  .hover\:border-#{$get-color}:hover {
+    @include border($get-color);
+  }
+}
+
+// border color
+@mixin border-top($color) {
+  border-top-color: map-get($colorsMap,$color);
+}
+
+@mixin border-left($color) {
+  border-left-color: map-get($colorsMap,$color);
+}
+
+@mixin border-right($color) {
+  border-right-color: map-get($colorsMap,$color);
+}
+
+@mixin border-bottom($color) {
+  border-bottom-color: map-get($colorsMap,$color);
+}
+
+@mixin border-x($color) {
+  @include border-left($color);
+  @include border-right($color);
+}
+
+@mixin border-y($color) {
+  @include border-top($color);
+  @include border-bottom-color($color);
+}
+
+@each $get-color, $value in $colorsMap {
+  .border-#{$get-color} {
+    @include border($get-color);
+  }
+
+  .border-top-#{$get-color} {
+    @include border-top($get-color);
+  }
+  
+  .border-left-#{$get-color} {
+    @include border-left($get-color);
+  }
+  
+  .border-right-#{$get-color} {
+    @include border-right($get-color);
+  }
+  
+  .border-bottom-#{$get-color} {
+    @include border-bottom($get-color);
+  }
+  
+  .border-x-#{$get-color} {
+    @include border-left($get-color);
+    @include border-right($get-color);
+  }
+  
+  .border-y-#{$get-color} {
+    @include border-top($get-color);
+    @include border-bottom($get-color);
+  }
+
+}
+
+
+// border size
 .border-0{
   border:0;
 }
-@for $i from 1 through length($colors) {
-  .hover\:bg-#{nth($color-names, $i)}:hover {
-    background-color: bg-color($i);
+
+
+
+@each $get-color, $value in $colorsMap {
+  .hover\:border-#{$get-color}:hover {
+    @include border($get-color);
   }
 }
 
-@for $i from 1 through length($colors) {
-  .hover\:text-#{nth($color-names, $i)}:hover {
-    color: bg-color($i);
-  }
+@mixin w($width) {
+  width: $width+'%';
+}
+@mixin mxw($width) {
+  max-width: $width+'%';
 }
 
-@for $i from 1 through length($colors) {
-  .hover\:border-#{nth($color-names, $i)}:hover {
-    border-color: bg-color($i);
-  }
+@mixin mnw($width) {
+  min-width: $width+'%';
 }
-
 //widths
 @for $i from 0 through 100 {
   .w-#{$i * $width} {
-    width: #{$i*$width}+'%';
+    @include w($i*$width);
   }
 
   .mxw-#{$i * $width} {
-     width: #{$i*$width}+'%';
+    @include mxw($i*$width);
   }
 
   .mnw-#{$i * $width}{
-    width: #{$i*$width}+'%';
+    @include mnw($i*$width);
   }
+}
+
+@mixin h($height) {
+  height: $height+'%';
+}
+@mixin mxh($height) {
+  max-height: $height+'%';
+}
+
+@mixin mnh($height) {
+  min-height: $height+'%';
 }
 
 //heights
 
 @for $i from 0 through 100 {
   .h-#{$i * $height} {
-    height: #{$i*$height}+'%';
+    @include h($i*$height);
   }
 
-  .hxw-#{$i * $height} {
-    height: #{$i*$height}+'%';
+  .mxh-#{$i * $height} {
+    @include mxh($i*$height);
   }
 
-  .hnw-#{$i * $height}{
-    height: #{$i*$height}+'%';
+  .mnh-#{$i * $height}{
+    @include mnh($i*$height);
   }
 }
 
 // paddings
 
+@mixin p($padding) {
+  padding: $padding+'px';
+}
+@mixin px($padding) {
+  padding-left: $padding+'px';
+  padding-right: $padding+'px';
+}
+@mixin py($padding) {
+  padding-top: $padding+'px';
+  padding-bottom: $padding+'px';
+}
+@mixin pt($padding) {
+  padding-top: $padding+'px';
+}
+@mixin pb($padding) {
+  padding-bottom: $padding+'px';
+}
+@mixin pl($padding) {
+  padding-left: $padding+'px';
+}
+@mixin pr($padding) {
+  padding-right: $padding+'px';
+}
+
 @for $i from 0 through 100 {
   .p-#{$i} {
-    padding: #{$i*2}px;
+    @include p($i*2);
   }
   .px-#{$i} {
-    padding-left: #{$i*2}px;
-    padding-right: #{$i*2}px;
+    @include px($i*2);
   }
   .py-#{$i} {
-    padding-top: #{$i*2}px;
-    padding-bottom: #{$i*2}px;
+    @include py($i*2);
   }
   .pt-#{$i} {
-    padding-top: #{$i*2}px;
+    @include pt($i*2);
   }
   .pb-#{$i} {
-    padding-bottom: #{$i*2}px;
+    @include pb($i*2);
   }
   .pl-#{$i} {
-    padding-left: #{$i*2}px;
+    @include pl($i*2);
   }
   .pr-#{$i} {
-    padding-right: #{$i*2}px;
+    @include pr($i*2);
   }
 }
 
+
+@mixin m($margin) {
+  margin: $margin+'px';
+}
+@mixin mx($margin) {
+  margin-left: $margin+'px';
+  margin-right: $margin+'px';
+}
+@mixin my($margin) {
+  margin-top: $margin+'px';
+  margin-bottom: $margin+'px';
+}
+@mixin mt($margin) {
+  margin-top: $margin+'px';
+}
+@mixin mb($margin) {
+  margin-bottom: $margin+'px';
+}
+@mixin ml($margin) {
+  margin-left: $margin+'px';
+}
+@mixin mr($margin) {
+  margin-right: $margin+'px';
+}
 
 // margins
 
 @for $i from 0 through 100 {
   .m-#{$i} {
-    margin: #{$i*2}px;
+    @include m($i*2);
   }
   .mx-#{$i} {
-    margin-left: #{$i*2}px;
-    margin-right: #{$i*2}px;
+    @include mx($i*2);
   }
   .my-#{$i} {
-    margin-top: #{$i*2}px;
-    margin-bottom: #{$i*2}px;
+    @include my($i*2);
   }
   .mt-#{$i} {
-    margin-top: #{$i*2}px;
-  }
+    @include mt($i*2);}
   .mb-#{$i} {
-    margin-bottom: #{$i*2}px;
+    @include mb($i*2);
   }
   .ml-#{$i} {
-    margin-left: #{$i*2}px;
+    @include ml($i*2);
   }
   .mr-#{$i} {
-    margin-right: #{$i*2}px;
+    @include mr($i*2);
   }
 }
+
+@mixin m-auto(){
+  margin: auto;
+}
+@mixin ml-auto(){
+  margin-left: auto;
+}
+@mixin mr-auto(){
+  margin-right: auto;
+}
+@mixin mt-auto(){
+  margin-top: auto;
+}
+@mixin mb-auto(){
+  margin-bottom: auto;
+}
+
+
+
 .m-auto{
-    margin: auto;
+  @include m-auto();
 }
 .ml-auto{
-    margin-left: auto;
+    @include ml-auto();
 }
 .mr-auto{
-    margin-right: auto;
+  @include mr-auto();
 }
 .mt-auto{
-    margin-top: auto;
+  @include mt-auto();
 }
 .mb-auto{
-    margin-bottom: auto;
+  @include mb-auto();
 }
 
 
+// radius ($radius par exemple = 4xl,sm etc)
+@mixin radius($radius) {
+  border-radius: index($lengths, $radius) * $border-radius-start;
+}
+@mixin radius-none{
+  border-radius: $border-radius-none;
+}
 
 .radius-none {
-  border-radius:$border-radius-none;
+  @include radius-none;
 }
 
+@mixin radius-full{
+  border-radius: $border-radius-full;
+}
 .radius-full {
-  border-radius:$border-radius-full; 
-} 
+  @include radius-full;
+}
+
+
+@mixin tl-radius($radius) {
+  border-top-left-radius: index($lengths, $radius) * $border-radius-start;
+}
+@mixin tr-radius($radius) {
+  border-top-right-radius: index($lengths, $radius) * $border-radius-start;
+}
+@mixin br-radius($radius) {
+  border-bottom-right-radius: index($lengths, $radius) * $border-radius-start;
+}
+@mixin bl-radius($radius) {
+  border-bottom-left-radius: index($lengths, $radius) * $border-radius-start;
+}
+@mixin l-radius($radius) {
+  @include bl-radius($radius);
+  @include tl-radius($radius);  
+}
+@mixin r-radius($radius) {
+  @include br-radius($radius);
+  @include tr-radius($radius);
+}
+@mixin t-radius($radius) {
+  @include tl-radius($radius);
+  @include tr-radius($radius); 
+}
+@mixin b-radius($radius) {
+  @include bl-radius($radius);
+  @include br-radius($radius);  
+}
+
+
 @for $i from 1 through length($lengths) {
     // border radius
     .radius-#{nth($lengths, $i)}{
-      border-radius: #{$i*$border-radius-start};
+      @include radius(nth($lengths, $i));
     }
   
     .tl-radius-#{nth($lengths, $i)}{
-        border-top-left-radius: #{$i*$border-radius-start};
+      @include tl-radius(nth($lengths, $i));
     }
     .tr-radius-#{nth($lengths, $i)}{
-  
-      border-top-right-radius: #{$i*$border-radius-start};
+      @include tr-radius(nth($lengths, $i));
     }
     .br-radius-#{nth($lengths, $i)}{
-  
-      border-bottom-right-radius: #{$i*$border-radius-start};
+      @include br-radius(nth($lengths, $i));
     }
     .bl-radius-#{nth($lengths, $i)}{
-      border-bottom-left-radius: #{$i*$border-radius-start};
+      @include bl-radius(nth($lengths, $i));
     }
   
     .l-radius-#{nth($lengths, $i)}{
-        @extend .bl-radius-#{nth($lengths, $i)};
-        @extend .tl-radius-#{nth($lengths, $i)};
+      @include l-radius(nth($lengths, $i));
     }
   
     .r-radius-#{nth($lengths, $i)}{  
-      @extend .br-radius-#{nth($lengths, $i)};
-      @extend .tr-radius-#{nth($lengths, $i)};
+      @include r-radius(nth($lengths, $i));
     }
   
     .t-radius-#{nth($lengths, $i)}{
-      @extend .tl-radius-#{nth($lengths, $i)};
-      @extend .tr-radius-#{nth($lengths, $i)};
+      @include t-radius(nth($lengths, $i));
     }
   
     .b-radius-#{nth($lengths, $i)}{
-      @extend .bl-radius-#{nth($lengths, $i)};
-      @extend .br-radius-#{nth($lengths, $i)};
+      @include b-radius(nth($lengths, $i));
     }
-  
 }
 
