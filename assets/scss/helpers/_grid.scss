@@ -1,193 +1,345 @@
 //generate all helper classes for grid by classes
 
-.grid{
+@mixin grid{
   display: grid;
+}
+
+.grid {
+  @include grid;
+}
+
+
+@mixin grid-cols($i) {
+  grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
 }
 
 @for $i from 1 through 12 {
   .grid-cols-#{$i} {
-    grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+    @include grid-cols($i);
   }
+}
+
+
+@mixin grid-rows($i) {
+  grid-template-rows: repeat(#{$i}, minmax(0, 1fr));
 }
 
 @for $i from 1 through 12 {
   .grid-rows-#{$i} {
-    grid-template-rows: repeat(#{$i}, minmax(0, 1fr));
+    @include grid-rows($i);
   }
 }
 
-.grid-flow-row{
+@mixin grid-flow-row{
   grid-auto-flow: row;
 }
+.grid-flow-row{
+  @include grid-flow-row;
+}
 
-.grid-flow-col{
+@mixin grid-flow-col{
   grid-auto-flow: column;
 }
+.grid-flow-col{
+  @include grid-flow-col;
+}
 
-.grid-flow-row-dense{
+@mixin grid-flow-row-dense{
   grid-auto-flow: row dense;
 }
-
-.grid-flow-col-dense{
-  grid-auto-flow: column dense;
+.grid-flow-row-dense{
+  @include grid-flow-row-dense;
 }
 
-.grid-cols-none{
+@mixin grid-flow-col-dense{
+  grid-auto-flow: column dense;
+}
+.grid-flow-col-dense{
+  @include grid-flow-col-dense;
+}
+
+@mixin grid-cols-none{
   grid-template-columns: none;
 }
 
-.grid-rows-none{
-  grid-template-rows: none;
+.grid-cols-none{
+  @include grid-cols-none;
 }
 
-.col-auto{
+@mixin grid-rows-none{
+  grid-template-rows: none;
+}
+.grid-rows-none{
+  @include grid-rows-none;
+}
+
+@mixin col-auto{
   grid-column: auto;
+}
+.col-auto{
+  @include col-auto;
+}
+
+@mixin col-span($i){
+  grid-column: span #{$i} / span #{$i};
 }
 
 @for $i from 1 through 12 {
   .col-span-#{$i} {
-    grid-column: span #{$i} / span #{$i};
+    @include col-span($i);
   }
 }
 
-.col-start-auto{
+@mixin col-start-auto{
   grid-column-start: auto;
+}
+
+.col-start-auto{
+  @include col-start-auto;
+}
+
+@mixin col-start($i) {
+  grid-column-start: #{$i};
 }
 
 @for $i from 1 through 12 {
   .col-start-#{$i} {
-    grid-column-start: #{$i};
+    @include col-start($i);
   }
 }
 
-.col-end-auto{
+@mixin col-end-auto{
   grid-column-end: auto;
+}
+.col-end-auto{
+  @include col-end-auto;
+}
+
+@mixin col-end($i) {
+  grid-column-end: #{$i};
 }
 
 @for $i from 1 through 12 {
   .col-end-#{$i} {
-    grid-column-end: #{$i};
+    @include col-end($i);
   }
 }
 
-.row-auto{
+@mixin row-auto{
   grid-row: auto;
 }
 
+.row-auto{
+  @include row-auto;
+}
+
+@mixin row-span($i) {
+  grid-row: span #{$i} / span #{$i};
+}
 @for $i from 1 through 12 {
   .row-span-#{$i} {
-    grid-row: span #{$i} / span #{$i};
+    @include row-span($i);
   }
 }
 
-.row-start-auto{
+@mixin row-start-auto{
   grid-row-start: auto;
 }
+.row-start-auto{
+  @include row-start-auto;
+}
+
+
+@mixin row-start($i){
+  grid-row-start: #{$i};
+}
+
 
 @for $i from 1 through 12 {
   .row-start-#{$i} {
-    grid-row-start: #{$i};
-  }
+    @include row-start($i);
 }
-
-.row-end-auto{
+}
+@mixin row-end-auto{
   grid-row-end: auto;
 }
 
+.row-end-auto{
+  @include row-end-auto;
+}
+
+
+@mixin row-end($i) {
+  grid-row-end: #{$i};
+}
 @for $i from 1 through 12 {
   .row-end-#{$i} {
-    grid-row-end: #{$i};
+    @include row-end($i);
   }
 }
 
-.justify-items-start {
+@mixin justify-items-start {
   justify-items: start;
 }
 
-.justify-items-end {
+.justify-items-start{
+  @include justify-items-start;
+}
+
+@mixin justify-items-end {
   justify-items: end;
 }
 
-.justify-items-center {
+.justify-items-end{
+  @include justify-items-end;
+}
+
+@mixin justify-items-center {
   justify-items: center;
 }
 
-.justify-items-stretch {
-  justify-items: stretch;
+.justify-item-center{
+  @include justify-items-center;
 }
 
-.align-items-start {
+@mixin justify-items-stretch {
+  justify-items: stretch;
+}
+.justify-items-stretch{
+  @include justify-items-stretch;
+}
+
+@mixin align-items-start {
   align-items: start;
 }
 
-.align-items-end {
-  align-items: end;
+.align-items-start {
+  @include align-items-start;
 }
 
-.align-items-center {
+@mixin align-items-end {
+  align-items: end;
+}
+.align-items-end {
+  @include align-items-end;
+}
+
+@mixin align-items-center {
   align-items: center;
 }
 
-.align-items-stretch {
+.align-items-center {
+  @include align-items-center;
+}
+
+@mixin align-items-stretch {
   align-items: stretch;
 }
+.align-items-stretch {
+  @include align-items-stretch;
+}
 
-.justify-content-start {
+@mixin justify-content-start {
   justify-content: start;
 }
-
-.justify-content-end {
-  justify-content: end;
+.justify-content-start {
+  @include justify-content-start;
 }
 
-.justify-content-center {
+@mixin justify-content-end {
+  justify-content: end;
+}
+.justify-content-end  {
+  @include justify-content-end;
+}
+
+@mixin justify-content-center {
   justify-content: center;
 }
 
-.justify-content-between {
+.justify-content-center {
+  @include justify-content-center;
+}
+
+@mixin justify-content-between {
   justify-content: space-between;
 }
+.justify-content-between {
+  @include justify-content-between;
+}
 
-.justify-content-around {
+@mixin justify-content-around {
   justify-content: space-around;
 }
-
-.align-content-start {
-  align-content: start;
+.justify-content-around {
+  @include justify-content-around;
 }
 
-.align-content-end {
+@mixin align-content-start {
+  align-content: start;
+}
+.align-content-start {
+  @include align-content-start;
+}
+
+@mixin align-content-end {
   align-content: end;
 }
 
-.align-content-center {
-  align-content: center;
+.align-content-end {
+  @include align-content-end;
 }
 
-.align-content-between {
+@mixin align-content-center {
+  align-content: center;
+}
+.align-content-center {
+  @include align-content-center;
+}
+
+@mixin align-content-between {
   align-content: space-between;
 }
 
-.align-content-around {
+.align-content-between {
+  @include align-content-between;
+}
+
+@mixin align-content-around {
   align-content: space-around;
 }
 
-.align-content-stretch {
-  align-content: stretch;
+.align-content-around {
+  @include align-content-around;
 }
 
+@mixin align-content-stretch {
+  align-content: stretch;
+}
+.align-content-stretch {
+  @include align-content-stretch;
+}
+
+@mixin gap($i){
+  gap: $i*0.125em $i*0.125em;
+}
+@mixin gap-x($i){
+  row-gap: $i*0.125em;
+}
+@mixin gap-y($i){
+  column-gap: $i*0.125em;
+}
 
 @for $i from 0 through 100 {
-  .gap-#{$i} {
-     gap: $i*0.125em $i*0.125em;
-  }
-
-  .gap-x-#{$i}{
-    row-gap: $i*0.125em;
-  }
   
-  .gap-y-#{$i}{
-    column-gap: $i*0.125em;
+  .gap-#{$i} {
+    @include gap($i);
+  }
+  .gap-x-#{$i} {
+    @include gap-x($i);
+  }
+  .gap-y-#{$i} {
+    @include gap-y($i);
   }
   
 }
