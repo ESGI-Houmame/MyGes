@@ -1,23 +1,26 @@
 
+@media (max-width: map-get($breakpoint,"md")){
+    .page-title, .page-title > *{
+        @include ft-size-4xl;       
+    }
+}
+
+@media (min-width: map-get($breakpoint,"md")) {
+    .page-title, .page-title > *{
+        @include ft-size-6xl;       
+    }
+}
+
 
 .page-head {
     @extend .flex, .flex-col;
  
     .page-title, .page-title > *{
-            @extend .text-center, .ft-size-6xl, .ft-w-bold;
+            @extend .text-center, .ft-w-bold;
     }
     .page-description, .page-description > * {
-        @extend .text-center, .ft-w-bold, .ft-size-sm;
-        margin-top:9px;
+        @extend .text-center, .ft-w-bold, .ft-size-sm,.mt-5;
     }
 }
 
 
-
-
-
-@media (max-width: map-get($breakpoint,"md")){
-    .page-title, .page-title > *{
-            
-    }
-}

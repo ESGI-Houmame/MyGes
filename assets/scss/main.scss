@@ -15,6 +15,8 @@
 @import "components/footer";
 @import "components/scrollList";
 @import "components/contactList";
+@import "components/contactItem";
+@import "components/contactDetail";
 @import "components/page";
 
 * {
@@ -46,5 +48,6 @@ body {
 @media screen and (max-width: map-get($breakpoint,'md') ) {
     .main-container {
         width: 100%;
+        @include px(30);
     }
 }

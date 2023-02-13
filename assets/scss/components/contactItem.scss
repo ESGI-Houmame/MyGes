@@ -1,0 +1,44 @@
+
+.contact-img {
+    height:60px;width: 60px;
+
+}
+
+.contact-item {
+    max-height: 100px;
+}
+
+.contact-info  {
+    .contact-info-desc {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+    }
+    @extend .pl-5;
+}
+
+.contact-action-box button{
+    @extend .ft-size-sm ,.mt-2;
+}
+
+@media (max-width:map-get($breakpoint,"sm")) {
+    .contact-info  {
+        .contact-info-desc {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .contact-info-title{
+            font-size: 1em;
+        }
+    }
+    .contact-img-box{
+        height: 100%;
+    }
+
+}

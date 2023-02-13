@@ -120,7 +120,7 @@
 }
 
 @mixin w($width) {
-  width: $width+'%';
+  width: #{$width}+'%';
 }
 @mixin mxw($width) {
   max-width: $width+'%';
