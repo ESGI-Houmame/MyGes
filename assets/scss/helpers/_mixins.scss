@@ -174,27 +174,27 @@
 // paddings
 
 @mixin p($padding) {
-  padding: $padding+'px';
+  padding: #{$padding}px;
 }
 @mixin px($padding) {
-  padding-left: $padding+'px';
-  padding-right: $padding+'px';
+  padding-left: #{$padding}px;
+  padding-right: #{$padding}px;
 }
 @mixin py($padding) {
-  padding-top: $padding+'px';
-  padding-bottom: $padding+'px';
+  padding-top: #{$padding}px;
+  padding-bottom: #{$padding}px;
 }
 @mixin pt($padding) {
-  padding-top: $padding+'px';
+  padding-top: #{$padding}px;
 }
 @mixin pb($padding) {
-  padding-bottom: $padding+'px';
+  padding-bottom: #{$padding}px;
 }
 @mixin pl($padding) {
-  padding-left: $padding+'px';
+  padding-left: #{$padding}px;
 }
 @mixin pr($padding) {
-  padding-right: $padding+'px';
+  padding-right: #{$padding}px;
 }
 
 @for $i from 0 through 100 {
@@ -223,27 +223,27 @@
 
 
 @mixin m($margin) {
-  margin: $margin+'px';
+  margin: #{$margin}px;
 }
 @mixin mx($margin) {
-  margin-left: $margin+'px';
-  margin-right: $margin+'px';
+  margin-left: #{$margin}px;
+  margin-right: #{$margin}px;
 }
 @mixin my($margin) {
-  margin-top: $margin+'px';
-  margin-bottom: $margin+'px';
+  margin-top: #{$margin}px;
+  margin-bottom: #{$margin}px;
 }
 @mixin mt($margin) {
-  margin-top: $margin+'px';
+  margin-top: #{$margin}px;
 }
 @mixin mb($margin) {
-  margin-bottom: $margin+'px';
+  margin-bottom: #{$margin}px;
 }
 @mixin ml($margin) {
-  margin-left: $margin+'px';
+  margin-left: #{$margin}px;
 }
 @mixin mr($margin) {
-  margin-right: $margin+'px';
+  margin-right: #{$margin}px;
 }
 
 // margins
