@@ -1,21 +1,29 @@
 
 .contact-box {
     @extend .col-span-12; 
-    max-width: 423px;
+    
+}
+
+.contact-detail-header-info{
+    @extend .p-2;
 }
 
 
-
-@media screen and (min-width:map-get($breakpoint,"lg")){
+@media (min-width: map-get($breakpoint,"lg") ){
         .contact-box {
             grid-column: span 6/span 6;
         }
 }
 
-@media screen and (min-width:map-get($breakpoint,"xl")){
+@media (min-width:map-get($breakpoint,"xl")){
     .contact-box {
         grid-column: span 5/span 5;
     }
 }
+
+@media (min-width:map-get($breakpoint,"sm")){
+
+}
+    
 
 
