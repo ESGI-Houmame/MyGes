@@ -1,29 +1,20 @@
 
 .contact-box {
-    @extend .col-span-12; 
-    
-}
-
-.contact-detail-header-info{
-    @extend .p-2;
+    @extend .col-span-12;
 }
 
 
-@media (min-width: map-get($breakpoint,"lg") ){
-        .contact-box {
-            grid-column: span 6/span 6;
-        }
-}
 
-@media (min-width:map-get($breakpoint,"xl")){
+@media screen and (min-width:map-get($breakpoint,"lg")){
     .contact-box {
-        grid-column: span 5/span 5;
+        grid-column: span 6/span 6;
     }
 }
 
-@media (min-width:map-get($breakpoint,"sm")){
-
+@media screen and (min-width:map-get($breakpoint,"xl")){
+.contact-box {
+    grid-column: span 5/span 5;
 }
-    
+}
 
 

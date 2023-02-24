@@ -1,28 +1,9 @@
-.contact-detail-box {
-    @extend .bg-ghost, .flex;
+._contact-detail {
+    @extend .bg-ghost,.mt-5;
 }
 
-@media (max-width:map-get($breakpoint,"md")) {
-    .contact-detail-box{
+@media (min-width: map-get($breakpoint, "sm")) {
+    ._contact-detail {
         @include col-span(12);
-        .contact-detail-header {
-            .contact-detail-img{
-            width: 60px;
-            height: 60px;
-            }
-
-            .contact-detail-header-info{
-
-            }
-            
-        }
-        
-    }
-}
-
-
-@media (min-width:map-get($breakpoint,"md")) {
-    .contact-detail-box{
-        @include col-span(2);
     }
 }
