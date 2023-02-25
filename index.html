@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="dist/css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 </head>
 <body>
 <header class="bg-default">
@@ -51,11 +54,11 @@
     let close = document.getElementById("header_nav_close");
     let toggle = document.getElementById("header_toggle");
     close.addEventListener("click", function () {
-        document.querySelector(".header_nav").classList.remove("toggle");
+        document.querySelector(".header_nav").classList.remove("active");
     });
 
     toggle.addEventListener("click", function () {
-        document.querySelector(".header_nav").classList.add("toggle");
+        document.querySelector(".header_nav").classList.add("active");
     });
 </script>
 </body>
