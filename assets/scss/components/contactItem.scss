@@ -1,9 +1,4 @@
 
-.contact-img {
-    height:60px;width: 60px;
-
-}
-
 .contact-item {
     max-height: 100px;
 }
@@ -17,8 +12,21 @@
         text-overflow: ellipsis;
         
     }
+    
     @extend .pl-5;
 }
+
+.contact-img-box{
+    @include flex;
+    @include flex-justify-center;
+    height: 100%;
+}
+
+
+.contact-img {
+    object-fit: cover;
+}
+
 
 .contact-action-box button{
     @extend .ft-size-sm ,.mt-2;
@@ -37,8 +45,23 @@
             font-size: 1em;
         }
     }
-    .contact-img-box{
-        height: 100%;
-    }
+   
 
+}
+@media (min-width:map-get($breakpoint,"xs")) {
+
+    .contact-img {
+        width: 3em;
+        height: 3em;
+    }
+    
+}
+
+@media (min-width:map-get($breakpoint,"sm")) {
+
+    .contact-img {
+        width: 4em;
+        height: 4em;
+    }
+    
 }

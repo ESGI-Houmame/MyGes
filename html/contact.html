@@ -44,7 +44,7 @@
         </div>
 
 
-        <div class = "grid grid-cols-12 mt-50">
+        <div class = "grid grid-cols-12 mt-50 gap-10">
             <!-- CONTACT BOX-->
             <div class = "contact-box">
                 <div class = "scroll-list">
@@ -67,10 +67,8 @@
                             <br/>
                             <div class = "contact-item bg-default grid  grid-rows-6 p-5 radius-6xl">
                                 <div class = "grid grid-cols-12 row-span-5">
-                                    <div class = "col-span-3">
-                                        <div class = "flex justify-content-center contact-img-box">
+                                    <div class = "col-span-3 contact-img-box">
                                             <img src = "../assets/images/contact.jpg" class = "w-100 radius-4xl contact-img">
-                                        </div>                               
                                     </div>
         
                                     <div class = "col-span-9 flex flex-col contact-info">
@@ -95,17 +93,95 @@
             
             <div class = "_contact-detail">
                 <div class = "_contact-detail-header grid grid-cols-12">
-                    <div class = "_contact-detail-picture bg-primary">
+                    <div class = "_contact-detail-picture">
                         <img src = "../assets/images/contact.jpg" class = "w-100 radius-4xl contact-img">
                     </div>
-                    <div class = "_contact-detail-info bg-secondary">
-                        
+                    <div class = "_contact-detail-info grid">
+                        <div class = "_contact-detail-user">
+                            <p class = "text-primary ft-w-bold contact-info-title">AHMINDACHE Jawad</p>
+                            <p class = "text-accent ft-w-regular ft-size-sm contact-info-desc"> Conception base de donnée relationelle</p>
+                        </div>
+                        <div class = "_contact-detail-social">
+                            <div><a href="#" target="_blank"><i class ="fa-brands fa-linkedin"></i>linkedin.com/in/example</a></div>
+                            <div><a href="#" target="_blank"><i class ="fa-brands fa-linkedin"></i>0600000000</a></div>
+                            <div><a href="#" target="_blank"><i class ="fa-brands fa-linkedin"></i>ExampleMail@myges.fr</a></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class = "_contact-detail-body">
-                   f
+                <div class = "_contact-detail-body grid grid-rows-12">
+                    <div class = "_contact-body-s1">
+                        <div class = "input w-100 _contact-objet radius-md mt-5 p-5 bg-default text-light">
+                            <input type  = "text" placeholder="Objet"/>
+                        </div>
+
+                        <div class = "input w-100 _contact-msg radius-md mt-5 p-5 bg-default text-light">
+                            <textarea type  = "text" placeholder="Votre message ici..."></textarea>
+                        </div>
+                    </div>
                      
+                    <div class = "_contact-body-s2">
+                        <div class = "_drop-box">
+                                <div class="_pj-section-title"><h2 class = "ft-size-lg text-primary ft-w-bold">Pièce jointe</h2></div>
+                                <div class = "_dropzone"></div>
+                        </div>
+                        
+                        <div class = "_drop-list">
+
+                            <div class = "_drop-list-item">
+                                <div class = "_drop-list-item-icon">
+                                    <i class="fa-solid fa-file"></i>
+                                </div>
+                                <div class = "_drop-list-item-info">
+                                    <p>Nom du fichier</p>
+                                </div>
+                                <div class = "_drop-list-item-action">
+                                    <i class="fa-solid fa-trash"></i>
+                                </div>
+                            </div>
+
+                            <div class = "_drop-list-item">
+                                <div class = "_drop-list-item-icon">
+                                    <i class="fa-solid fa-file"></i>
+                                </div>
+                                <div class = "_drop-list-item-info">
+                                    <p>Nom du fichier</p>
+                                </div>
+                                <div class = "_drop-list-item-action">
+                                    <i class="fa-solid fa-trash"></i>
+                                </div>
+                            </div>
+
+                            <div class = "_drop-list-item">
+                                <div class = "_drop-list-item-icon">
+                                    <i class="fa-solid fa-file"></i>
+                                </div>
+                                <div class = "_drop-list-item-info">
+                                    <p>Nom du fichier</p>
+                                </div>
+                                <div class = "_drop-list-item-action">
+                                    <i class="fa-solid fa-trash"></i>
+                                </div>
+                            </div>
+
+                            <div class = "_drop-list-item">
+                                <div class = "_drop-list-item-icon">
+                                    <i class="fa-solid fa-file"></i>
+                                </div>
+                                <div class = "_drop-list-item-info">
+                                    <p>Nom du fichier</p>
+                                </div>
+                                <div class = "_drop-list-item-action">
+                                    <i class="fa-solid fa-trash"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class = "_contact-body-s3">
+                        <button class = "btn btn-primary" >Envoyer</button>
+                    </div>
+
                 </div>
             </div>
               
