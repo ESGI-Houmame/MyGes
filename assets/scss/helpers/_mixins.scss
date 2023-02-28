@@ -24,27 +24,6 @@
 @mixin border($color){
   border-color: map-get($colorsMap,$color);
 }
-
-
-@each $get-color, $value in $colorsMap {
-  .bg-#{$get-color} {
-    @include bg($get-color);
-  }
-  .text-#{$get-color} {
-    @include text($get-color);
-  }
-
-  .hover\:bg-#{$get-color}:hover {
-    @include bg($get-color);
-  }
-  .hover\:text-#{$get-color}:hover {
-    @include text($get-color);
-  }
-  .hover\:border-#{$get-color}:hover {
-    @include border($get-color);
-  }
-}
-
 // border color
 @mixin border-top($color) {
   border-top-color: map-get($colorsMap,$color);
@@ -72,53 +51,6 @@
   @include border-bottom-color($color);
 }
 
-@each $get-color, $value in $colorsMap {
-  .border-#{$get-color} {
-    @include border($get-color);
-  }
-
-  .border-top-#{$get-color} {
-    @include border-top($get-color);
-  }
-  
-  .border-left-#{$get-color} {
-    @include border-left($get-color);
-  }
-  
-  .border-right-#{$get-color} {
-    @include border-right($get-color);
-  }
-  
-  .border-bottom-#{$get-color} {
-    @include border-bottom($get-color);
-  }
-  
-  .border-x-#{$get-color} {
-    @include border-left($get-color);
-    @include border-right($get-color);
-  }
-  
-  .border-y-#{$get-color} {
-    @include border-top($get-color);
-    @include border-bottom($get-color);
-  }
-
-}
-
-
-// border size
-.border-0{
-  border:0;
-}
-
-
-
-@each $get-color, $value in $colorsMap {
-  .hover\:border-#{$get-color}:hover {
-    @include border($get-color);
-  }
-}
-
 @mixin w($width) {
   width: #{$width}+'%';
 }
@@ -128,20 +60,6 @@
 
 @mixin mnw($width) {
   min-width: $width+'%';
-}
-//widths
-@for $i from 0 through 100 {
-  .w-#{$i * $width} {
-    @include w($i*$width);
-  }
-
-  .mxw-#{$i * $width} {
-    @include mxw($i*$width);
-  }
-
-  .mnw-#{$i * $width}{
-    @include mnw($i*$width);
-  }
 }
 
 @mixin h($height) {
@@ -153,22 +71,6 @@
 
 @mixin mnh($height) {
   min-height: $height+'%';
-}
-
-//heights
-
-@for $i from 0 through 100 {
-  .h-#{$i * $height} {
-    @include h($i*$height);
-  }
-
-  .mxh-#{$i * $height} {
-    @include mxh($i*$height);
-  }
-
-  .mnh-#{$i * $height}{
-    @include mnh($i*$height);
-  }
 }
 
 // paddings
@@ -197,30 +99,6 @@
   padding-right: #{$padding}px;
 }
 
-@for $i from 0 through 100 {
-  .p-#{$i} {
-    @include p($i*2);
-  }
-  .px-#{$i} {
-    @include px($i*2);
-  }
-  .py-#{$i} {
-    @include py($i*2);
-  }
-  .pt-#{$i} {
-    @include pt($i*2);
-  }
-  .pb-#{$i} {
-    @include pb($i*2);
-  }
-  .pl-#{$i} {
-    @include pl($i*2);
-  }
-  .pr-#{$i} {
-    @include pr($i*2);
-  }
-}
-
 
 @mixin m($margin) {
   margin: #{$margin}px;
@@ -246,30 +124,6 @@
   margin-right: #{$margin}px;
 }
 
-// margins
-
-@for $i from 0 through 100 {
-  .m-#{$i} {
-    @include m($i*2);
-  }
-  .mx-#{$i} {
-    @include mx($i*2);
-  }
-  .my-#{$i} {
-    @include my($i*2);
-  }
-  .mt-#{$i} {
-    @include mt($i*2);}
-  .mb-#{$i} {
-    @include mb($i*2);
-  }
-  .ml-#{$i} {
-    @include ml($i*2);
-  }
-  .mr-#{$i} {
-    @include mr($i*2);
-  }
-}
 
 @mixin m-auto(){
   margin: auto;
@@ -289,22 +143,6 @@
 
 
 
-.m-auto{
-  @include m-auto();
-}
-.ml-auto{
-    @include ml-auto();
-}
-.mr-auto{
-  @include mr-auto();
-}
-.mt-auto{
-  @include mt-auto();
-}
-.mb-auto{
-  @include mb-auto();
-}
-
 
 // radius ($radius par exemple = 4xl,sm etc)
 @mixin radius($radius) {
@@ -314,17 +152,9 @@
   border-radius: $border-radius-none;
 }
 
-.radius-none {
-  @include radius-none;
-}
-
 @mixin radius-full{
   border-radius: $border-radius-full;
 }
-.radius-full {
-  @include radius-full;
-}
-
 
 @mixin tl-radius($radius) {
   border-top-left-radius: index($lengths, $radius) * $border-radius-start;
@@ -356,39 +186,1537 @@
 }
 
 
-@for $i from 1 through length($lengths) {
-    // border radius
-    .radius-#{nth($lengths, $i)}{
-      @include radius(nth($lengths, $i));
+@for $i from 0 through 1000 {
+  .w-#{$i} {
+    width: #{$i}px;
+  }
+  .h-#{$i} {
+    height: #{$i}px;
+  }
+  .min-w-#{$i} {
+    min-width: #{$i}px;
+  }
+  .min-h-#{$i} {
+    min-height: #{$i}px;
+  }
+  .max-w-#{$i} {
+    max-width: #{$i}px;
+  }
+  .max-h-#{$i} {
+    max-height: #{$i}px;
+  }
+  .hover\:w-#{$i}:hover {
+    width: #{$i}px;
+  }
+  .hover\:h-#{$i}:hover {
+    height: #{$i}px;
+  }
+  .hover\:min-w-#{$i}:hover {
+    min-width: #{$i}px;
+  }
+  .hover\:min-h-#{$i}:hover {
+    min-height: #{$i}px;
+  }
+  .hover\:max-w-#{$i}:hover {
+    max-width: #{$i}px;
+  }
+  .hover\:max-h-#{$i}:hover {
+    max-height: #{$i}px;
+  }
+  .border-#{$i} {
+    border: #{$i}px solid;
+  }
+  .border-t-#{$i} {
+    border-top: #{$i}px solid;
+  }
+  .border-r-#{$i} {
+    border-right: #{$i}px solid;
+  }
+  .border-b-#{$i} {
+    border-bottom: #{$i}px solid;
+  }
+  .border-l-#{$i} {
+    border-left: #{$i}px solid;
+  }
+  .hover\:border-#{$i}:hover {
+    border: #{$i}px solid;
+  }
+  .hover\:border-t-#{$i}:hover {
+    border-top: #{$i}px solid;
+  }
+  .hover\:border-r-#{$i}:hover {
+    border-right: #{$i}px solid;
+  }
+  .hover\:border-b-#{$i}:hover {
+    border-bottom: #{$i}px solid;
+  }
+  .hover\:border-l-#{$i}:hover {
+    border-left: #{$i}px solid;
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      .#{$breakpoint}\:w-#{$i} {
+        width: #{$i}px solid !important;
+      }
+      .#{$breakpoint}\:border-#{$i} {
+        border: #{$i}px solid !important;
+      }
+      .#{$breakpoint}\:border-t-#{$i} {
+        border-top: #{$i}px solid !important;
+      }
+      .#{$breakpoint}\:border-r-#{$i} {
+        border-right: #{$i}px solid !important;
+      }
+      .#{$breakpoint}\:border-b-#{$i} {
+        border-bottom: #{$i}px solid !important;
+      }
+      .#{$breakpoint}\:border-l-#{$i} {
+        border-left: #{$i}px solid !important;
+      }
+      .#{$breakpoint}\:hover\:border-#{$i}:hover {
+        border: #{$i}px !important;
+      }
+      .#{$breakpoint}\:hover\:border-t-#{$i}:hover {
+        border-top: #{$i}px !important;
+      }
+      .#{$breakpoint}\:hover\:border-r-#{$i}:hover {
+        border-right: #{$i}px !important;
+      }
+      .#{$breakpoint}\:hover\:border-b-#{$i}:hover {
+        border-bottom: #{$i}px !important;
+      }
+      .#{$breakpoint}\:hover\:border-l-#{$i}:hover {
+        border-left: #{$i}px !important;
+      }
+      .#{$breakpoint}\:h-#{$i} {
+        height: #{$i}px !important;
+      }
+      .#{$breakpoint}\:min-w-#{$i} {
+        min-width: #{$i}px !important;
+      }
+      .#{$breakpoint}\:min-h-#{$i} {
+        min-height: #{$i}px !important;
+      }
+      .#{$breakpoint}\:max-w-#{$i} {
+        max-width: #{$i}px !important;
+      }
+      .#{$breakpoint}\:max-h-#{$i} {
+        max-height: #{$i}px !important;
+      }
+      .#{$breakpoint}\:hover\:w-#{$i}:hover {
+        width: #{$i}px !important;
+      }
+      .#{$breakpoint}\:hover\:h-#{$i}:hover {
+        height: #{$i}px !important;
+      }
+      .#{$breakpoint}\:hover\:min-w-#{$i}:hover {
+        min-width: #{$i}px !important;
+      }
+      .#{$breakpoint}\:hover\:min-h-#{$i}:hover {
+        min-height: #{$i}px !important;
+      }
+      .#{$breakpoint}\:hover\:max-w-#{$i}:hover {
+        max-width: #{$i}px !important;
+      }
+      .#{$breakpoint}\:hover\:max-h-#{$i}:hover {
+        max-height: #{$i}px !important;
+      }
     }
-  
-    .tl-radius-#{nth($lengths, $i)}{
-      @include tl-radius(nth($lengths, $i));
-    }
-    .tr-radius-#{nth($lengths, $i)}{
-      @include tr-radius(nth($lengths, $i));
-    }
-    .br-radius-#{nth($lengths, $i)}{
-      @include br-radius(nth($lengths, $i));
-    }
-    .bl-radius-#{nth($lengths, $i)}{
-      @include bl-radius(nth($lengths, $i));
-    }
-  
-    .l-radius-#{nth($lengths, $i)}{
-      @include l-radius(nth($lengths, $i));
-    }
-  
-    .r-radius-#{nth($lengths, $i)}{  
-      @include r-radius(nth($lengths, $i));
-    }
-  
-    .t-radius-#{nth($lengths, $i)}{
-      @include t-radius(nth($lengths, $i));
-    }
-  
-    .b-radius-#{nth($lengths, $i)}{
-      @include b-radius(nth($lengths, $i));
-    }
+  }
 }
 
+
+@for $i from 0 through 100 {
+  .w-#{$i}\/100 {
+    width: #{$i}+'%';
+  }
+  .min-w-#{$i}\/100 {
+    min-width: #{$i}+'%';
+  }
+  .max-w-#{$i}\/100 {
+    max-width: #{$i}+'%';
+  }
+  .h-#{$i}\/100 {
+    height: #{$i}+'%';
+  }
+  .min-h-#{$i}\/100 {
+    min-height: #{$i}+'%';
+  }
+  .max-h-#{$i}\/100 {
+    max-height: #{$i}+'%';
+  }
+  .p-#{$i} {
+    padding: #{$i*2}px;
+  }
+  .px-#{$i} {
+    padding-left: #{$i*2}px;
+    padding-right: #{$i*2}px;
+  }
+  .py-#{$i} {
+    padding-top: #{$i*2}px;
+    padding-bottom: #{$i*2}px;
+  }
+  .pt-#{$i} {
+    padding-top: #{$i*2}px;
+  }
+  .pb-#{$i} {
+    padding-bottom: #{$i*2}px;
+  }
+  .pl-#{$i} {
+    padding-left: #{$i*2}px;
+  }
+  .pr-#{$i} {
+    padding-right: #{$i*2}px;
+  }
+  .hover\:w-#{$i}\/100 {
+    width: #{$i}+'%';
+  }
+  .hover\:min-w-#{$i}\/100 {
+    min-width: #{$i}+'%';
+  }
+  .hover\:max-w-#{$i}\/100 {
+    max-width: #{$i}+'%';
+  }
+  .hover\:h-#{$i}\/100 {
+    height: #{$i}+'%';
+  }
+  .hover\:min-h-#{$i}\/100 {
+    min-height: #{$i}+'%';
+  }
+  .hover\:max-h-#{$i}\/100 {
+    max-height: #{$i}+'%';
+  }
+  .hover\:p-#{$i}:hover {
+    padding: #{$i*2}px;
+  }
+  .hover\:px-#{$i}:hover {
+    padding-left: #{$i*2}px;
+    padding-right: #{$i*2}px;
+  }
+  .hover\:py-#{$i}:hover {
+    padding-top: #{$i*2}px;
+    padding-bottom: #{$i*2}px;
+  }
+  .hover\:pt-#{$i}:hover {
+    padding-top: #{$i*2}px;
+  }
+  .hover\:pb-#{$i}:hover {
+    padding-bottom: #{$i*2}px;
+  }
+  .hover\:pl-#{$i}:hover {
+    padding-left: #{$i*2}px;
+  }
+  .hover\:pr-#{$i}:hover {
+    padding-right: #{$i*2}px;
+  }
+  .m-#{$i} {
+    margin: #{$i*2}px;
+  }
+  .mx-#{$i} {
+    margin-left: #{$i*2}px;
+    margin-right: #{$i*2}px;
+  }
+  .my-#{$i} {
+    margin-top: #{$i*2}px;
+    margin-bottom: #{$i*2}px;
+  }
+  .mt-#{$i} {
+    margin-top: #{$i*2}px;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$i*2}px;
+  }
+  .ml-#{$i} {
+    margin-left: #{$i*2}px;
+  }
+  .mr-#{$i} {
+    margin-right: #{$i*2}px;
+  }
+  .hover\:m-#{$i}:hover {
+    margin: #{$i*2}px;
+  }
+  .hover\:mx-#{$i}:hover {
+    margin-left: #{$i*2}px;
+    margin-right: #{$i*2}px;
+  }
+  .hover\:my-#{$i}:hover {
+    margin-top: #{$i*2}px;
+    margin-bottom: #{$i*2}px;
+  }
+  .hover\:mt-#{$i}:hover {
+    margin-top: #{$i*2}px;
+  }
+  .hover\:mb-#{$i}:hover {
+    margin-bottom: #{$i*2}px;
+  }
+  .hover\:ml-#{$i}:hover {
+    margin-left: #{$i*2}px;
+  }
+  .hover\:mr-#{$i}:hover {
+    margin-right: #{$i*2}px;
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      .#{$breakpoint}\:w-#{$i}\/100 {
+        width: #{$i}+'%' !important;
+      }
+      .#{$breakpoint}\:min-w-#{$i}\/100 {
+        min-width: #{$i}+'%' !important;
+      }
+      .#{$breakpoint}\:max-w-#{$i}\/100 {
+        max-width: #{$i}+'%' !important;
+      }
+      .#{$breakpoint}\:h-#{$i}\/100 {
+        height: #{$i}+'%' !important;
+      }
+      .#{$breakpoint}\:min-h-#{$i}\/100 {
+        min-height: #{$i}+'%' !important;
+      }
+      .#{$breakpoint}\:max-h-#{$i}\/100 {
+        max-height: #{$i}+'%' !important;
+      }
+      .#{$breakpoint}\:hover\:w-#{$i}\/100:hover {
+        width: #{$i}+'%' !important;
+      }
+      .#{$breakpoint}\:hover\:min-w-#{$i}\/100:hover {
+        min-width: #{$i}+'%' !important;
+      }
+      .#{$breakpoint}\:hover\:max-w-#{$i}\/100:hover {
+        max-width: #{$i}+'%' !important;
+      }
+      .#{$breakpoint}\:hover\:h-#{$i}\/100:hover {
+        height: #{$i}+'%' !important;
+      }
+      .#{$breakpoint}\:hover\:min-h-#{$i}\/100:hover {
+        min-height: #{$i}+'%' !important;
+      }
+      .#{$breakpoint}\:hover\:max-h-#{$i}\/100:hover {
+        max-height: #{$i}+'%' !important;
+      }
+      .#{$breakpoint}\:p-#{$i} {
+        padding: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:px-#{$i} {
+        padding-left: #{$i*2}px !important;
+        padding-right: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:py-#{$i} {
+        padding-top: #{$i*2}px !important;
+        padding-bottom: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:pt-#{$i} {
+        padding-top: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:pb-#{$i} {
+        padding-bottom: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:pl-#{$i} {
+        padding-left: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:pr-#{$i} {
+        padding-right: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:hover\:p-#{$i}:hover {
+        padding: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:hover\:px-#{$i}:hover {
+        padding-left: #{$i*2}px !important;
+        padding-right: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:hover\:py-#{$i}:hover {
+        padding-top: #{$i*2}px !important;
+        padding-bottom: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:hover\:pt-#{$i}:hover {
+        padding-top: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:hover\:pb-#{$i}:hover {
+        padding-bottom: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:hover\:pl-#{$i}:hover {
+        padding-left: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:hover\:pr-#{$i}:hover {
+        padding-right: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:m-#{$i} {
+        margin: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:mx-#{$i} {
+        margin-left: #{$i*2}px !important;
+        margin-right: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:my-#{$i} {
+        margin-top: #{$i*2}px !important;
+        margin-bottom: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:mt-#{$i} {
+        margin-top: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:mb-#{$i} {
+        margin-bottom: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:ml-#{$i} {
+        margin-left: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:mr-#{$i} {
+        margin-right: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:hover\:m-#{$i} {
+        margin: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:hover\:mx-#{$i} {
+        margin-left: #{$i*2}px !important;
+        margin-right: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:hover\:my-#{$i} {
+        margin-top: #{$i*2}px !important;
+        margin-bottom: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:hover\:mt-#{$i} {
+        margin-top: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:hover\:mb-#{$i} {
+        margin-bottom: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:hover\:ml-#{$i} {
+        margin-left: #{$i*2}px !important;
+      }
+      .#{$breakpoint}\:hover\:mr-#{$i} {
+        margin-right: #{$i*2}px !important;
+      }
+    }
+  }
+}
+
+@for $i from 1 through length($colors) {
+  .bg-#{nth($color-names, $i)} {
+    background-color: bg-color($i);
+  }
+  .text-#{nth($color-names, $i)} {
+    color: bg-color($i);
+  }
+  .border-#{nth($color-names, $i)} {
+    border-color: bg-color($i);
+  }
+
+  .border-top-#{nth($color-names, $i)} {
+    border-top-color: bg-color($i);
+  }
+
+  .border-left-#{nth($color-names, $i)} {
+    border-left-color: bg-color($i);
+  }
+
+  .border-right-#{nth($color-names, $i)} {
+    border-right-color: bg-color($i);
+  }
+
+  .border-bottom-#{nth($color-names, $i)} {
+    border-bottom-color: bg-color($i);
+  }
+
+  .border-x-color-#{nth($color-names, $i)} {
+    border-left-color: bg-color($i);
+    border-right-color: bg-color($i);
+  }
+
+  .border-y-color-#{nth($color-names, $i)} {
+    border-top-color: bg-color($i);
+    border-bottom-color: bg-color($i);
+  }
+  .hover\:bg-#{nth($color-names, $i)}:hover {
+    background-color: bg-color($i);
+  }
+  .hover\:text-#{nth($color-names, $i)}:hover {
+    color: bg-color($i);
+  }
+  .hover\:border-#{nth($color-names, $i)}:hover {
+    border-color: bg-color($i);
+  }
+
+  .hover\:border-top-#{nth($color-names, $i)}:hover {
+    border-top-color: bg-color($i);
+  }
+
+  .hover\:border-left-#{nth($color-names, $i)}:hover {
+    border-left-color: bg-color($i);
+  }
+
+  .hover\:border-right-#{nth($color-names, $i)}:hover {
+    border-right-color: bg-color($i);
+  }
+
+  .hover\:border-bottom-#{nth($color-names, $i)}:hover {
+    border-bottom-color: bg-color($i);
+  }
+
+  .hover\:border-x-color-#{nth($color-names, $i)}:hover {
+    border-left-color: bg-color($i);
+    border-right-color: bg-color($i);
+  }
+
+  .hover\:border-y-color-#{nth($color-names, $i)}:hover {
+    border-top-color: bg-color($i);
+    border-bottom-color: bg-color($i);
+  }
+  @each $breakpoint in map-keys($breakpoints) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      .#{$breakpoint}\:bg-#{nth($color-names, $i)} {
+        background-color: bg-color($i) !important;
+      }
+      .#{$breakpoint}\:text-#{nth($color-names, $i)} {
+        color: bg-color($i) !important;
+      }
+      .#{$breakpoint}\:border-#{nth($color-names, $i)} {
+        border-color: bg-color($i) !important;
+      }
+
+      .#{$breakpoint}\:border-top-#{nth($color-names, $i)} {
+        border-top-color: bg-color($i) !important;
+      }
+
+      .#{$breakpoint}\:border-left-#{nth($color-names, $i)} {
+        border-left-color: bg-color($i) !important;
+      }
+      .#{$breakpoint}\:border-right-#{nth($color-names, $i)} {
+        border-right-color: bg-color($i) !important;
+      }
+      .#{$breakpoint}\:border-bottom-#{nth($color-names, $i)} {
+        border-bottom-color: bg-color($i) !important;
+      }
+      .#{$breakpoint}\:border-x-color-#{nth($color-names, $i)} {
+        border-left-color: bg-color($i) !important;
+        border-right-color: bg-color($i) !important;
+      }
+      .#{$breakpoint}\:border-y-color-#{nth($color-names, $i)} {
+        border-top-color: bg-color($i) !important;
+        border-bottom-color: bg-color($i) !important;
+      }
+      .#{$breakpoint}\:hover\:bg-#{nth($color-names, $i)} {
+        background-color: bg-color($i) !important;
+      }
+      .#{$breakpoint}\:hover\:text-#{nth($color-names, $i)} {
+        color: bg-color($i) !important;
+      }
+      .#{$breakpoint}\:hover\:border-#{nth($color-names, $i)} {
+        border-color: bg-color($i) !important;
+      }
+
+      .#{$breakpoint}\:hover\:border-top-#{nth($color-names, $i)} {
+        border-top-color: bg-color($i) !important;
+      }
+
+      .#{$breakpoint}\:hover\:border-left-#{nth($color-names, $i)} {
+        border-left-color: bg-color($i) !important;
+      }
+
+      .#{$breakpoint}\:hover\:border-right-#{nth($color-names, $i)} {
+        border-right-color: bg-color($i) !important;
+      }
+
+      .#{$breakpoint}\:hover\:border-bottom-#{nth($color-names, $i)} {
+        border-bottom-color: bg-color($i) !important;
+      }
+
+      .#{$breakpoint}\:hover\:border-x-color-#{nth($color-names, $i)} {
+        border-left-color: bg-color($i) !important;
+        border-right-color: bg-color($i) !important;
+      }
+
+      .#{$breakpoint}\:hover\:border-y-color-#{nth($color-names, $i)} {
+        border-top-color: bg-color($i) !important;
+        border-bottom-color: bg-color($i) !important;
+      }
+    }
+  }
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.min-w-full {
+  width: 100vw;
+}
+
+.max-w-full {
+  height: 100vh;
+}
+
+.min-h-full {
+  min-height: 100%;
+}
+
+.max-h-full {
+  max-height: 100%;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.max-h-screen {
+  max-height: 100vh;
+}
+
+.min-w-screen {
+  min-width: 100vw;
+}
+
+.max-w-screen {
+  max-width: 100vw;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+.radius-none {
+  border-radius: $border-radius-none;
+}
+
+.radius-full {
+  border-radius: $border-radius-full;
+}
+
+.hover\:w-full:hover {
+  width: 100%;
+}
+
+.hover\:h-full:hover {
+  height: 100%;
+}
+
+.hover\:w-screen:hover {
+  width: 100vw;
+}
+
+.hover\:h-screen:hover {
+  height: 100vh;
+}
+
+.hover\:min-w-full:hover {
+  width: 100vw;
+}
+
+.hover\:max-w-full:hover {
+  height: 100vh;
+}
+
+.hover\:min-h-full:hover {
+  min-height: 100%;
+}
+
+.hover\:max-h-full:hover {
+  max-height: 100%;
+}
+
+.hover\:min-h-screen:hover {
+  min-height: 100vh;
+}
+
+.hover\:max-h-screen:hover {
+  max-height: 100vh;
+}
+
+.hover\:min-w-screen:hover {
+  min-width: 100vw;
+}
+
+.hover\:max-w-screen:hover {
+  max-width: 100vw;
+}
+
+
+.hover\:m-auto {
+  margin: auto;
+}
+
+.hover\:ml-auto {
+  margin-left: auto;
+}
+
+.hover\:mr-auto {
+  margin-right: auto;
+}
+
+.hover\:mt-auto {
+  margin-top: auto;
+}
+
+.hover\:mb-auto {
+  margin-bottom: auto;
+}
+
+.hover\:mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hover\:my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+.hover\:radius-none {
+  border-radius: $border-radius-none;
+}
+
+.hover\:radius-full {
+  border-radius: $border-radius-full;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.hover\:text-center:hover {
+  text-align: center;
+}
+
+.hover\:text-left:hover {
+  text-align: left;
+}
+
+.hover\:text-right:hover {
+  text-align: right;
+}
+
+.hover\:text-justify:hover {
+  text-align: justify;
+}
+
+.hover\:text-nowrap:hover {
+  white-space: nowrap;
+}
+
+.hover\:text-truncate:hover {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hover\:text-lowercase:hover {
+  text-transform: lowercase;
+}
+
+.hover\:text-uppercase:hover {
+  text-transform: uppercase;
+}
+
+.hover\:text-capitalize:hover {
+  text-transform: capitalize;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}
+
+.text-no-underline {
+  text-decoration: none;
+}
+
+.hover\:text-underline:hover {
+  text-decoration: underline;
+}
+
+.hover\:text-line-through:hover {
+  text-decoration: line-through;
+}
+
+.hover\:text-no-underline:hover {
+  text-decoration: none;
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+  @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+    .#{$breakpoint}\:w-full {
+      width: 100% !important;
+    }
+    .#{$breakpoint}\:h-full {
+      height: 100% !important;
+    }
+    .#{$breakpoint}\:min-h-screen {
+      min-height: 100vh !important;
+    }
+
+    .#{$breakpoint}\:max-h-screen {
+      max-height: 100vh !important;
+    }
+
+    .#{$breakpoint}\:min-w-screen {
+      min-width: 100vw !important;
+    }
+
+    .#{$breakpoint}\:max-w-screen {
+      max-width: 100vw !important;
+    }
+    .#{$breakpoint}\:hover\:min-h-screen {
+      min-height: 100vh !important;
+    }
+
+    .#{$breakpoint}\:hover\:max-h-screen {
+      max-height: 100vh !important;
+    }
+
+    .#{$breakpoint}\:hover\:min-w-screen {
+      min-width: 100vw !important;
+    }
+
+    .#{$breakpoint}\:hover\:max-w-screen {
+      max-width: 100vw !important;
+    }
+
+    .#{$breakpoint}\:m-auto {
+      margin: auto !important;
+    }
+
+    .#{$breakpoint}\:ml-auto {
+      margin-left: auto !important;
+    }
+
+    .#{$breakpoint}\:mr-auto {
+      margin-right: auto !important;
+    }
+
+    .#{$breakpoint}\:mt-auto {
+      margin-top: auto !important;
+    }
+
+    .#{$breakpoint}\:mb-auto {
+      margin-bottom: auto !important;
+    }
+
+    .#{$breakpoint}\:mx-auto {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .#{$breakpoint}\:my-auto {
+      margin-top: auto !important;
+      margin-bottom: auto !important;
+    }
+
+
+    .#{$breakpoint}\:radius-none {
+      border-radius: $border-radius-none !important;
+    }
+
+    .#{$breakpoint}\:radius-full {
+      border-radius: $border-radius-full !important;
+    }
+
+
+    .#{$breakpoint}\:hover\:min-h-screen:hover {
+      min-height: 100vh !important;
+    }
+
+    .#{$breakpoint}\:hover\:max-h-screen:hover {
+      max-height: 100vh !important;
+    }
+
+    .#{$breakpoint}\:hover\:min-w-screen:hover {
+      min-width: 100vw !important;
+    }
+
+    .#{$breakpoint}\:hover\:max-w-screen:hover {
+      max-width: 100vw !important;
+    }
+
+
+    .#{$breakpoint}\:hover\:m-auto {
+      margin: auto !important;
+    }
+
+    .#{$breakpoint}\:hover\:ml-auto {
+      margin-left: auto !important;
+    }
+
+    .#{$breakpoint}\:hover\:mr-auto {
+      margin-right: auto !important;
+    }
+
+    .#{$breakpoint}\:hover\:mt-auto {
+      margin-top: auto !important;
+    }
+
+    .#{$breakpoint}\:hover\:mb-auto {
+      margin-bottom: auto !important;
+    }
+
+    .#{$breakpoint}\:hover\:mx-auto {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .#{$breakpoint}\:hover\:my-auto {
+      margin-top: auto !important;
+      margin-bottom: auto !important;
+    }
+
+
+    .#{$breakpoint}\:hover\:radius-none {
+      border-radius: $border-radius-none !important;
+    }
+
+    .#{$breakpoint}\:hover\:radius-full {
+      border-radius: $border-radius-full !important;
+    }
+
+    .#{$breakpoint}\:text-center {
+      text-align: center !important;
+    }
+
+    .#{$breakpoint}\:text-left {
+      text-align: left !important;
+    }
+
+    .#{$breakpoint}\:text-right {
+      text-align: right !important;
+    }
+
+    .#{$breakpoint}\:text-justify {
+      text-align: justify !important;
+    }
+
+
+    .#{$breakpoint}\:text-nowrap {
+      white-space: nowrap !important;
+    }
+
+    .#{$breakpoint}\:text-truncate {
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+    }
+
+    .#{$breakpoint}\:text-lowercase {
+      text-transform: lowercase !important;
+    }
+
+    .#{$breakpoint}\:text-uppercase {
+      text-transform: uppercase !important;
+    }
+
+    .#{$breakpoint}\:text-capitalize {
+      text-transform: capitalize !important;
+    }
+
+    .#{$breakpoint}\:hover\:text-center:hover {
+      text-align: center !important;
+    }
+
+    .#{$breakpoint}\:hover\:text-left:hover {
+      text-align: left !important;
+    }
+
+    .#{$breakpoint}\:hover\:text-right:hover {
+      text-align: right !important;
+    }
+
+    .#{$breakpoint}\:hover\:text-justify:hover {
+      text-align: justify !important;
+    }
+
+    .#{$breakpoint}\:hover\:text-nowrap:hover {
+      white-space: nowrap !important;
+    }
+
+    .#{$breakpoint}\:hover\:text-truncate:hover {
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+    }
+
+    .#{$breakpoint}\:hover\:text-lowercase:hover {
+      text-transform: lowercase !important;
+    }
+
+    .#{$breakpoint}\:hover\:text-uppercase:hover {
+      text-transform: uppercase !important;
+    }
+
+    .#{$breakpoint}\:hover\:text-capitalize:hover {
+      text-transform: capitalize !important;
+    }
+
+    .#{$breakpoint}\:text-underline {
+      text-decoration: underline !important;
+    }
+
+    .#{$breakpoint}\:text-line-through {
+      text-decoration: line-through !important;
+    }
+
+    .#{$breakpoint}\:text-no-underline {
+      text-decoration: none !important;
+    }
+
+    .#{$breakpoint}\:hover\:text-underline:hover {
+      text-decoration: underline !important;
+    }
+
+    .#{$breakpoint}\:hover\:text-line-through:hover {
+      text-decoration: line-through !important;
+    }
+
+    .#{$breakpoint}\:hover\:text-no-underline:hover {
+      text-decoration: none !important;
+    }
+
+    .#{$breakpoint}\:w-full {
+      width: 100% !important;
+    }
+    .#{$breakpoint}\:h-full {
+      height: 100% !important;
+    }
+
+    .#{$breakpoint}\:w-screen {
+      width: 100vw !important;
+    }
+    .#{$breakpoint}\:h-screen {
+      height: 100vh !important;
+    }
+    .#{$breakpoint}\:min-w-full {
+      min-width: 100% !important;
+    }
+    .#{$breakpoint}\:min-h-full {
+      min-height: 100% !important;
+    }
+
+    .#{$breakpoint}\:max-w-full {
+      max-width: 100% !important;
+    }
+    .#{$breakpoint}\:max-h-full {
+      max-height: 100% !important;
+    }
+
+    .#{$breakpoint}\:hover\:w-full:hover {
+      width: 100% !important;
+    }
+    .#{$breakpoint}\:hover\:h-full:hover {
+      height: 100% !important;
+    }
+
+    .#{$breakpoint}\:hover\:w-screen:hover {
+      width: 100vw !important;
+    }
+    .#{$breakpoint}\:hover\:h-screen:hover {
+      height: 100vh !important;
+    }
+    .#{$breakpoint}\:hover\:min-w-full:hover {
+      min-width: 100% !important;
+    }
+    .#{$breakpoint}\:hover\:min-h-full:hover {
+      min-height: 100% !important;
+    }
+
+    .#{$breakpoint}\:hover\:max-w-full:hover {
+      max-width: 100% !important;
+    }
+    .#{$breakpoint}\:hover\:max-h-full:hover {
+      max-height: 100% !important;
+    }
+
+
+  }
+}
+
+@for $i from 1 through length($lengths) {
+  $width : nth($lengths, $i);
+  $font-size : map-get($font-sizes, $width);
+  .text-#{nth($lengths, $i)} {
+    font-size: #{$font-size}rem;
+  }
+  // border radius
+  .radius-#{nth($lengths, $i)} {
+    border-radius: #{$i*$border-radius-start};
+  }
+
+  .tl-radius-#{nth($lengths, $i)} {
+    border-top-left-radius: #{$i*$border-radius-start};
+  }
+  .tr-radius-#{nth($lengths, $i)} {
+
+    border-top-right-radius: #{$i*$border-radius-start};
+  }
+  .br-radius-#{nth($lengths, $i)} {
+
+    border-bottom-right-radius: #{$i*$border-radius-start};
+  }
+  .bl-radius-#{nth($lengths, $i)} {
+    border-bottom-left-radius: #{$i*$border-radius-start};
+  }
+
+  .l-radius-#{nth($lengths, $i)} {
+    border-bottom-left-radius: #{$i*$border-radius-start};
+    border-top-left-radius: #{$i*$border-radius-start};
+  }
+
+  .r-radius-#{nth($lengths, $i)} {
+    border-bottom-right-radius: #{$i*$border-radius-start};
+    border-top-right-radius: #{$i*$border-radius-start};
+  }
+
+  .t-radius-#{nth($lengths, $i)} {
+    border-top-left-radius: #{$i*$border-radius-start};
+    border-top-right-radius: #{$i*$border-radius-start};
+  }
+
+  .b-radius-#{nth($lengths, $i)} {
+    border-bottom-left-radius: #{$i*$border-radius-start};
+    border-bottom-right-radius: #{$i*$border-radius-start};
+  }
+  .hover\:text-#{nth($lengths, $i)}:hover {
+    font-size: #{$i*16}px;
+  }
+  .hover\:radius-#{nth($lengths, $i)} {
+    border-radius: #{$i*$border-radius-start};
+  }
+
+  .hover\:tl-radius-#{nth($lengths, $i)} {
+    border-top-left-radius: #{$i*$border-radius-start};
+  }
+  .hover\:tr-radius-#{nth($lengths, $i)} {
+
+    border-top-right-radius: #{$i*$border-radius-start};
+  }
+  .hover\:br-radius-#{nth($lengths, $i)} {
+
+    border-bottom-right-radius: #{$i*$border-radius-start};
+  }
+  .hover\:bl-radius-#{nth($lengths, $i)} {
+    border-bottom-left-radius: #{$i*$border-radius-start};
+  }
+
+  .hover\:l-radius-#{nth($lengths, $i)} {
+    border-bottom-left-radius: #{$i*$border-radius-start};
+    border-top-left-radius: #{$i*$border-radius-start};
+  }
+
+  .hover\:r-radius-#{nth($lengths, $i)} {
+    border-bottom-right-radius: #{$i*$border-radius-start};
+    border-top-right-radius: #{$i*$border-radius-start};
+  }
+
+  .hover\:t-radius-#{nth($lengths, $i)} {
+    border-top-left-radius: #{$i*$border-radius-start};
+    border-top-right-radius: #{$i*$border-radius-start};
+  }
+
+  .hover\:b-radius-#{nth($lengths, $i)} {
+    border-bottom-left-radius: #{$i*$border-radius-start};
+    border-bottom-right-radius: #{$i*$border-radius-start};
+  }
+  @each $breakpoint in map-keys($breakpoints) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      .#{$breakpoint}\:text-#{nth($lengths, $i)} {
+        font-size: #{$i*16}px !important;
+      }
+      .#{$breakpoint}\:radius-#{nth($lengths, $i)} {
+        border-radius: #{$i*$border-radius-start} !important;
+      }
+
+      .#{$breakpoint}\:tl-radius-#{nth($lengths, $i)} {
+        border-top-left-radius: #{$i*$border-radius-start} !important;
+      }
+      .#{$breakpoint}\:tr-radius-#{nth($lengths, $i)} {
+
+        border-top-right-radius: #{$i*$border-radius-start} !important;
+      }
+      .#{$breakpoint}\:br-radius-#{nth($lengths, $i)} {
+
+        border-bottom-right-radius: #{$i*$border-radius-start} !important;
+      }
+      .#{$breakpoint}\:bl-radius-#{nth($lengths, $i)} {
+        border-bottom-left-radius: #{$i*$border-radius-start} !important;
+      }
+
+      .#{$breakpoint}\:l-radius-#{nth($lengths, $i)} {
+        border-bottom-left-radius: #{$i*$border-radius-start} !important;
+        border-top-left-radius: #{$i*$border-radius-start} !important;
+      }
+
+      .#{$breakpoint}\:r-radius-#{nth($lengths, $i)} {
+        border-bottom-right-radius: #{$i*$border-radius-start} !important;
+        border-top-right-radius: #{$i*$border-radius-start} !important;
+      }
+
+      .#{$breakpoint}\:t-radius-#{nth($lengths, $i)} {
+        border-top-left-radius: #{$i*$border-radius-start} !important;
+        border-top-right-radius: #{$i*$border-radius-start} !important;
+      }
+
+      .#{$breakpoint}\:b-radius-#{nth($lengths, $i)} {
+        border-bottom-left-radius: #{$i*$border-radius-start} !important;
+        border-bottom-right-radius: #{$i*$border-radius-start} !important;
+      }
+      .#{$breakpoint}\:hover\:text-#{nth($lengths, $i)}:hover {
+        font-size: #{$i*16}px !important;
+      }
+      .#{$breakpoint}\:hover\:radius-#{nth($lengths, $i)}:hover {
+        border-radius: #{$i*$border-radius-start} !important;
+      }
+
+      .#{$breakpoint}\:hover\:tl-radius-#{nth($lengths, $i)}:hover {
+        border-top-left-radius: #{$i*$border-radius-start} !important;
+      }
+      .#{$breakpoint}\:hover\:tr-radius-#{nth($lengths, $i)}:hover {
+        border-top-right-radius: #{$i*$border-radius-start} !important;
+      }
+      .#{$breakpoint}\:hover\:br-radius-#{nth($lengths, $i)}:hover {
+        border-bottom-right-radius: #{$i*$border-radius-start} !important;
+      }
+      .#{$breakpoint}\:hover\:bl-radius-#{nth($lengths, $i)}:hover {
+        border-bottom-left-radius: #{$i*$border-radius-start} !important;
+        border-top-left-radius: #{$i*$border-radius-start} !important;
+      }
+
+      .#{$breakpoint}\:hover\:l-radius-#{nth($lengths, $i)}:hover {
+        border-bottom-left-radius: #{$i*$border-radius-start} !important;
+        border-top-left-radius: #{$i*$border-radius-start} !important;
+      }
+
+      .#{$breakpoint}\:hover\:r-radius-#{nth($lengths, $i)}:hover {
+        border-bottom-right-radius: #{$i*$border-radius-start} !important;
+        border-top-right-radius: #{$i*$border-radius-start} !important;
+      }
+
+      .#{$breakpoint}\:hover\:t-radius-#{nth($lengths, $i)}:hover {
+        border-top-left-radius: #{$i*$border-radius-start} !important;
+        border-top-right-radius: #{$i*$border-radius-start} !important;
+      }
+
+      .#{$breakpoint}\:hover\:b-radius-#{nth($lengths, $i)}:hover {
+        border-bottom-right-radius: #{$i*$border-radius-start} !important;
+        border-bottom-left-radius: #{$i*$border-radius-start} !important;
+      }
+    }
+  }
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.static {
+  position: static;
+}
+
+.hover\:inline-block:hover {
+  display: inline-block;
+}
+
+.hover\:block:hover {
+  display: block;
+}
+
+.hover\:absolute:hover {
+  position: absolute;
+}
+
+.hover\:relative:hover {
+  position: relative;
+}
+
+.hover\:fixed:hover {
+  position: fixed;
+}
+
+.hover\:sticky:hover {
+  position: sticky;
+}
+
+.hover\:static:hover {
+  position: static;
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+  @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+    .#{$breakpoint}\:inline-block {
+      display: inline-block;
+    }
+
+    .#{$breakpoint}\:block {
+      display: block;
+    }
+
+    .#{$breakpoint}\:absolute {
+      position: absolute;
+    }
+
+    .#{$breakpoint}\:relative {
+      position: relative;
+    }
+
+    .#{$breakpoint}\:fixed {
+      position: fixed;
+    }
+
+    .#{$breakpoint}\:sticky {
+      position: sticky;
+    }
+
+    .#{$breakpoint}\:static {
+      position: static;
+    }
+
+    .#{$breakpoint}\:hover\:inline-block:hover {
+      display: inline-block;
+    }
+
+    .#{$breakpoint}\:hover\:block:hover {
+      display: block;
+    }
+
+    .#{$breakpoint}\:hover\:absolute:hover {
+      position: absolute;
+    }
+
+    .#{$breakpoint}\:hover\:relative:hover {
+      position: relative;
+    }
+
+    .#{$breakpoint}\:hover\:fixed:hover {
+      position: fixed;
+    }
+
+    .#{$breakpoint}\:hover\:sticky:hover {
+      position: sticky;
+    }
+
+    .#{$breakpoint}\:hover\:static:hover {
+      position: static;
+    }
+  }
+}
+
+@for $i from 1 through 100 {
+  .opacity-#{$i} {
+    opacity: #{$i}\%;
+  }
+  .top-#{$i} {
+    top: #{$i}\%;
+  }
+  .right-#{$i} {
+    right: #{$i}\%;
+  }
+  .bottom-#{$i} {
+    bottom: #{$i}\%;
+  }
+  .left-#{$i} {
+    left: #{$i}\%;
+  }
+
+  .hover\:opacity-#{$i}:hover {
+    opacity: #{$i}\%;
+  }
+  .hover\:top-#{$i}:hover {
+    top: #{$i}\%;
+  }
+  .hover\:right-#{$i}:hover {
+    right: #{$i}\%;
+  }
+  .hover\:bottom-#{$i}:hover {
+    bottom: #{$i}\%;
+  }
+  .hover\:left-#{$i}:hover {
+    left: #{$i}\%;
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      .#{$breakpoint}\:opacity-#{$i} {
+        opacity: #{$i}\%;
+      }
+      .#{$breakpoint}\:top-#{$i} {
+        top: #{$i}\%;
+      }
+      .#{$breakpoint}\:right-#{$i} {
+        right: #{$i}\%;
+      }
+      .#{$breakpoint}\:bottom-#{$i} {
+        bottom: #{$i}\%;
+      }
+      .#{$breakpoint}\:left-#{$i} {
+        left: #{$i}\%;
+      }
+      .#{$breakpoint}\:hover\:opacity-#{$i}:hover {
+        opacity: #{$i}\%;
+      }
+      .#{$breakpoint}\:hover\:top-#{$i}:hover {
+        top: #{$i}\%;
+      }
+      .#{$breakpoint}\:hover\:right-#{$i}:hover {
+        right: #{$i}\%;
+      }
+      .#{$breakpoint}\:hover\:bottom-#{$i}:hover {
+        bottom: #{$i}\%;
+      }
+      .#{$breakpoint}\:hover\:left-#{$i}:hover {
+        left: #{$i}\%;
+      }
+    }
+  }
+}
+
+
+@for $i from 0 through 1000 {
+  .top-#{$i} {
+    top: #{$i}px;
+  }
+  .right-#{$i} {
+    right: #{$i}px;
+  }
+  .bottom-#{$i} {
+    bottom: #{$i}px;
+  }
+  .left-#{$i} {
+    left: #{$i}px;
+  }
+
+  .hover\:top-#{$i}:hover {
+    top: #{$i}px;
+  }
+  .hover\:right-#{$i}:hover {
+    right: #{$i}px;
+  }
+  .hover\:bottom-#{$i}:hover {
+    bottom: #{$i}px;
+  }
+  .hover\:left-#{$i}:hover {
+    left: #{$i}px;
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+
+      .#{$breakpoint}\:top-#{$i} {
+        top: #{$i}px;
+      }
+      .#{$breakpoint}\:right-#{$i} {
+        right: #{$i}px;
+      }
+      .#{$breakpoint}\:bottom-#{$i} {
+        bottom: #{$i}px;
+      }
+      .#{$breakpoint}\:left-#{$i} {
+        left: #{$i}px;
+      }
+
+      .#{$breakpoint}\:hover\:top-#{$i}:hover {
+        top: #{$i}px;
+      }
+      .#{$breakpoint}\:hover\:right-#{$i}:hover {
+        right: #{$i}px;
+      }
+      .#{$breakpoint}\:hover\:bottom-#{$i}:hover {
+        bottom: #{$i}px;
+      }
+      .#{$breakpoint}\:hover\:left-#{$i}:hover {
+        left: #{$i}px;
+      }
+    }
+  }
+}

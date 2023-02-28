@@ -37,7 +37,9 @@ body {
 }
 
 .main-container {
-    @extend .container, .w-75,.py-30;
+    @extend .container;
+    @include w(75);
+    @include py(30);
 
 }
 

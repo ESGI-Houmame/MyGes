@@ -1,11 +1,20 @@
 ._contact-detail {
-    @extend .bg-ghost,.radius-2xl,.p-4;
+    @include bg('ghost');
+    @include radius('2xl');
+    @include pl(4);
+    @include grid-rows(12);
 }
 
 
 
 
 @media (min-width: map-get($breakpoint, "xs")) {
+    .contact-container{
+        @include grid;
+        @include grid-cols(12);
+        @include mt(50);
+        @include gap(10);
+    }
     ._contact-detail {
         @include col-span(12);
         @include mt(10);
@@ -56,10 +65,22 @@
         @include grid-rows(12);
         ._contact-objet{
             @include row-span(2);
+            @include radius('md');
+            @include mt(5);
+            @include p(5);
+            @include w(100);
+            @include bg('default');
+            color:$light;
         }
+        
         ._contact-msg{
             @include row-span(10);
-            
+            @include w(100);
+            @include radius('md');
+            @include mt(5);
+            @include p(5);
+            @include bg('default');
+            color:$light;
         }
     }
     
@@ -75,7 +96,15 @@
             @include grid-rows(6);
             ._pj-section-title {
                 @include row-span(1);
-            }    
+                h2 {
+                    @include ft-size-lg;
+                    color: $primary;
+                    font-weight: $font-weight-bold;
+    
+                }
+            }
+            
+            
             ._dropzone {
                 @include row-span(5);
                 border: 2px dashed $accent;

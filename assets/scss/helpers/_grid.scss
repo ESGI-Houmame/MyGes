@@ -4,99 +4,68 @@
   display: grid;
 }
 
-.grid {
-  @include grid;
-}
+
 
 
 @mixin grid-cols($i) {
   grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
 }
 
-@for $i from 1 through 12 {
-  .grid-cols-#{$i} {
-    @include grid-cols($i);
-  }
-}
+
 
 
 @mixin grid-rows($i) {
   grid-template-rows: repeat(#{$i}, minmax(0, 1fr));
 }
 
-@for $i from 1 through 12 {
-  .grid-rows-#{$i} {
-    @include grid-rows($i);
-  }
-}
+
 
 @mixin grid-flow-row{
   grid-auto-flow: row;
 }
-.grid-flow-row{
-  @include grid-flow-row;
-}
+
 
 @mixin grid-flow-col{
   grid-auto-flow: column;
 }
-.grid-flow-col{
-  @include grid-flow-col;
-}
+
 
 @mixin grid-flow-row-dense{
   grid-auto-flow: row dense;
 }
-.grid-flow-row-dense{
-  @include grid-flow-row-dense;
-}
+
 
 @mixin grid-flow-col-dense{
   grid-auto-flow: column dense;
 }
-.grid-flow-col-dense{
-  @include grid-flow-col-dense;
-}
+
 
 @mixin grid-cols-none{
   grid-template-columns: none;
 }
 
-.grid-cols-none{
-  @include grid-cols-none;
-}
+
 
 @mixin grid-rows-none{
   grid-template-rows: none;
 }
-.grid-rows-none{
-  @include grid-rows-none;
-}
+
 
 @mixin col-auto{
   grid-column: auto;
 }
-.col-auto{
-  @include col-auto;
-}
+
 
 @mixin col-span($i){
   grid-column: span #{$i} / span #{$i};
 }
 
-@for $i from 1 through 12 {
-  .col-span-#{$i} {
-    @include col-span($i);
-  }
-}
+
 
 @mixin col-start-auto{
   grid-column-start: auto;
 }
 
-.col-start-auto{
-  @include col-start-auto;
-}
 
 @mixin col-start($i) {
   grid-column-start: #{$i};
@@ -111,133 +80,78 @@
 @mixin col-end-auto{
   grid-column-end: auto;
 }
-.col-end-auto{
-  @include col-end-auto;
-}
+
 
 @mixin col-end($i) {
   grid-column-end: #{$i};
 }
 
-@for $i from 1 through 12 {
-  .col-end-#{$i} {
-    @include col-end($i);
-  }
-}
+
 
 @mixin row-auto{
   grid-row: auto;
 }
 
-.row-auto{
-  @include row-auto;
-}
-
 @mixin row-span($i) {
   grid-row: span #{$i} / span #{$i};
-}
-@for $i from 1 through 12 {
-  .row-span-#{$i} {
-    @include row-span($i);
-  }
 }
 
 @mixin row-start-auto{
   grid-row-start: auto;
 }
-.row-start-auto{
-  @include row-start-auto;
-}
+
 
 
 @mixin row-start($i){
   grid-row-start: #{$i};
 }
 
-
-@for $i from 1 through 12 {
-  .row-start-#{$i} {
-    @include row-start($i);
-}
-}
 @mixin row-end-auto{
   grid-row-end: auto;
-}
-
-.row-end-auto{
-  @include row-end-auto;
 }
 
 
 @mixin row-end($i) {
   grid-row-end: #{$i};
 }
-@for $i from 1 through 12 {
-  .row-end-#{$i} {
-    @include row-end($i);
-  }
-}
+
 
 @mixin justify-items-start {
   justify-items: start;
-}
-
-.justify-items-start{
-  @include justify-items-start;
 }
 
 @mixin justify-items-end {
   justify-items: end;
 }
 
-.justify-items-end{
-  @include justify-items-end;
-}
 
 @mixin justify-items-center {
   justify-items: center;
 }
 
-.justify-item-center{
-  @include justify-items-center;
-}
 
 @mixin justify-items-stretch {
   justify-items: stretch;
 }
-.justify-items-stretch{
-  @include justify-items-stretch;
-}
+
 
 @mixin align-items-start {
   align-items: start;
 }
 
-.align-items-start {
-  @include align-items-start;
-}
 
 @mixin align-items-end {
   align-items: end;
-}
-.align-items-end {
-  @include align-items-end;
 }
 
 @mixin align-items-center {
   align-items: center;
 }
 
-.align-items-center {
-  @include align-items-center;
-}
-
 @mixin align-items-stretch {
   align-items: stretch;
 }
-.align-items-stretch {
-  @include align-items-stretch;
-}
+
 
 @mixin justify-content-start {
   justify-content: start;
@@ -264,61 +178,44 @@
 @mixin justify-content-between {
   justify-content: space-between;
 }
-.justify-content-between {
-  @include justify-content-between;
-}
+
 
 @mixin justify-content-around {
   justify-content: space-around;
 }
-.justify-content-around {
-  @include justify-content-around;
-}
+
 
 @mixin align-content-start {
   align-content: start;
 }
-.align-content-start {
-  @include align-content-start;
-}
+
 
 @mixin align-content-end {
   align-content: end;
 }
 
-.align-content-end {
-  @include align-content-end;
-}
+
 
 @mixin align-content-center {
   align-content: center;
 }
-.align-content-center {
-  @include align-content-center;
-}
+
 
 @mixin align-content-between {
   align-content: space-between;
 }
 
-.align-content-between {
-  @include align-content-between;
-}
 
 @mixin align-content-around {
   align-content: space-around;
 }
 
-.align-content-around {
-  @include align-content-around;
-}
+
 
 @mixin align-content-stretch {
   align-content: stretch;
 }
-.align-content-stretch {
-  @include align-content-stretch;
-}
+
 
 @mixin gap($i){
   gap: $i*0.125em $i*0.125em;
@@ -330,16 +227,379 @@
   column-gap: $i*0.125em;
 }
 
-@for $i from 0 through 100 {
-  
+//generate all helper classes for grid by classes
+
+
+.grid {
+  display: grid;
+}
+
+.grid-flow-row {
+  grid-auto-flow: row;
+}
+
+.grid-flow-col {
+  grid-auto-flow: column;
+}
+
+.grid-flow-row-dense {
+  grid-auto-flow: row dense;
+}
+
+.grid-flow-col-dense {
+  grid-auto-flow: column dense;
+}
+
+.grid-cols-none {
+  grid-template-columns: none;
+}
+
+.grid-rows-none {
+  grid-template-rows: none;
+}
+
+.col-auto {
+  grid-column: auto;
+}
+
+.col-start-auto {
+  grid-column-start: auto;
+}
+
+.col-end-auto {
+  grid-column-end: auto;
+}
+
+.row-auto {
+  grid-row: auto;
+}
+
+.row-start-auto {
+  grid-row-start: auto;
+}
+
+
+.justify-items-start {
+  justify-items: start;
+}
+
+.row-end-auto {
+  grid-row-end: auto;
+}
+
+.justify-items-end {
+  justify-items: end;
+}
+
+.justify-items-center {
+  justify-items: center;
+}
+
+.justify-items-stretch {
+  justify-items: stretch;
+}
+
+.align-items-start {
+  align-items: start;
+}
+
+.align-items-end {
+  align-items: end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+.justify-content-start {
+  justify-content: start;
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.align-content-start {
+  align-content: start;
+}
+
+.align-content-end {
+  align-content: end;
+}
+
+.align-content-center {
+  align-content: center;
+}
+
+.align-content-between {
+  align-content: space-between;
+}
+
+.align-content-around {
+  align-content: space-around;
+}
+
+.align-content-stretch {
+  align-content: stretch;
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+  @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+    .#{$breakpoint}\:grid-flow-row {
+      grid-auto-flow: row !important;
+    }
+
+
+    .#{$breakpoint}\:grid-flow-col {
+      grid-auto-flow: column !important;
+    }
+
+    .#{$breakpoint}\:grid-flow-row-dense {
+      grid-auto-flow: row dense !important;
+    }
+
+    .#{$breakpoint}\:grid-flow-col-dense {
+      grid-auto-flow: column dense !important;
+    }
+
+    .#{$breakpoint}\:grid-cols-none {
+      grid-template-columns: none !important;
+    }
+
+    .#{$breakpoint}\:grid-rows-none {
+      grid-template-rows: none !important;
+    }
+
+    .#{$breakpoint}\:col-auto {
+      grid-column: auto !important;
+    }
+    .#{$breakpoint}\:grid {
+      display: grid !important;
+    }
+
+    .#{$breakpoint}\:col-start-auto {
+      grid-column-start: auto !important;
+    }
+
+    .#{$breakpoint}\:col-end-auto {
+      grid-column-end: auto !important;
+    }
+
+    .#{$breakpoint}\:row-auto {
+      grid-row: auto !important;
+    }
+
+    .#{$breakpoint}\:row-start-auto {
+      grid-row-start: auto !important;
+    }
+
+
+    .#{$breakpoint}\:justify-items-start {
+      justify-items: start !important;
+    }
+
+    .#{$breakpoint}\:row-end-auto {
+      grid-row-end: auto !important;
+    }
+
+    .#{$breakpoint}\:justify-items-end {
+      justify-items: end !important;
+    }
+
+    .#{$breakpoint}\:justify-items-center {
+      justify-items: center !important;
+    }
+
+    .#{$breakpoint}\:justify-items-stretch {
+      justify-items: stretch !important;
+    }
+
+    .#{$breakpoint}\:align-items-start {
+      align-items: start !important;
+    }
+
+    .#{$breakpoint}\:align-items-end {
+      align-items: end !important;
+    }
+
+    .#{$breakpoint}\:align-items-center {
+      align-items: center !important;
+    }
+
+    .#{$breakpoint}\:align-items-stretch {
+      align-items: stretch !important;
+    }
+
+    .#{$breakpoint}\:justify-content-start {
+      justify-content: start !important;
+    }
+
+    .#{$breakpoint}\:justify-content-end {
+      justify-content: end !important;
+    }
+
+    .#{$breakpoint}\:justify-content-center {
+      justify-content: center !important;
+    }
+
+    .#{$breakpoint}\:justify-content-between {
+      justify-content: space-between !important;
+    }
+
+    .#{$breakpoint}\:justify-content-around {
+      justify-content: space-around !important;
+    }
+
+    .#{$breakpoint}\:align-content-start {
+      align-content: start !important;
+    }
+
+    .#{$breakpoint}\:align-content-end {
+      align-content: end !important;
+    }
+
+    .#{$breakpoint}\:align-content-center {
+      align-content: center !important;
+    }
+
+    .#{$breakpoint}\:align-content-between {
+      align-content: space-between !important;
+    }
+
+    .#{$breakpoint}\:align-content-around {
+      align-content: space-around !important;
+    }
+
+    .#{$breakpoint}\:align-content-stretch {
+      align-content: stretch !important;
+    }
+
+  }
+}
+
+@each $weight in map-keys($font-weights) {
+  .font-#{$weight} {
+    font-weight: map-get($font-weights, $weight);
+  }
+  .hover\:font-#{$weight}:hover {
+    font-weight: map-get($font-weights, $weight);
+  }
+  @each $breakpoint in map-keys($breakpoints) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      .#{$breakpoint}\:font-#{$weight} {
+        font-weight: map-get($font-weights, $weight) !important;
+      }
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  .grid-cols-#{$i} {
+    grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+  }
+  .row-end-#{$i} {
+    grid-row-end: #{$i};
+  }
+  .grid-rows-#{$i} {
+    grid-template-rows: repeat(#{$i}, minmax(0, 1fr));
+  }
+  .col-span-#{$i} {
+    grid-column: span #{$i} / span #{$i};
+  }
+  .col-start-#{$i} {
+    grid-column-start: #{$i};
+  }
+  .col-end-#{$i} {
+    grid-column-end: #{$i};
+  }
+  .row-span-#{$i} {
+    grid-row: span #{$i} / span #{$i};
+  }
+  .row-start-#{$i} {
+    grid-row-start: #{$i};
+  }
+  .row-end-#{$i} {
+    grid-row-end: #{$i};
+  }
+  .auto-cols-#{$i} {
+    grid-auto-columns: #{$i};
+  }
+  .auto-rows-#{$i} {
+    grid-auto-rows: #{$i};
+  }
   .gap-#{$i} {
-    @include gap($i);
+    grid-gap: #{$i}px;
   }
-  .gap-x-#{$i} {
-    @include gap-x($i);
+  .col-gap-#{$i} {
+    column-gap: #{$i}px;
   }
-  .gap-y-#{$i} {
-    @include gap-y($i);
+  .row-gap-#{$i} {
+    row-gap: #{$i}px;
   }
-  
+
+
+  // generate for all breakpoints
+  @each $breakpoint in map-keys($breakpoints) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      .#{$breakpoint}\:grid-cols-#{$i} {
+        grid-template-columns: repeat(#{$i}, minmax(0, 1fr)) !important;
+      }
+      .#{$breakpoint}\:row-end-#{$i} {
+        grid-row-end: #{$i} !important;
+      }
+      .#{$breakpoint}\:grid-cols-#{$i} {
+        grid-template-columns: repeat(#{$i}, minmax(0, 1fr)) !important;
+      }
+      .#{$breakpoint}\:col-span-#{$i} {
+        grid-column: span #{$i} / span #{$i} !important;
+      }
+      .#{$breakpoint}\:col-start-#{$i} {
+        grid-column-start: #{$i} !important;
+      }
+      .#{$breakpoint}\:col-end-#{$i} {
+        grid-column-end: #{$i} !important;
+      }
+      .#{$breakpoint}\:row-span-#{$i} {
+        grid-row: span #{$i} / span #{$i} !important;
+      }
+      .#{$breakpoint}\:row-start-#{$i} {
+        grid-row-start: #{$i} !important;
+      }
+      .#{$breakpoint}\:row-end-#{$i} {
+        grid-row-end: #{$i} !important;
+      }
+      .#{$breakpoint}\:auto-cols-#{$i} {
+        grid-auto-columns: #{$i} !important;
+      }
+      .#{$breakpoint}\:auto-rows-#{$i} {
+        grid-auto-rows: #{$i} !important;
+      }
+      .#{$breakpoint}\:gap-#{$i} {
+        grid-gap: #{$i}px !important;
+      }
+      .#{$breakpoint}\:col-gap-#{$i} {
+        column-gap: #{$i}px !important;
+      }
+      .#{$breakpoint}\:row-gap-#{$i} {
+        row-gap: #{$i}px !important;
+      }
+    }
+  }
+
 }

@@ -8,26 +8,37 @@
         width: 100%;
         height: 100%;
     }
-
+    @include radius('lg');
+    @include p(10);
+    @include bg('default');
+    color : $light;
     & > input:focus, & > textarea:focus{
         border: 0px;
     }
 }
 
-
+.search-input {
+    @include ft-size-md;
+    font-weight: $font-weight-bold;
+}
 
 .input-icon {
-    @extend .grid,.grid-cols-12;
+    @include grid;
+    @include grid-cols(12);
     
     & > div {
         & > .input-icon {
-            @extend .ft-size-xl;
+
+            font-size: map-get($font-sizes,'xl');
+
         }
 
-        @extend .col-span-2,.p-2,.text-center;
+        @include col-span(2);
+        @include p(2);
+        @include text-center;
     }
 
     & > input, & > textarea {
-        @extend .col-span-10;
+        @include col-span(10);
     }
 }

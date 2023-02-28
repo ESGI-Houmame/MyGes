@@ -47,55 +47,7 @@
   @mixin overflow-y-scroll {
   overflow-y: scroll;
   }
-  
-  // Classe pour le overflow
-  .overflow-auto {
-  @include overflow-auto;
-  }
-  
-  .overflow-hidden {
-  @include overflow-hidden;
-  }
-  
-  .overflow-visible {
-  @include overflow-visible;
-  }
-  
-  .overflow-scroll {
-  @include overflow-scroll;
-  }
-  
-  .overflow-x-auto {
-  @include overflow-x-auto;
-  }
-  
-  .overflow-y-auto {
-  @include overflow-y-auto;
-  }
-  
-  .overflow-x-hidden {
-  @include overflow-x-hidden;
-  }
-  
-  .overflow-y-hidden {
-  @include overflow-y-hidden;
-  }
-  
-  .overflow-x-visible {
-  @include overflow-x-visible;
-  }
-  
-  .overflow-y-visible {
-  @include overflow-y-visible;
-  }
-  
-  .overflow-x-scroll {
-  @include overflow-x-scroll;
-  }
-  
-  .overflow-y-scroll {
-  @include overflow-y-scroll;
-  }
+
 
 // Mixins pour le positionnement
 @mixin static {
@@ -116,25 +68,4 @@
   
   @mixin sticky {
   position: sticky;
-  }
-  
-  // Classe pour le positionnement
-  .static {
-  @include static;
-  }
-  
-  .fixed {
-  @include fixed;
-  }
-  
-  .absolute {
-  @include absolute;
-  }
-  
-  .relative {
-  @include relative;
-  }
-  
-  .sticky {
-  @include sticky;
   }

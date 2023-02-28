@@ -44,7 +44,7 @@
         </div>
 
 
-        <div class = "grid grid-cols-12 mt-50 gap-10">
+        <div class = "contact-container">
             <!-- CONTACT BOX-->
             <div class = "contact-box">
                 <div class = "scroll-list">
@@ -58,27 +58,28 @@
                         </div>
                     </div>
                 
-                    <div class = "scroll-list-body p-12">
-                        <div class = "input input-icon  radius-lg p-5 bg-default text-light">
+                    <div class = "scroll-list-body">
+                        <div class = "input input-icon">
                             <div><i class="input-icon fa-solid fa-magnifying-glass"></i></div>
-                            <input type = "text" class="ft-size-md ft-w-bold" placeholder="Recherche..."/>
+                            <input type = "text" class="search-input" placeholder="Recherche..."/>
                         </div>
                         <div class = "scroll-content">
                             <br/>
-                            <div class = "contact-item bg-default grid  grid-rows-6 p-5 radius-6xl">
-                                <div class = "grid grid-cols-12 row-span-5">
-                                    <div class = "col-span-3 contact-img-box">
-                                            <img src = "../assets/images/contact.jpg" class = "w-100 radius-4xl contact-img">
+                            <div class = "contact-item">
+                                <div>
+                                    <div class = "contact-img-box">
+                                            <img src = "../assets/img/contact.jpg" class = "contact-img">
                                     </div>
         
-                                    <div class = "col-span-9 flex flex-col contact-info">
-                                        <p class = "text-primary ft-w-bold contact-info-title">AHMINDACHE Jawad</p>
-                                        <p class = "text-accent ft-w-regular ft-size-sm contact-info-desc"> Conception base de donnée relationelle</p>
+                                    <div class = "contact-info">
+                                        <p class = "contact-info-title">AHMINDACHE Jawad</p>
+                                        <p class = "contact-info-desc"> Conception base de donnée relationelle</p>
                                     </div>
 
                                 </div>
-                                <div class = "flex  justify-content-end align-items-center row-span-1 pb-5 contact-action-box">
-                                    <button class = "ft-w-bold  bg-primary text-light p-3 px-6 border-0 tl-radius-xs b-radius-6xl tr-radius-6xl pointer">Message</button>
+                                <div class = "contact-action-box">
+                                    <button class = "contact-msg-btn">Message</button>
+                                    
                                 </div>
                           
                             </div>
@@ -94,12 +95,12 @@
             <div class = "_contact-detail">
                 <div class = "_contact-detail-header grid">
                     <div class = "_contact-detail-picture">
-                        <img src = "../assets/images/contact.jpg" class = "w-100 radius-4xl contact-img">
+                        <img src = "../assets/img/contact.jpg" class = "contact-img">
                     </div>
                     <div class = "_contact-detail-info grid">
                         <div class = "_contact-detail-user">
-                            <p class = "text-primary ft-w-bold contact-info-title">AHMINDACHE Jawad</p>
-                            <p class = "text-accent ft-w-regular ft-size-sm contact-info-desc"> Conception base de donnée relationelle</p>
+                            <p class = "contact-info-title">AHMINDACHE Jawad</p>
+                            <p class = "contact-info-desc"> Conception base de donnée relationelle</p>
                         </div>
                         <div class = "_contact-detail-social">
                             <div><a href="#" target="_blank"><i class ="fa-brands fa-linkedin"></i>linkedin.com/in/example</a></div>
@@ -109,20 +110,20 @@
                     </div>
                 </div>
 
-                <div class = "_contact-detail-body grid grid-rows-12">
+                <div class = "_contact-detail-body grid">
                     <div class = "_contact-body-s1">
-                        <div class = "input w-100 _contact-objet radius-md mt-5 p-5 bg-default text-light">
+                        <div class = "input _contact-objet">
                             <input type  = "text" placeholder="Objet"/>
                         </div>
 
-                        <div class = "input w-100 _contact-msg radius-md mt-5 p-5 bg-default text-light">
+                        <div class = "input _contact-msg">
                             <textarea type  = "text" placeholder="Votre message ici..."></textarea>
                         </div>
                     </div>
                      
                     <div class = "_contact-body-s2">
                         <div class = "_drop-box">
-                                <div class="_pj-section-title"><h2 class = "ft-size-lg text-primary ft-w-bold">Pièce jointe</h2></div>
+                                <div class="_pj-section-title"><h2>Pièce jointe</h2></div>
                                 <div class = "_dropzone"></div>
                         </div>
                         

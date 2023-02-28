@@ -3,32 +3,47 @@
     background: $ghost;
     color:$light;
 
-    @extend .flex,.flex-col,.radius-xl;
     
-    
+    @include flex;
+    @include flex-col; 
+    @include radius('xl');
     .scroll-list-header {
-        @extend .grid,.grid-cols-12;
+        @include grid;
+        @include grid-cols(12);
         height: 60px;
 
         border-bottom: 2px solid $accent;
         & > div {
-            @extend .flex,.flex-items-center,.flex-justify-start, .p-5;
+            @include flex;
+            @include flex-items-center;
+            @include flex-justify-start;
+            @include p(5);
         }
         & > div:nth-child(1) {
-            @extend .col-span-9,.text-light,.ft-w-bold,.ft-size-lg;
+            @include col-span(9);
+            color: $light;
+            @include ft-w-bold;
+            @include ft-size-lg;
         }
 
         & > div:nth-child(2) {
-            @extend .col-span-3,.p-0,.flex-justify-center;
-
+            @include col-span(3);
+            @include p(0);
+            @include flex-justify-center;
             & > .sl-icon {
-                @extend .ft-size-2xl,.text-accent,.pointer;
+                @include ft-size-2xl;
+                color: $accent;
+                cursor: pointer;
             }
         }
     }
 
     .scroll-list-body {
-        @extend .flex,.flex-col,.flex-grow,.gap-y-10;
+        @include flex;
+        @include flex-col;
+        @include flex-grow;
+        @include gap-y(10);
+        @include p(12);
         overflow:hidden;
         overflow-y: auto;
         

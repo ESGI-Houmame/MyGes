@@ -6,10 +6,10 @@
   margin: 0;
   padding: 15px 0 0 30px;
   position: relative;
-  @extend .flex;
+  display: flex;
   &-content {
-    @extend .grid;
-    @extend .grid-cols-3;
+    @include grid;
+    @include grid-cols(3);
 
     &-col {
       @extend .col-span-1;

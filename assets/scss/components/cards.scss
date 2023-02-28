@@ -1,5 +1,5 @@
 .card {
-  @extend .radius-md; 
+  @include radius('md'); 
   background-color: $ghost;
   font-size: $font-size-md;
   width: 300px;
@@ -7,7 +7,7 @@
 
   &card-image{
 
-    @extend .radius-md;
+    @include radius('md'); 
     background-color: transparent;
     top: 0;
     width: 100%;

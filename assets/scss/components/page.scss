@@ -13,13 +13,17 @@
 
 
 .page-head {
-    @extend .flex, .flex-col;
- 
+    @include flex;
+    @include flex-col;
     .page-title, .page-title > *{
-            @extend .text-center, .ft-w-bold;
+            @include text-center;
+            @include ft-w-bold;
     }
     .page-description, .page-description > * {
-        @extend .text-center, .ft-w-bold, .ft-size-sm,.mt-5;
+        @include text-center; 
+        @include ft-w-bold;
+        @include ft-size-sm;
+        @include mt(5);
     }
 }
 
