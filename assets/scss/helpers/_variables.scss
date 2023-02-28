@@ -1,37 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
 
 //colors
-$primary : #A472F9;
-$secondary : #D926AA;
-$accent : #39C796;
+$primary: #A472F9;
+$secondary: #D926AA;
+$accent: #39C796;
 $ghost: #2A303C;
-$default:#242933;
+$default: #242933;
 $light: #E8E8E8;
 
 $colors: $primary, $secondary, $accent, $ghost, $default, $light;
 $color-names: "primary", "secondary", "accent", "ghost", "default", "light";
+//generate breakpoints for responsive design
+$breakpoints: (
+        "sm": 640px,
+        "md": 768px,
+        "lg": 1024px,
+        "xl": 1280px,
+        "xxl": 1536px,
+);
 
-$lengths: "xs","sm","md","lg","xl","2xl","3xl","4xl","5xl","6xl";
+$font-weights: (
+        "thin": 200,
+        "light": 300,
+        "normal": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700,
+        "extrabold": 800,
+        "black": 900,
+);
 
-
-$width: 1;
-$height: 1;
+$lengths: "xxs", "xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl";
 //fonts
 $font-family: "Montserrat", sans-serif;
 
-//font sizes
-$font-size-xxs: 0.5rem;
-$font-size-xs: 0.75rem;
-$font-size-sm: 0.875rem;
-$font-size-md: 1rem;
-$font-size-lg: 1.125rem;
-$font-size-xl: 1.25rem;
-$font-size-2xl: 1.5rem;
-$font-size-3xl: 2rem;
-$font-size-4xl: 2.5rem;
-$font-size-5xl: 3rem;
-$font-size-6xl: 4rem;
 
+$font-sizes : (
+        xxs: 0.5,
+        xs: 0.75,
+        sm: 0.875,
+        md: 1,
+        lg: 1.125,
+        xl: 1.25,
+        2xl: 1.5,
+        3xl: 2,
+        4xl: 2.5,
+        5xl: 3,
+        6xl: 4,
+);
 //font weights
 $font-weight-thin: 200;
 $font-weight-light: 300;

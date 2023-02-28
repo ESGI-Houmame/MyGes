@@ -22,8 +22,9 @@
         </div>
         <nav class="header_nav">
             <div class="header_nav_close pointer" id="header_nav_close">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                     stroke="currentColor" class="w-10 h-10">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
             </div>
             <ul class="header_nav_list">
@@ -35,7 +36,7 @@
         </nav>
     </div>
 </header>
-<div class="container">
+<div class="container bg-default h-screen">
     <h1>Buttons</h1>
     <button class="btn btn-primary">Primary</button>
     <button class="btn btn-secondary">Secondary</button>
@@ -48,18 +49,18 @@
     <button class="btn btn-primary-outline">Hello world</button>
     <button class="btn btn-secondary-outline">Hello world</button>
     <button class="btn btn-accent-outline">Hello world</button>
+    <h1>Section title</h1>
+    <div class="w-95/100 md:w-30/100 md:m-0 mx-auto p-4 border-l-3 border-r-3 r-radius-md flex align-items-center text-light l-radius-md border-light">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+             stroke="currentColor" class="w-25 h-25 mr-3">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/>
+        </svg>
+        <span>
+                Bon plans
+            </span>
+    </div>
 </div>
-
-<script type="text/javascript">
-    let close = document.getElementById("header_nav_close");
-    let toggle = document.getElementById("header_toggle");
-    close.addEventListener("click", function () {
-        document.querySelector(".header_nav").classList.remove("active");
-    });
-
-    toggle.addEventListener("click", function () {
-        document.querySelector(".header_nav").classList.add("active");
-    });
-</script>
+<script src="assets/js/index.js"></script>
 </body>
 </html>
