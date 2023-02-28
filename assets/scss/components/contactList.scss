@@ -1,6 +1,17 @@
 
 .contact-box {
     @extend .col-span-12;
+
+    .scroll-list{
+        max-height: 790px;
+
+        .scroll-content{
+            overflow-y: auto;
+            overflow-x: hidden;
+            @include grid;
+            @include gap-x(10);
+        }
+    }
 }
 
 
