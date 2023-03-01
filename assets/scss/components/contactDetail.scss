@@ -1,7 +1,6 @@
 ._contact-detail {
     @include bg('ghost');
     @include radius('2xl');
-    @include pl(4);
     @include grid-rows(12);
 }
 

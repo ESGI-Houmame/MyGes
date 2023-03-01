@@ -75,7 +75,8 @@
 }
 .contact-action-box button{
     font-size : map-get($font-sizes, 'sm');
-    @include mt(2);
+    margin-right: 10px;
+    margin-top: -10px;
 }
 
 @media (max-width:map-get($breakpoint,"sm")) {

@@ -18,7 +18,8 @@
         "components/contactList",
         "components/contactItem",
         "components/contactDetail",
-        "components/page";
+        "components/page",
+        "layouts/square-box";
 
 * {
 
@@ -33,7 +34,6 @@
 }
 body {
     background-color: $default;
-
 }
 
 .main-container {

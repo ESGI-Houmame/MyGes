@@ -10,26 +10,28 @@
     
 </head>
 <body>
-    <header class="bg-ghost">
-        <div class="header">
-            <div class="header_toggle pointer" id="header_toggle">
+    <header>
+        <div class="container header">
+            <div class="header_brand">
+                <img src="../assets/img/logo.svg" alt="logo">
+            </div>
+            <div class="header_toggle pointer ml-auto" id="header_toggle">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="w-6 h-6">
+                     stroke="currentColor" class="h-20 w-20">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
                 </svg>
             </div>
-            <div class="header_brand">
-                LOGO
-            </div>
             <nav class="header_nav">
                 <div class="header_nav_close pointer" id="header_nav_close">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-15 h-15">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                         stroke="currentColor" class="w-25 h-25">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 </div>
                 <ul class="header_nav_list">
-                    <li class="header_nav_list_item"><a class="header_nav_list_item_link" href="#">Home</a></li>
-                    <li class="header_nav_list_item"><a class="header_nav_list_item_link" href="#">About</a></li>
+                    <li class="header_nav_list_item"><a class="header_nav_list_item_link" href="/">Accueil</a></li>
+                    <li class="header_nav_list_item"><a class="header_nav_list_item_link" href="#">Support de cours</a></li>
+                    <li class="header_nav_list_item"><a class="header_nav_list_item_link" href="#">Projets pédagogiques</a>
                     <li class="header_nav_list_item"><a class="header_nav_list_item_link" href="#">Contact</a>
                     <li class="header_nav_list_item ml-auto"><a href="#" class="btn btn-primary">Connexion</a></li>
                 </ul>
@@ -45,68 +47,58 @@
 
 
         <div class = "grid grid-cols-12 mt-50 gap-10">
-                
+            <div class = "projet-card col-span-12 grid md:col-span-6 bg-ghost grid grid-rows-8 radius-md min-h-300 p-10">
+                <div class = "projet-card-header grid grid-cols-12 row-span-3">
+                        <div class = "xs:col-span-2">
+                            <div class = "bg-default square relative radius-lg">
+                                <div class = "absolute h-100/100 w-100/100 top-0 flex align-items-center justify-content-center">
+                                    <i class = "fas fa-user text-secondary text-3xl"></i>
+                                </div>
+                            </div>
+
+                           
+                        </div>
+
+                        <div class = "xs:col-span-10 px-5">
+                            <p class = "w-100/100 text-secondary font-bold">Challenge semestriel 3IW S1</p>
+                            <p class = "w-100/100 text-light font-semibold">15/01/2023 21h19</p>
+                        </div>
+
+                        
+                </div>
+                <div class = "projet-card-body row-span-2">
+                    <p class = "text-center w-100/100 text-light font-semibold">S1 - Intégration web - html5 - css3 - jquery</p>
+                </div>
+                <div class = "projet-card-footer row-span-3 grid grid-cols-12" style = "background:orange">
+                        <div class = "col-span-3">
+                            <p class = "text-sm text-secondary font-bold h-20/100">Equipe</p>
+                            <div class = "h-80/100 bg-primary">
+                                    <div>
+                                        <img src = "../assets/img/contact.jpg" style  ="height:20px;width:40px" class = "w-100/100 h-100/100 radius-md">
+                                        <img src = "../assets/img/houm.jpg"  style  ="height:20px;width:40px" class = "w-100/100 h-100/100 radius-md">
+                                        <img src = "../assets/img/hajar.jpg" style  ="height:20px;width:40px" class = "w-100/100 h-100/100 radius-md">
+                                        <img src = "../assets/img/stef.jpg" style  ="height:20px;width:40px" class = "w-100/100 h-100/100 radius-md">
+
+                                    </div>
+                            </div>
+                        </div>
+                        <div class = "col-span-6">
+                            <button class = "">intervenants</button>
+                        </div>
+                        <div style = "background:green" class = "col-span-3"></div>
+                    </div>
+            </div>
+
               
         </div>
     </main>
     <!-- -->
-    <footer class="footer">
-        <div class="footer-content">
-                <div class="footer-content-col">
-                    <img src="/assets/images/logo.svg" class="footer-content-col-logo">
-                    <p>Plateforme pour les étudiants du réseau GES</p>
-                </div>
-                <div class="footer-content-col">
-                    <h4>Exemple</h4>
-                    <ul>
-                        <li>Accueil</li>
-                        <li>Suivi</li>
-                        <li>Support de cours</li>
-                        <li>Projets pédagogiques</li>
-                        <li>Contact</li>
-                        <li>Connexion</li>
-                    </ul>
-                </div>
-                <div class="footer-content-col">
-                    <h4>Exemple</h4>
-                    <ul>
-                        <li>Accueil</li>
-                        <li>Suivi</li>
-                        <li>Support de cours</li>
-                    </ul>
-                    <h4>Exemple2</h4>
-                    <ul>
-                        <li>Accueil</li>
-                        <li>Suivi</li>
-                        <li>Support de cours</li>
-                    </ul>
-                </div>
-                <div class="footer-content-col-full">
-                    <div class="footer-content-col-full-socials">
-                        <img src="/assets/images/Discord.svg" class="footer-content-col-full-socials-icon">
-                        <img src="/assets/images/Twitter.svg" class="footer-content-col-full-socials-icon">
-                        <img src="/assets/images/Insta.svg" class="footer-content-col-full-socials-icon">
-                        <img src="/assets/images/Linkedin.svg" class="footer-content-col-full-socials-icon">
-                    </div>
-                </div>
-                <div class="footer-content-col-full-divider">
-        
-                </div>
-            ici
-        </div>
-        </footer>
+    <footer class="mt-auto ls-sm text-primary text-xl md:text-3xl min-h-300 bg-accent flex align-items-center justify-content-center">
+        FOOTER
+    </footer>
 
-    <script type="text/javascript">
-        let close = document.getElementById("header_nav_close");
-        let toggle = document.getElementById("header_toggle");
-        close.addEventListener("click", function () {
-            document.querySelector(".header_nav").classList.remove("toggle");
-        });
-    
-        toggle.addEventListener("click", function () {
-            document.querySelector(".header_nav").classList.add("toggle");
-        });
-    </script>
+    <script src = "../assets/js/index.js"></script>
+
     
 </body>
 </html>

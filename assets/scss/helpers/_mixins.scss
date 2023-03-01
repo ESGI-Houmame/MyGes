@@ -193,6 +193,13 @@
   .h-#{$i} {
     height: #{$i}px;
   }
+
+  .w-#{$i}-em {
+    width: #{$i}em;
+  }
+  .h-#{$i}-em {
+    height: #{$i}em;
+  }
   .min-w-#{$i} {
     min-width: #{$i}px;
   }
@@ -291,6 +298,12 @@
       }
       .#{$breakpoint}\:h-#{$i} {
         height: #{$i}px !important;
+      }
+      .#{$breakpoint}\:w-#{$i}-em {
+        width: #{$i}em;
+      }
+      .#{$breakpoint}\:h-#{$i}-em {
+        height: #{$i}em;
       }
       .#{$breakpoint}\:min-w-#{$i} {
         min-width: #{$i}px !important;
@@ -1303,12 +1316,21 @@
   }
 }
 
-@for $i from 1 through length($lengths) {
-  $width : nth($lengths, $i);
-  $font-size : map-get($font-sizes, $width);
-  .text-#{nth($lengths, $i)} {
-    font-size: #{$font-size}rem;
+@each $name, $value in $font-sizes {
+  .text-#{$name} {
+    font-size: #{$value}rem;
   }
+  @each $breakpoint in map-keys($breakpoints) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      .#{$breakpoint}\:text-#{$name} {
+        font-size: #{$value}rem;
+      }
+    }
+  }
+}
+
+@for $i from 1 through length($lengths) {
+  
   // border radius
   .radius-#{nth($lengths, $i)} {
     border-radius: #{$i*$border-radius-start};
@@ -1391,9 +1413,7 @@
   }
   @each $breakpoint in map-keys($breakpoints) {
     @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
-      .#{$breakpoint}\:text-#{nth($lengths, $i)} {
-        font-size: #{$i*16}px !important;
-      }
+ 
       .#{$breakpoint}\:radius-#{nth($lengths, $i)} {
         border-radius: #{$i*$border-radius-start} !important;
       }
@@ -1662,7 +1682,7 @@
 }
 
 
-@for $i from 0 through 1000 {
+@for $i from -500 through 1000 {
   .top-#{$i} {
     top: #{$i}px;
   }
