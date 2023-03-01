@@ -5,11 +5,10 @@
   min-height: 300px;
   margin: 0;
   padding: 15px 0 0 30px;
-  position: relative;
-  display: flex;
+
   &-content {
-    @include grid;
-    @include grid-cols(3);
+    @extend .grid;
+    @extend .grid-cols-3;
 
     &-col {
       @extend .col-span-1;
@@ -43,7 +42,7 @@
         }
 
         &-divider{
-          width: 100%;
+          width: 900px;
           height: 5px;
           background-color: $default;
         }
@@ -65,4 +64,5 @@
     }
   }
 }
+
 
