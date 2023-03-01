@@ -185,7 +185,9 @@
   @include br-radius($radius);  
 }
 
-
+.transition-bg-color {
+  transition: background-color 0.3s ease;
+}
 @for $i from 0 through 1000 {
   .w-#{$i} {
     width: #{$i}px;
@@ -643,6 +645,7 @@
   .hover\:bg-#{nth($color-names, $i)}:hover {
     background-color: bg-color($i);
   }
+  
   .hover\:text-#{nth($color-names, $i)}:hover {
     color: bg-color($i);
   }
@@ -677,6 +680,8 @@
   }
   @each $breakpoint in map-keys($breakpoints) {
     @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+
+      
       .#{$breakpoint}\:bg-#{nth($color-names, $i)} {
         background-color: bg-color($i) !important;
       }
@@ -710,6 +715,12 @@
       }
       .#{$breakpoint}\:hover\:bg-#{nth($color-names, $i)} {
         background-color: bg-color($i) !important;
+      }
+      .#{$breakpoint}\:hover\:bg-#{nth($color-names, $i)}-darken:hover {
+        background-color: darken(bg-color($i), 20%);
+      }
+      .#{$breakpoint}\:hover\:bg-#{nth($color-names, $i)}-lighten:hover {
+        background-color: lighten(bg-color($i), 20%);
       }
       .#{$breakpoint}\:hover\:text-#{nth($color-names, $i)} {
         color: bg-color($i) !important;
@@ -1353,6 +1364,7 @@
     .#{$breakpoint}\:hover\:max-h-full:hover {
       max-height: 100% !important;
     }
+
 
 
   }

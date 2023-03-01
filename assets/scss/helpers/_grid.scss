@@ -509,6 +509,34 @@
   }
 }
 
+@for $i from 0 through 100{
+  .gap-#{$i} {
+    grid-gap: #{$i}px;
+  }
+  .col-gap-#{$i} {
+    column-gap: #{$i}px;
+  }
+  .row-gap-#{$i} {
+    row-gap: #{$i}px;
+  }
+  // generate for all breakpoints
+  @each $breakpoint in map-keys($breakpoints) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      .#{$breakpoint}\:gap-#{$i} {
+        grid-gap: #{$i}px;
+      }
+      .#{$breakpoint}\:col-gap-#{$i} {
+        column-gap: #{$i}px;
+      }
+      .#{$breakpoint}\:row-gap-#{$i} {
+        row-gap: #{$i}px;
+      }
+
+    }
+
+  }
+}
+
 @for $i from 1 through 12 {
   .grid-cols-#{$i} {
     grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
@@ -542,15 +570,6 @@
   }
   .auto-rows-#{$i} {
     grid-auto-rows: #{$i};
-  }
-  .gap-#{$i} {
-    grid-gap: #{$i}px;
-  }
-  .col-gap-#{$i} {
-    column-gap: #{$i}px;
-  }
-  .row-gap-#{$i} {
-    row-gap: #{$i}px;
   }
 
 
@@ -590,15 +609,7 @@
       .#{$breakpoint}\:auto-rows-#{$i} {
         grid-auto-rows: #{$i} !important;
       }
-      .#{$breakpoint}\:gap-#{$i} {
-        grid-gap: #{$i}px !important;
-      }
-      .#{$breakpoint}\:col-gap-#{$i} {
-        column-gap: #{$i}px !important;
-      }
-      .#{$breakpoint}\:row-gap-#{$i} {
-        row-gap: #{$i}px !important;
-      }
+
     }
   }
 

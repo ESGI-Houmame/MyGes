@@ -47,12 +47,15 @@
 
 
         <div class = "grid grid-cols-12 mt-50 gap-10">
-            <div class = "projet-card col-span-12 grid md:col-span-6 bg-ghost grid grid-rows-8 radius-md min-h-300 p-10">
+            <div class = "projet-card col-span-12 grid lg:col-span-6 bg-ghost grid grid-rows-8 radius-4xl min-h-300 p-10 relative">
+                <div class = "ruban absolute w-150 h-100 right-0 top-0 overflow-hidden">
+                    <span style="transform:rotate(30deg)" class = "ruban-inner flex mt-6 ml-10 bg-primary text-light w-100/100 justify-content-center font-bold text-xs bg-accent text-nowrap p-3" style = "">PAS FINI</span>
+                </div>
                 <div class = "projet-card-header grid grid-cols-12 row-span-3">
                         <div class = "xs:col-span-2">
-                            <div class = "bg-default square relative radius-lg">
+                            <div class = "bg-default square-width relative radius-4xl">
                                 <div class = "absolute h-100/100 w-100/100 top-0 flex align-items-center justify-content-center">
-                                    <i class = "fas fa-user text-secondary text-3xl"></i>
+                                    <i class = "fas fa-user text-secondary xs:text-xl sm:text-5xl"></i>
                                 </div>
                             </div>
 
@@ -66,26 +69,53 @@
 
                         
                 </div>
-                <div class = "projet-card-body row-span-2">
+                <div class = "projet-card-body row-span-2 flex align-items-center">
                     <p class = "text-center w-100/100 text-light font-semibold">S1 - Intégration web - html5 - css3 - jquery</p>
                 </div>
-                <div class = "projet-card-footer row-span-3 grid grid-cols-12" style = "background:orange">
+                <div class = "projet-card-footer row-span-3 grid grid-cols-12">
                         <div class = "col-span-3 max-h-98">
                             <p class = "text-sm text-secondary font-bold h-20/100">Equipe</p>
-                            <div class = "bg-primary flex max-h-80/100">
-                                    <div class = "overflow-auto">
-                                        <img src = "../assets/img/contact.jpg"  class = "w-100/100 h-100/100 radius-md">
-                                        <img src = "../assets/img/houm.jpg"   class = "w-100/100 h-100/100 radius-md">
-                                        <img src = "../assets/img/hajar.jpg"  class = "w-100/100 h-100/100 radius-md">
-                                        <img src = "../assets/img/stef.jpg"  class = "w-100/100 h-100/100 radius-md">
+                            <div class = "flex xs:flex-wrap lg:flex-nowrap h-80/100 max-w-100/100  overflow-auto  mt-5">    
+                                    <div class = "max-w-100 max-h-50/100 min-w-55">
+                                            <div class = "square-width relative">
+                                                <div class = "absolute top-0 w-100/100 h-100/100">
+                                                    <img src = "../assets/img/contact.jpg" class = "img-square radius-full border-3 border-default">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class = "max-w-100 max-h-50/100 min-w-55">
+                                            <div class = "square-width relative">
+                                                <div class = "absolute top-0 w-100/100 h-100/100">
+                                                    <img src = "../assets/img/houm.jpg" class = "img-square radius-full border-3 border-default">
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                    </div>
+                                        <div class = "max-w-100 max-h-50/100 min-w-55">
+                                            <div class = "square-width relative">
+                                                <div class = "absolute top-0 w-100/100 h-100/100">
+                                                    <img src = "../assets/img/hajar.jpg" class = "img-square radius-full border-3 border-default">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class = "max-w-100 max-h-50/100 min-w-55">
+                                            <div class = "square-width relative">
+                                                <div class = "absolute top-0 w-100/100 h-100/100">
+                                                    <img src = "../assets/img/stef.jpg" class = "img-square radius-full border-3 border-default">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
                             </div>
                         </div>
-                        <div class = "col-span-6">
-                            <button class = "">intervenants</button>
+                        <div class = "col-span-6 flex align-items-end justify-content-center">
+                            <button class = "border-0 pointer transition-bg-color xs:hover:bg-secondary-darken max-w-100 xs:text-xs xl:text-sm min-w-50/100 font-semibold radius-4xl p-4  bg-secondary text-white">intervenants</button>
                         </div>
-                        <div style = "background:green" class = "col-span-3"></div>
+                        <div class = "col-span-3 flex md:align-items-end xs:align-items-center xs:justify-content-end md:justify-content-center gap-10 pb-2  xs:flex-col md:flex-row">
+                            <i class="fa-solid fa-user-plus transition-bg-color pointer hover:text-secondary text-light text-xl"></i>
+                            <i class="fa-solid fa-user-gear transition-bg-color pointer hover:text-secondary text-light text-xl"></i>
+                            <i class="fa-solid fa-download  transition-bg-color pointer hover:text-secondary text-light text-xl"></i>
+                        </div>
                     </div>
             </div>
 
