@@ -12,7 +12,7 @@
 
     &-col {
       @extend .col-span-1;
-
+      
       ul li{
         padding: 5px;
       }
@@ -37,7 +37,6 @@
           &-icon{
             width: 20px;
             height: 20px;
-            padding: 20px;
           }
         }
 

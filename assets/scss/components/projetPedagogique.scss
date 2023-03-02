@@ -1,0 +1,7 @@
+@media (min-width: map-get($breakpoints, 'md')){
+    .projet-action-item:hover .projet-action-bubble{
+        transition: all 0.3s ease-in;
+        z-index: 999;
+        display:block!important;
+    }
+}

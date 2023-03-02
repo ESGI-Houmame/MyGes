@@ -10,6 +10,7 @@ toggle.addEventListener("click", function () {
 
 
 $(document).ready(function(){
+
     // Changer page
     $(".header_nav_list_item_link").click(function(){
         $(".header_nav").removeClass("active");
@@ -24,12 +25,16 @@ $(document).ready(function(){
                 case 'contact':
                     Contact();
                     break;
+                case 'support-cours':
+                    SupportCours();
+                    break;
             }
                 
         });
 
     });
 
+    $('.header_nav_list_item_link[data-link="index"]').click();
 });
 
 
@@ -97,4 +102,32 @@ function Contact(){
             });
     }
     getUserList();
+}
+
+function SupportCours(){
+    for(let i = 0; i <= 4; i++){
+        
+        $('.support-cours-item').first().clone().appendTo('.support-cours-list');
+
+    }
+    $('.support-cours-item').find('.support-item-arrow').click(function(){
+            let supportItemSub = $(this).parent().parent().find('.support-item-sub');
+            
+            if(supportItemSub.css('display') == 'none'){
+                supportItemSub.css('display','flex');
+                supportItemSub.css('animation','fadeInDown 0.5s ease-in-out');
+                $(this).css('animation','rotateIn 0.2s ease-in-out');
+                $(this).css('transform', 'rotate(90deg)');
+                
+            }
+            else{
+                    supportItemSub.css('display','none');
+                    supportItemSub.css('animation','none');
+                    $(this).css('animation','rotateOut 0.2s ease-in-out');
+                    $(this).css('transform', 'rotate(0deg)');    
+            }
+
+    });
+
+
 }

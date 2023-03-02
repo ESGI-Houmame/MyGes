@@ -158,7 +158,6 @@
 @mixin flex-self-stretch{
   align-self: stretch;
 }
-//generate all helper classes for flexbox by classes
 .flex {
   display: flex;
 }
@@ -227,6 +226,22 @@
   flex: none;
 }
 
+.justify-self-start {
+  justify-self: flex-start;
+}
+
+.justify-self-end {
+  justify-self: flex-end;
+}
+
+.justify-self-center {
+  justify-self: center;
+}
+
+.justify-self-stretch {
+  justify-self: stretch;
+}
+
 .flex-justify-start {
   justify-content: flex-start;
 }
@@ -273,10 +288,6 @@
 
 .flex-content-start {
   align-content: flex-start;
-}
-
-.flex-basis-0{
-  flex-basis:0;
 }
 
 .flex-content-end {
@@ -578,6 +589,22 @@
       justify-content: space-evenly;
     }
 
+    .#{$breakpoint}\:justify-self-start {
+      justify-self: flex-start;
+    }
+    
+    .#{$breakpoint}\:justify-self-end {
+      justify-self: flex-end;
+    }
+    
+    .#{$breakpoint}\:justify-self-center {
+      justify-self: center;
+    }
+    
+    .#{$breakpoint}\:justify-self-stretch {
+      justify-self: stretch;
+    }
+    
     .#{$breakpoint}\:flex-items-start {
       align-items: flex-start;
     }
@@ -647,3 +674,4 @@
     }
   }
 }
+

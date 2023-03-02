@@ -188,6 +188,12 @@
 .transition-bg-color {
   transition: background-color 0.3s ease;
 }
+
+@for $i from -10 through 999{
+  .z-#{$i} {
+    z-index: $i;
+  }
+} 
 @for $i from 0 through 1000 {
   .w-#{$i} {
     width: #{$i}px;
@@ -606,6 +612,9 @@
   }
 }
 
+.aspect-ratio-1-1{
+    aspect-ratio: 1 / 1;
+}
 @for $i from 1 through length($colors) {
   .bg-#{nth($color-names, $i)} {
     background-color: bg-color($i);
@@ -722,6 +731,12 @@
       .#{$breakpoint}\:hover\:bg-#{nth($color-names, $i)}-lighten:hover {
         background-color: lighten(bg-color($i), 20%);
       }
+      .#{$breakpoint}\:bg-#{nth($color-names, $i)}-darken {
+        background-color: darken(bg-color($i), 20%);
+      }
+      .#{$breakpoint}\:bg-#{nth($color-names, $i)}-lighten {
+        background-color: lighten(bg-color($i), 20%);
+      }
       .#{$breakpoint}\:hover\:text-#{nth($color-names, $i)} {
         color: bg-color($i) !important;
       }
@@ -758,6 +773,24 @@
   }
 }
 
+.shadow-none {
+  box-shadow: none!important;
+
+}
+
+.shadow-sm{
+  box-shadow: 0 0.125rem 0.25rem darken($default,50%)!important;
+
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem darken($default,50%)!important;
+
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem darken($default,50%)!important;
+}
 .w-full {
   width: 100%;
 }
@@ -1557,7 +1590,9 @@
 .block {
   display: block;
 }
-
+.d-none {
+  display: none;
+}
 .absolute {
   position: absolute;
 }
