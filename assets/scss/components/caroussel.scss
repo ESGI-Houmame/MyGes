@@ -1,0 +1,7 @@
+.caroussel {
+  position: relative;
+  overflow: hidden;
+  &__slide{
+    position: absolute;
+  }
+}

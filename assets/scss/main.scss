@@ -8,6 +8,7 @@
 @import "components/buttons";
 @import "components/navbar";
 @import "layouts/container";
+@import "components/caroussel";
 * {
 
   box-sizing: border-box;
@@ -30,4 +31,5 @@
   max-width: 80%;
   margin: 10px auto;
 }
+
 
