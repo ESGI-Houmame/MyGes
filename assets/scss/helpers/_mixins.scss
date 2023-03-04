@@ -154,6 +154,7 @@
   }
 }
 
+
 @for $i from 0 through 100 {
   .w-#{$i}\/100 {
     width: #{$i}+'%';
@@ -1131,10 +1132,8 @@
 }
 
 @for $i from 1 through length($lengths) {
-  $width : nth($lengths, $i);
-  $font-size : map-get($font-sizes, $width);
   .text-#{nth($lengths, $i)} {
-    font-size: #{$font-size}rem;
+    font-size: #{map-get($font-sizes, nth($lengths, $i))}rem;
   }
   // border radius
   .radius-#{nth($lengths, $i)} {
@@ -1176,7 +1175,7 @@
     border-bottom-right-radius: #{$i*$border-radius-start};
   }
   .hover\:text-#{nth($lengths, $i)}:hover {
-    font-size: #{$i*16}px;
+    font-size: #{map-get($font-sizes, nth($lengths, $i))}rem;
   }
   .hover\:radius-#{nth($lengths, $i)} {
     border-radius: #{$i*$border-radius-start};
@@ -1219,7 +1218,7 @@
   @each $breakpoint in map-keys($breakpoints) {
     @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
       .#{$breakpoint}\:text-#{nth($lengths, $i)} {
-        font-size: #{$i*16}px !important;
+        font-size: #{map-get($font-sizes, nth($lengths, $i))}rem !important;
       }
       .#{$breakpoint}\:radius-#{nth($lengths, $i)} {
         border-radius: #{$i*$border-radius-start} !important;
@@ -1260,7 +1259,7 @@
         border-bottom-right-radius: #{$i*$border-radius-start} !important;
       }
       .#{$breakpoint}\:hover\:text-#{nth($lengths, $i)}:hover {
-        font-size: #{$i*16}px !important;
+        font-size: #{map-get($font-sizes, nth($lengths, $i))}rem !important;
       }
       .#{$breakpoint}\:hover\:radius-#{nth($lengths, $i)}:hover {
         border-radius: #{$i*$border-radius-start} !important;
@@ -1303,6 +1302,20 @@
   }
 }
 
+//aspect ratio
+
+.aspect-ratio-1\/1 {
+  aspect-ratio: 1/1;
+}
+
+.aspect-ratio-4\/3 {
+  aspect-ratio: 4/3;
+}
+
+.aspect-ratio-16\/9 {
+  aspect-ratio: 16/9;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -1331,6 +1344,27 @@
   position: static;
 }
 
+.fill {
+  object-fit: fill;
+}
+
+.contain {
+  object-fit: contain;
+}
+
+.cover {
+  object-fit: cover;
+}
+
+.scale-down {
+  object-fit: scale-down;
+}
+
+.object-none {
+  object-fit: none;
+}
+
+
 .hover\:inline-block:hover {
   display: inline-block;
 }
@@ -1357,6 +1391,38 @@
 
 .hover\:static:hover {
   position: static;
+}
+
+.hover\:fill:hover {
+  object-fit: fill;
+}
+
+.hover\:contain:hover {
+  object-fit: contain;
+}
+
+.hover\:cover:hover {
+  object-fit: cover;
+}
+
+.hover\:scale-down:hover {
+  object-fit: scale-down;
+}
+
+.hover\:object-none:hover {
+  object-fit: none;
+}
+
+.hover\:aspect-ration-1\/1:hover {
+  aspect-ratio: 1/1;
+}
+
+.hover\:aspect-ration-4\/3:hover {
+  aspect-ratio: 4/3;
+}
+
+.hover\:aspect-ration-16\/9:hover {
+  aspect-ratio: 16/9;
 }
 
 @each $breakpoint in map-keys($breakpoints) {
@@ -1389,6 +1455,39 @@
       position: static;
     }
 
+    .#{$breakpoint}\:fill {
+      object-fit: fill;
+    }
+
+    .#{$breakpoint}\:contain {
+      object-fit: contain;
+    }
+
+    .#{$breakpoint}\:cover {
+      object-fit: cover;
+    }
+
+    .#{$breakpoint}\:scale-down {
+      object-fit: scale-down;
+    }
+
+    .#{$breakpoint}\:object-none {
+      object-fit: none;
+    }
+
+    .#{$breakpoint}\:aspect-ratio-1\/1 {
+      aspect-ratio: 1/1;
+    }
+
+    .#{$breakpoint}\:aspect-ratio-4\/3 {
+      aspect-ratio: 4/3;
+    }
+
+    .#{$breakpoint}\:aspect-ratio-16\/9 {
+      aspect-ratio: 16/9;
+    }
+
+
     .#{$breakpoint}\:hover\:inline-block:hover {
       display: inline-block;
     }
@@ -1416,10 +1515,46 @@
     .#{$breakpoint}\:hover\:static:hover {
       position: static;
     }
+
+    .#{$breakpoint}\:hover\:fill:hover {
+      object-fit: fill;
+    }
+
+    .#{$breakpoint}\:hover\:contain:hover {
+      object-fit: contain;
+    }
+
+    .#{$breakpoint}\:hover\:cover:hover {
+      object-fit: cover;
+    }
+
+    .#{$breakpoint}\:hover\:scale-down:hover {
+      object-fit: scale-down;
+    }
+
+    .#{$breakpoint}\:hover\:object-none:hover {
+      object-fit: none;
+    }
+
+    .#{$breakpoint}\:hover\:aspect-ratio-1\/1:hover {
+      aspect-ratio: 1/1;
+    }
+
+    .#{$breakpoint}\:hover\:aspect-ratio-4\/3:hover {
+      aspect-ratio: 4/3;
+    }
+
+    .#{$breakpoint}\:hover\:aspect-ratio-16\/9:hover {
+      aspect-ratio: 16/9;
+    }
+
+
   }
 }
 
-@for $i from -1000 through 1000 {
+
+@for $i from -900 through 1000 {
+
   .top-#{$i} {
     top: #{$i}px;
   }

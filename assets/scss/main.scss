@@ -8,6 +8,8 @@
 @import "components/buttons";
 @import "components/navbar";
 @import "layouts/container";
+@import "components/caroussel";
+
 * {
 
   box-sizing: border-box;
@@ -16,6 +18,7 @@
   font-size: 16px;
   font-weight: 400;
   text-decoration: none;
+  color: $light;
 
 }
 
@@ -31,3 +34,12 @@
   margin: 10px auto;
 }
 
+.header-clip {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+@media screen and (min-width: 640px) {
+  .header-clip {
+    clip-path: polygon(0 0, 65% 0, 100% 100%, 0 100%);
+  }
+}
