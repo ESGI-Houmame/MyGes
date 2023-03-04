@@ -1132,11 +1132,8 @@
 }
 
 @for $i from 1 through length($lengths) {
-  $width: nth($lengths, $i);
-  $font-size: map-get($font-sizes, $width);
   .text-#{nth($lengths, $i)} {
-    font-size: #{$font-size}rem;
-
+    font-size: #{map-get($font-sizes, nth($lengths, $i))}rem;
   }
   // border radius
   .radius-#{nth($lengths, $i)} {
@@ -1178,7 +1175,7 @@
     border-bottom-right-radius: #{$i*$border-radius-start};
   }
   .hover\:text-#{nth($lengths, $i)}:hover {
-    font-size: #{$i*16}px;
+    font-size: #{map-get($font-sizes, nth($lengths, $i))}rem;
   }
   .hover\:radius-#{nth($lengths, $i)} {
     border-radius: #{$i*$border-radius-start};
@@ -1221,7 +1218,7 @@
   @each $breakpoint in map-keys($breakpoints) {
     @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
       .#{$breakpoint}\:text-#{nth($lengths, $i)} {
-        font-size: #{$i*16}px !important;
+        font-size: #{map-get($font-sizes, nth($lengths, $i))}rem !important;
       }
       .#{$breakpoint}\:radius-#{nth($lengths, $i)} {
         border-radius: #{$i*$border-radius-start} !important;
@@ -1262,7 +1259,7 @@
         border-bottom-right-radius: #{$i*$border-radius-start} !important;
       }
       .#{$breakpoint}\:hover\:text-#{nth($lengths, $i)}:hover {
-        font-size: #{$i*16}px !important;
+        font-size: #{map-get($font-sizes, nth($lengths, $i))}rem !important;
       }
       .#{$breakpoint}\:hover\:radius-#{nth($lengths, $i)}:hover {
         border-radius: #{$i*$border-radius-start} !important;
@@ -1491,7 +1488,6 @@
     }
 
 
-
     .#{$breakpoint}\:hover\:inline-block:hover {
       display: inline-block;
     }
@@ -1551,7 +1547,6 @@
     .#{$breakpoint}\:hover\:aspect-ratio-16\/9:hover {
       aspect-ratio: 16/9;
     }
-
 
 
   }

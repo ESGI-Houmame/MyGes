@@ -1,7 +1,66 @@
 .caroussel {
   position: relative;
-  overflow: hidden;
-  &__slide{
+  margin: 20px 0;
+
+
+  &__slide {
     position: absolute;
+    left: 0;
+    top: 0;
+    animation: fade-out 0.5s ease-in-out;
+    opacity: 0;
+
+    &__active {
+      position: absolute;
+      animation: fade-in 0.5s ease-in-out;
+      opacity: 1;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+    &__dot {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: $primary;
+
+      transition: all 0.5s ease-in-out;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+
+      &__active {
+        width: 1.2rem;
+        height: 1.2rem;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
