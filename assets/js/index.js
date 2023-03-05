@@ -20,18 +20,26 @@ $(document).ready(function(){
         let content = $(document.body).find('.content-box');
 
         content.html('<p class = "text-light font-bold p-5 text-center">Chargement de '+ $(this).text() +'...</p>');
-        content.load("/html/"+link+".html",function(){
-            switch(link){
-                case 'contact':
-                    Contact();
-                    break;
-                case 'support-cours':
-                    SupportCours();
-                    break;
+        $.ajax({
+            url: "/html/" + link + ".html",
+            type: "GET",
+            crossDomain: true,
+            success: function(data) {
+                content.html(data);
+                switch(link){
+                    case 'contact':
+                        Contact();
+                        break;
+                    case 'support-cours':
+                        SupportCours();
+                        break;
+                    case 'index':
+                        Accueil();
+                        break;
+                }
             }
-                
         });
-
+      
     });
 
     $('.header_nav_list_item_link[data-link="index"]').click();
@@ -131,31 +139,36 @@ function SupportCours(){
 
 
 }
-/*
-let nbrOfSlides = document.querySelectorAll(".caroussel__slide").length;
-let currentSlide = 0;
-let dots = document.querySelector(".caroussel__dots");
-//add dots
-for (let i = 0; i < nbrOfSlides; i++) {
-    let dot = document.createElement("div");
-    // add class caroussel__dots__dot and caroussel__dots__dot__active for the active one
-    dot.classList.add("caroussel__dots__dot");
-    if (i === currentSlide) {
-        dot.classList.add("caroussel__dots__dot__active");
+
+function Accueil(){
+    let caroussel = function(){
+        let nbrOfSlides = document.querySelectorAll(".caroussel__slide").length;
+        let currentSlide = 0;
+        let dots = document.querySelector(".caroussel__dots");
+        //add dots
+        for (let i = 0; i < nbrOfSlides; i++) {
+            let dot = document.createElement("div");
+            // add class caroussel__dots__dot and caroussel__dots__dot__active for the active one
+            dot.classList.add("caroussel__dots__dot");
+            if (i === currentSlide) {
+                dot.classList.add("caroussel__dots__dot__active");
+            }
+            dots.appendChild(dot);
+        }
+        
+        setInterval(() => {
+            currentSlide++;
+            if (currentSlide > nbrOfSlides - 1) {
+                currentSlide = 0;
+            }
+            document.querySelector(".caroussel__slide__active").classList.remove("caroussel__slide__active");
+            document.querySelectorAll(".caroussel__slide")[currentSlide].classList.add("caroussel__slide__active");
+            //dots
+            document.querySelector(".caroussel__dots__dot__active").classList.remove("caroussel__dots__dot__active");
+            document.querySelectorAll(".caroussel__dots__dot")[currentSlide].classList.add("caroussel__dots__dot__active");
+        }, 5000)
+        
     }
-    dots.appendChild(dot);
+    caroussel();
 }
 
-setInterval(() => {
-    currentSlide++;
-    if (currentSlide > nbrOfSlides - 1) {
-        currentSlide = 0;
-    }
-    document.querySelector(".caroussel__slide__active").classList.remove("caroussel__slide__active");
-    document.querySelectorAll(".caroussel__slide")[currentSlide].classList.add("caroussel__slide__active");
-    //dots
-    document.querySelector(".caroussel__dots__dot__active").classList.remove("caroussel__dots__dot__active");
-    document.querySelectorAll(".caroussel__dots__dot")[currentSlide].classList.add("caroussel__dots__dot__active");
-}, 5000)
-
-//dots*/
