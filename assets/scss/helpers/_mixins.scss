@@ -1316,6 +1316,9 @@
   aspect-ratio: 16/9;
 }
 
+.d-none {
+  display: none;
+}
 .inline-block {
   display: inline-block;
 }
@@ -1427,6 +1430,19 @@
 
 @each $breakpoint in map-keys($breakpoints) {
   @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+    .#{$breakpoint}\:d-none {
+      display: none;
+    }
+
+    
+    @for $i from 0 through 100 {
+      .#{$breakpoint}\:translate-y-#{$i} {
+        transform: translateY(#{$i}+'%');
+      }
+      .#{$breakpoint}\:translate-x-#{$i} {
+        transform: translateX(#{$i}+'%');
+      }
+    }
     .#{$breakpoint}\:inline-block {
       display: inline-block;
     }
