@@ -34,6 +34,9 @@
       align-items: center;
       padding: 8px 0;
       cursor: pointer;
+      &__toggle{
+        transform: rotate(-90deg);
+      }
 
       > * {
         margin-right: 1rem;

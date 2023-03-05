@@ -3,6 +3,7 @@
 @import "helpers/mixins";
 @import "helpers/flex";
 @import "helpers/grid";
+@import "helpers/table";
 
 // import components
 @import "components/buttons";
@@ -10,6 +11,7 @@
 @import "layouts/container";
 @import "components/caroussel";
 @import "components/accordeon";
+
 
 * {
 
