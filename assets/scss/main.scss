@@ -9,6 +9,7 @@
 @import "components/navbar";
 @import "layouts/container";
 @import "components/caroussel";
+@import "components/accordeon";
 
 * {
 
@@ -20,6 +21,7 @@
   text-decoration: none;
   color: $light;
 }
+
 
 .pointer {
   cursor: pointer;
