@@ -38,27 +38,37 @@
     </div>
 </header>
 <main class="flex-1">
+    <div class = "container main-container">
     <div>
             <h1 class="text-xl md:text-5xl font-bold text-center mt-24">
                 <span class="text-xl md:text-5xl font-bold text-center">SE </span> <span class="text-xl md:text-5xl font-bold text-center text-primary">CONNECTER</span>
             </h1>
     </div>
-    <div>
-            <img class="mt-24 bg-img" src="assets/img/connexionImg.jpg">
-            <div>
+    <div class = "relative w-100/100 mt-25">
+                <img class="xs:d-none lg:block w-100/100 bg-img" src="assets/img/connexionImg.jpg">
+            
+            <div class = "xs:relative lg:absolute lg:translate-y-30 top-0 right-0 xs:w-100/100 lg:max-w-500 text-lg">
                     <form action="/login" method="post">
-                        <input type="text" placeholder="nom d'utilisateur" id="username" name="username" required>
+                        <input type="text" placeholder="nom d'utilisateur"  class = "radius-6xl" id="username" name="username" required>
                         
-                        <input type="password" placeholder="************" id="password" name="password" required>
+                        <input type="password" placeholder="************" class = "radius-6xl" id="password" name="password" required>
                       
                         <label class="mt-15">Mot de passe oublié ?</label>
                         <label>Changer mon mot de passe</label>
-                        <input class="mt-10" type="submit" value="Connectez-vous">
+                        <input class="mt-10 class = "radius-6xl"" type="submit" value="Connectez-vous">
 
-                        <img class="mt-10" src="/assets/img/userLogo.svg">
-                        <div class="desc">Pour des raisons de sécurité, veuillez vous déconnecter et fermer votre navigateur lorsque vous avez fini d'accéder aux services authentifiés.</div>
+                        
+                        <div class = "grid grid-cols-12 mt-15">
+                            <div class = "col-span-1">
+                                <img class = "w-100/100" src="assets/img/userLogo.svg"/>
+                            </div>
+                            <div class = "col-span-11 px-5">
+                                <span>Pour des raisons de sécurité, veuillez vous déconnecter et fermer votre navigateur lorsque vous avez fini d'accéder aux services authentifiés.</span>
+                            </div>
+                        </div>
                       </form>
             </div>
+    </div>
     </div>
 </main>
 <div class="min-h-100"></div>
