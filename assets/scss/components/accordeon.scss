@@ -10,14 +10,19 @@
       opacity: 0;
       height: 0;
       overflow: hidden;
-      transition: opacity 1s ease-in-out 0.5s, height 1s ease-in-out;
+      transition: opacity 0.7s ease-in-out 0.5s, height 0.7s ease-in-out;
     }
 
     &__active {
       > .accordeon__item__content {
         opacity: 1;
         height: auto;
-        transition: opacity 1s ease-in-out, height 1s ease-in-out 0.5s;
+        transition: opacity 0.7s ease-in-out, height 0.7s ease-in-out 0.5s;
+      }
+
+      .accordeon__item__header__toggle {
+        transition: transform 0.5s ease-in-out;
+        transform: rotate(0deg);
       }
     }
 
@@ -34,7 +39,9 @@
       align-items: center;
       padding: 8px 0;
       cursor: pointer;
-      &__toggle{
+
+      &__toggle {
+        transition: transform 0.5s ease-in-out;
         transform: rotate(-90deg);
       }
 
