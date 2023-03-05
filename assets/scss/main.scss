@@ -4,7 +4,8 @@
         "helpers/flex",
         "helpers/grid",
         "helpers/typography",
-        "helpers/placement";
+        "helpers/placement",
+        "helpers/table";
 
 
 // import components
@@ -22,7 +23,8 @@
         "components/page",
         "layouts/square-box",
         "components/support-cours.scss",
-        "components/caroussel";
+        "components/caroussel",
+        "components/accordeon.scss";
 
 * {
 
@@ -79,7 +81,6 @@ body {
     border-radius: 10px;
     border: 3px solid $ghost;
   }
-
   .divider {
     background: $ghost;
     border: 0;
@@ -95,11 +96,63 @@ body {
   .bg-img{
     clip-path: polygon(70% 0%, 70% 100%, 0% 100%, 0 0%)
   }
-
-
+  
+  .form-connexion form {
+    background-color: $ghost;
+    padding: 55px;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 600px;
+    height: 450px;
+  }
+  
+  .form-connexion img{
+    left: 0;
+  }
+  
+  .form-connexion .desc{
+    font-size: x-small;
+  }
+  
+  .form-connexion label{
+    font-size: x-small;
+    color: $secondary;
+  }
+  
+  .form-connexion label:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .form-connexion input[type="text"],
+  .form-connexion input[type="password"] {
+    padding: 10px;
+    background-color: $default;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid $accent;
+    border-radius: 15px;
+  }
+  
+  .form-connexion input[type="submit"] {
+    padding: 10px 20px;
+    background-color: $accent;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-connexion input[type="submit"]:hover {
+    background-color: $primary;
+  }
+  
   @media screen and (min-width: 640px) {
     .header-clip {
       clip-path: polygon(0 0, 65% 0, 100% 100%, 0 100%);
     }
   }
-  

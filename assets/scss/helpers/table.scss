@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  
+    th {
+      background-color: $default;
+      border: 1px solid $ghost;
+      padding: 8px;
+      color: $light;
+      text-align: center;
+    }
+  
+    td {
+      border: 1px solid $default;
+      padding: 8px;
+      text-align: center;
+      color: $light;
+    }
+    
+    &.table-style-revert {
+      th {
+        background-color: $ghost;
+        border: 1px solid $default;
+        padding: 8px;
+        text-align: center;
+      }
+  
+      td {
+        border: 1px solid $ghost;
+        padding: 8px;
+        text-align: center;
+      }
+    }
+  }

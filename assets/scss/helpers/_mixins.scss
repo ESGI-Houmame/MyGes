@@ -1583,6 +1583,147 @@
   }
 }
 
+
+@each $breakpoint in map-keys($breakpoints) {
+  @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+    .#{$breakpoint}\:d-none {
+      display: none;
+    }
+
+    
+    @for $i from 0 through 100 {
+      .#{$breakpoint}\:translate-y-#{$i} {
+        transform: translateY(#{$i}+'%');
+      }
+      .#{$breakpoint}\:translate-x-#{$i} {
+        transform: translateX(#{$i}+'%');
+      }
+    }
+    .#{$breakpoint}\:inline-block {
+      display: inline-block;
+    }
+
+    .#{$breakpoint}\:block {
+      display: block;
+    }
+
+    .#{$breakpoint}\:absolute {
+      position: absolute;
+    }
+
+    .#{$breakpoint}\:relative {
+      position: relative;
+    }
+
+    .#{$breakpoint}\:fixed {
+      position: fixed;
+    }
+
+    .#{$breakpoint}\:sticky {
+      position: sticky;
+    }
+
+    .#{$breakpoint}\:static {
+      position: static;
+    }
+
+    .#{$breakpoint}\:fill {
+      object-fit: fill;
+    }
+
+    .#{$breakpoint}\:contain {
+      object-fit: contain;
+    }
+
+    .#{$breakpoint}\:cover {
+      object-fit: cover;
+    }
+
+    .#{$breakpoint}\:scale-down {
+      object-fit: scale-down;
+    }
+
+    .#{$breakpoint}\:object-none {
+      object-fit: none;
+    }
+
+    .#{$breakpoint}\:aspect-ratio-1\/1 {
+      aspect-ratio: 1/1;
+    }
+
+    .#{$breakpoint}\:aspect-ratio-4\/3 {
+      aspect-ratio: 4/3;
+    }
+
+    .#{$breakpoint}\:aspect-ratio-16\/9 {
+      aspect-ratio: 16/9;
+    }
+
+
+    .#{$breakpoint}\:hover\:inline-block:hover {
+      display: inline-block;
+    }
+
+    .#{$breakpoint}\:hover\:block:hover {
+      display: block;
+    }
+
+    .#{$breakpoint}\:hover\:absolute:hover {
+      position: absolute;
+    }
+
+    .#{$breakpoint}\:hover\:relative:hover {
+      position: relative;
+    }
+
+    .#{$breakpoint}\:hover\:fixed:hover {
+      position: fixed;
+    }
+
+    .#{$breakpoint}\:hover\:sticky:hover {
+      position: sticky;
+    }
+
+    .#{$breakpoint}\:hover\:static:hover {
+      position: static;
+    }
+
+    .#{$breakpoint}\:hover\:fill:hover {
+      object-fit: fill;
+    }
+
+    .#{$breakpoint}\:hover\:contain:hover {
+      object-fit: contain;
+    }
+
+    .#{$breakpoint}\:hover\:cover:hover {
+      object-fit: cover;
+    }
+
+    .#{$breakpoint}\:hover\:scale-down:hover {
+      object-fit: scale-down;
+    }
+
+    .#{$breakpoint}\:hover\:object-none:hover {
+      object-fit: none;
+    }
+
+    .#{$breakpoint}\:hover\:aspect-ratio-1\/1:hover {
+      aspect-ratio: 1/1;
+    }
+
+    .#{$breakpoint}\:hover\:aspect-ratio-4\/3:hover {
+      aspect-ratio: 4/3;
+    }
+
+    .#{$breakpoint}\:hover\:aspect-ratio-16\/9:hover {
+      aspect-ratio: 16/9;
+    }
+
+
+  }
+}
+
 .inline-block {
   display: inline-block;
 }
