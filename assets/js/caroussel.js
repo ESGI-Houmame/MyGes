@@ -1,12 +1,3 @@
-let close = document.getElementById("header_nav_close");
-let toggle = document.getElementById("header_toggle");
-close.addEventListener("click", function () {
-    document.querySelector(".header_nav").classList.remove("active");
-});
-
-toggle.addEventListener("click", function () {
-    document.querySelector(".header_nav").classList.add("active");
-});
 
 
 let nbrOfSlides = document.querySelectorAll(".caroussel__slide").length;
@@ -34,8 +25,3 @@ setInterval(() => {
     document.querySelector(".caroussel__dots__dot__active").classList.remove("caroussel__dots__dot__active");
     document.querySelectorAll(".caroussel__dots__dot")[currentSlide].classList.add("caroussel__dots__dot__active");
 }, 5000)
-
-//dots
-
-
-
