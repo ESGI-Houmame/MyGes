@@ -9,7 +9,7 @@
       &__content {
         opacity: 0;
         height: 0;
-        overflow: hidden;
+        overflow: auto;
         transition: opacity 0.7s ease-in-out 0.5s, height 0.7s ease-in-out;
       }
   
