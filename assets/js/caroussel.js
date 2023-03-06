@@ -23,5 +23,5 @@ function caroussel(){
         //dots
         document.querySelector(".caroussel__dots__dot__active").classList.remove("caroussel__dots__dot__active");
         document.querySelectorAll(".caroussel__dots__dot")[currentSlide].classList.add("caroussel__dots__dot__active");
-    }, 5000)
+    }, 10e3)
 }
