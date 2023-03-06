@@ -1,25 +1,212 @@
 @function bg-color($index) {
-  $index: $index - 1 ;
+  $index: $index - 1;
   $color-count: length($colors);
-  $color-index: $index % $color-count ;
-  @return nth($colors, $color-index + 1) ;
+  $color-index: $index % $color-count;
+  @return nth($colors, $color-index + 1);
 }
-
 @function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
-
+  
   @if $index {
     @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
   }
+  
   @return $string;
 }
 
+// background color & text color & hover background and text color
+@mixin bg($color){
+  background-color: map-get($colorsMap,$color);
+}
+@mixin text($color){
+  color: map-get($colorsMap,$color);
+}
+@mixin border($color){
+  border-color: map-get($colorsMap,$color);
+}
+// border color
+@mixin border-top($color) {
+  border-top-color: map-get($colorsMap,$color);
+}
+
+@mixin border-left($color) {
+  border-left-color: map-get($colorsMap,$color);
+}
+
+@mixin border-right($color) {
+  border-right-color: map-get($colorsMap,$color);
+}
+
+@mixin border-bottom($color) {
+  border-bottom-color: map-get($colorsMap,$color);
+}
+
+@mixin border-x($color) {
+  @include border-left($color);
+  @include border-right($color);
+}
+
+@mixin border-y($color) {
+  @include border-top($color);
+  @include border-bottom-color($color);
+}
+
+@mixin w($width) {
+  width: #{$width}+'%';
+}
+@mixin mxw($width) {
+  max-width: $width+'%';
+}
+
+@mixin mnw($width) {
+  min-width: $width+'%';
+}
+
+@mixin h($height) {
+  height: $height+'%';
+}
+@mixin mxh($height) {
+  max-height: $height+'%';
+}
+
+@mixin mnh($height) {
+  min-height: $height+'%';
+}
+
+// paddings
+
+@mixin p($padding) {
+  padding: #{$padding}px;
+}
+@mixin px($padding) {
+  padding-left: #{$padding}px;
+  padding-right: #{$padding}px;
+}
+@mixin py($padding) {
+  padding-top: #{$padding}px;
+  padding-bottom: #{$padding}px;
+}
+@mixin pt($padding) {
+  padding-top: #{$padding}px;
+}
+@mixin pb($padding) {
+  padding-bottom: #{$padding}px;
+}
+@mixin pl($padding) {
+  padding-left: #{$padding}px;
+}
+@mixin pr($padding) {
+  padding-right: #{$padding}px;
+}
+
+
+@mixin m($margin) {
+  margin: #{$margin}px;
+}
+@mixin mx($margin) {
+  margin-left: #{$margin}px;
+  margin-right: #{$margin}px;
+}
+@mixin my($margin) {
+  margin-top: #{$margin}px;
+  margin-bottom: #{$margin}px;
+}
+@mixin mt($margin) {
+  margin-top: #{$margin}px;
+}
+@mixin mb($margin) {
+  margin-bottom: #{$margin}px;
+}
+@mixin ml($margin) {
+  margin-left: #{$margin}px;
+}
+@mixin mr($margin) {
+  margin-right: #{$margin}px;
+}
+
+
+@mixin m-auto(){
+  margin: auto;
+}
+@mixin ml-auto(){
+  margin-left: auto;
+}
+@mixin mr-auto(){
+  margin-right: auto;
+}
+@mixin mt-auto(){
+  margin-top: auto;
+}
+@mixin mb-auto(){
+  margin-bottom: auto;
+}
+
+
+
+
+// radius ($radius par exemple = 4xl,sm etc)
+@mixin radius($radius) {
+  border-radius: index($lengths, $radius) * $border-radius-start;
+}
+@mixin radius-none{
+  border-radius: $border-radius-none;
+}
+
+@mixin radius-full{
+  border-radius: $border-radius-full;
+}
+
+@mixin tl-radius($radius) {
+  border-top-left-radius: index($lengths, $radius) * $border-radius-start;
+}
+@mixin tr-radius($radius) {
+  border-top-right-radius: index($lengths, $radius) * $border-radius-start;
+}
+@mixin br-radius($radius) {
+  border-bottom-right-radius: index($lengths, $radius) * $border-radius-start;
+}
+@mixin bl-radius($radius) {
+  border-bottom-left-radius: index($lengths, $radius) * $border-radius-start;
+}
+@mixin l-radius($radius) {
+  @include bl-radius($radius);
+  @include tl-radius($radius);  
+}
+@mixin r-radius($radius) {
+  @include br-radius($radius);
+  @include tr-radius($radius);
+}
+@mixin t-radius($radius) {
+  @include tl-radius($radius);
+  @include tr-radius($radius); 
+}
+@mixin b-radius($radius) {
+  @include bl-radius($radius);
+  @include br-radius($radius);  
+}
+
+.transition-bg-color {
+  transition: background-color 0.3s ease;
+}
+
+@for $i from -10 through 999{
+  .z-#{$i} {
+    z-index: $i;
+  }
+} 
 @for $i from 0 through 1000 {
   .w-#{$i} {
     width: #{$i}px;
   }
   .h-#{$i} {
     height: #{$i}px;
+  }
+
+  .w-#{$i}-em {
+    width: #{$i}em;
+  }
+  .h-#{$i}-em {
+    height: #{$i}em;
   }
   .min-w-#{$i} {
     min-width: #{$i}px;
@@ -119,6 +306,12 @@
       }
       .#{$breakpoint}\:h-#{$i} {
         height: #{$i}px !important;
+      }
+      .#{$breakpoint}\:w-#{$i}-em {
+        width: #{$i}em;
+      }
+      .#{$breakpoint}\:h-#{$i}-em {
+        height: #{$i}em;
       }
       .#{$breakpoint}\:min-w-#{$i} {
         min-width: #{$i}px !important;
@@ -419,6 +612,9 @@
   }
 }
 
+.aspect-ratio-1-1{
+    aspect-ratio: 1 / 1;
+}
 @for $i from 1 through length($colors) {
   .bg-#{nth($color-names, $i)} {
     background-color: bg-color($i);
@@ -458,6 +654,7 @@
   .hover\:bg-#{nth($color-names, $i)}:hover {
     background-color: bg-color($i);
   }
+  
   .hover\:text-#{nth($color-names, $i)}:hover {
     color: bg-color($i);
   }
@@ -492,6 +689,8 @@
   }
   @each $breakpoint in map-keys($breakpoints) {
     @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+
+      
       .#{$breakpoint}\:bg-#{nth($color-names, $i)} {
         background-color: bg-color($i) !important;
       }
@@ -525,6 +724,18 @@
       }
       .#{$breakpoint}\:hover\:bg-#{nth($color-names, $i)} {
         background-color: bg-color($i) !important;
+      }
+      .#{$breakpoint}\:hover\:bg-#{nth($color-names, $i)}-darken:hover {
+        background-color: darken(bg-color($i), 20%);
+      }
+      .#{$breakpoint}\:hover\:bg-#{nth($color-names, $i)}-lighten:hover {
+        background-color: lighten(bg-color($i), 20%);
+      }
+      .#{$breakpoint}\:bg-#{nth($color-names, $i)}-darken {
+        background-color: darken(bg-color($i), 20%);
+      }
+      .#{$breakpoint}\:bg-#{nth($color-names, $i)}-lighten {
+        background-color: lighten(bg-color($i), 20%);
       }
       .#{$breakpoint}\:hover\:text-#{nth($color-names, $i)} {
         color: bg-color($i) !important;
@@ -562,6 +773,24 @@
   }
 }
 
+.shadow-none {
+  box-shadow: none!important;
+
+}
+
+.shadow-sm{
+  box-shadow: 0 0.125rem 0.25rem darken($default,50%)!important;
+
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem darken($default,50%)!important;
+
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem darken($default,50%)!important;
+}
 .w-full {
   width: 100%;
 }
@@ -819,6 +1048,48 @@
 
 .text-line-through {
   text-decoration: line-through;
+}
+
+
+@each $breakpoint in map-keys($breakpoints) {
+  @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+    .#{$breakpoint}\:overflow-hidden {
+      overflow: hidden;
+    }
+    .#{$breakpoint}\:overflow-auto {
+      overflow: auto;
+    }
+    .#{$breakpoint}\:overflow-y-auto {
+      overflow-y: auto;
+    }
+    .#{$breakpoint}\:overflow-y-hidden {
+      overflow-y: hidden;
+    }
+    .#{$breakpoint}\:overflow-x-auto {
+      overflow-x: auto;
+    }
+    .#{$breakpoint}\:overflow-y-auto {
+      overflow-y: auto;
+    }
+  }
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+.overflow-x-auto {
+  overflow-x: auto;
+}
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .text-no-underline {
@@ -1128,13 +1399,25 @@
     }
 
 
+
+  }
+}
+
+@each $name, $value in $font-sizes {
+  .text-#{$name} {
+    font-size: #{$value}rem;
+  }
+  @each $breakpoint in map-keys($breakpoints) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      .#{$breakpoint}\:text-#{$name} {
+        font-size: #{$value}rem;
+      }
+    }
   }
 }
 
 @for $i from 1 through length($lengths) {
-  .text-#{nth($lengths, $i)} {
-    font-size: #{map-get($font-sizes, nth($lengths, $i))}rem;
-  }
+  
   // border radius
   .radius-#{nth($lengths, $i)} {
     border-radius: #{$i*$border-radius-start};
@@ -1175,7 +1458,7 @@
     border-bottom-right-radius: #{$i*$border-radius-start};
   }
   .hover\:text-#{nth($lengths, $i)}:hover {
-    font-size: #{map-get($font-sizes, nth($lengths, $i))}rem;
+    font-size: #{$i*16}px;
   }
   .hover\:radius-#{nth($lengths, $i)} {
     border-radius: #{$i*$border-radius-start};
@@ -1217,9 +1500,7 @@
   }
   @each $breakpoint in map-keys($breakpoints) {
     @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
-      .#{$breakpoint}\:text-#{nth($lengths, $i)} {
-        font-size: #{map-get($font-sizes, nth($lengths, $i))}rem !important;
-      }
+ 
       .#{$breakpoint}\:radius-#{nth($lengths, $i)} {
         border-radius: #{$i*$border-radius-start} !important;
       }
@@ -1259,7 +1540,7 @@
         border-bottom-right-radius: #{$i*$border-radius-start} !important;
       }
       .#{$breakpoint}\:hover\:text-#{nth($lengths, $i)}:hover {
-        font-size: #{map-get($font-sizes, nth($lengths, $i))}rem !important;
+        font-size: #{$i*16}px !important;
       }
       .#{$breakpoint}\:hover\:radius-#{nth($lengths, $i)}:hover {
         border-radius: #{$i*$border-radius-start} !important;
@@ -1302,131 +1583,6 @@
   }
 }
 
-//aspect ratio
-
-.aspect-ratio-1\/1 {
-  aspect-ratio: 1/1;
-}
-
-.aspect-ratio-4\/3 {
-  aspect-ratio: 4/3;
-}
-
-.aspect-ratio-16\/9 {
-  aspect-ratio: 16/9;
-}
-
-.d-none {
-  display: none;
-}
-.inline-block {
-  display: inline-block;
-}
-
-.block {
-  display: block;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.relative {
-  position: relative;
-}
-
-.fixed {
-  position: fixed;
-}
-
-.sticky {
-  position: sticky;
-}
-
-.static {
-  position: static;
-}
-
-.fill {
-  object-fit: fill;
-}
-
-.contain {
-  object-fit: contain;
-}
-
-.cover {
-  object-fit: cover;
-}
-
-.scale-down {
-  object-fit: scale-down;
-}
-
-.object-none {
-  object-fit: none;
-}
-
-
-.hover\:inline-block:hover {
-  display: inline-block;
-}
-
-.hover\:block:hover {
-  display: block;
-}
-
-.hover\:absolute:hover {
-  position: absolute;
-}
-
-.hover\:relative:hover {
-  position: relative;
-}
-
-.hover\:fixed:hover {
-  position: fixed;
-}
-
-.hover\:sticky:hover {
-  position: sticky;
-}
-
-.hover\:static:hover {
-  position: static;
-}
-
-.hover\:fill:hover {
-  object-fit: fill;
-}
-
-.hover\:contain:hover {
-  object-fit: contain;
-}
-
-.hover\:cover:hover {
-  object-fit: cover;
-}
-
-.hover\:scale-down:hover {
-  object-fit: scale-down;
-}
-
-.hover\:object-none:hover {
-  object-fit: none;
-}
-
-.hover\:aspect-ration-1\/1:hover {
-  aspect-ratio: 1/1;
-}
-
-.hover\:aspect-ration-4\/3:hover {
-  aspect-ratio: 4/3;
-}
-
-.hover\:aspect-ration-16\/9:hover {
-  aspect-ratio: 16/9;
-}
 
 @each $breakpoint in map-keys($breakpoints) {
   @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
@@ -1568,9 +1724,195 @@
   }
 }
 
+.inline-block {
+  display: inline-block;
+}
 
-@for $i from -900 through 1000 {
+.block {
+  display: block;
+}
+.d-none {
+  display: none;
+}
+.absolute {
+  position: absolute;
+}
 
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.static {
+  position: static;
+}
+
+.hover\:inline-block:hover {
+  display: inline-block;
+}
+
+.hover\:block:hover {
+  display: block;
+}
+
+.hover\:absolute:hover {
+  position: absolute;
+}
+
+.hover\:relative:hover {
+  position: relative;
+}
+
+.hover\:fixed:hover {
+  position: fixed;
+}
+
+.hover\:sticky:hover {
+  position: sticky;
+}
+
+.hover\:static:hover {
+  position: static;
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+  @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+    .#{$breakpoint}\:inline-block {
+      display: inline-block;
+    }
+
+    .#{$breakpoint}\:block {
+      display: block;
+    }
+
+    .#{$breakpoint}\:absolute {
+      position: absolute;
+    }
+
+    .#{$breakpoint}\:relative {
+      position: relative;
+    }
+
+    .#{$breakpoint}\:fixed {
+      position: fixed;
+    }
+
+    .#{$breakpoint}\:sticky {
+      position: sticky;
+    }
+
+    .#{$breakpoint}\:static {
+      position: static;
+    }
+
+    .#{$breakpoint}\:hover\:inline-block:hover {
+      display: inline-block;
+    }
+
+    .#{$breakpoint}\:hover\:block:hover {
+      display: block;
+    }
+
+    .#{$breakpoint}\:hover\:absolute:hover {
+      position: absolute;
+    }
+
+    .#{$breakpoint}\:hover\:relative:hover {
+      position: relative;
+    }
+
+    .#{$breakpoint}\:hover\:fixed:hover {
+      position: fixed;
+    }
+
+    .#{$breakpoint}\:hover\:sticky:hover {
+      position: sticky;
+    }
+
+    .#{$breakpoint}\:hover\:static:hover {
+      position: static;
+    }
+  }
+}
+
+@for $i from 1 through 100 {
+  .opacity-#{$i} {
+    opacity: #{$i}\%;
+  }
+  .top-#{$i} {
+    top: #{$i}\%;
+  }
+  .right-#{$i} {
+    right: #{$i}\%;
+  }
+  .bottom-#{$i} {
+    bottom: #{$i}\%;
+  }
+  .left-#{$i} {
+    left: #{$i}\%;
+  }
+
+  .hover\:opacity-#{$i}:hover {
+    opacity: #{$i}\%;
+  }
+  .hover\:top-#{$i}:hover {
+    top: #{$i}\%;
+  }
+  .hover\:right-#{$i}:hover {
+    right: #{$i}\%;
+  }
+  .hover\:bottom-#{$i}:hover {
+    bottom: #{$i}\%;
+  }
+  .hover\:left-#{$i}:hover {
+    left: #{$i}\%;
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      .#{$breakpoint}\:opacity-#{$i} {
+        opacity: #{$i}\%;
+      }
+      .#{$breakpoint}\:top-#{$i} {
+        top: #{$i}\%;
+      }
+      .#{$breakpoint}\:right-#{$i} {
+        right: #{$i}\%;
+      }
+      .#{$breakpoint}\:bottom-#{$i} {
+        bottom: #{$i}\%;
+      }
+      .#{$breakpoint}\:left-#{$i} {
+        left: #{$i}\%;
+      }
+      .#{$breakpoint}\:hover\:opacity-#{$i}:hover {
+        opacity: #{$i}\%;
+      }
+      .#{$breakpoint}\:hover\:top-#{$i}:hover {
+        top: #{$i}\%;
+      }
+      .#{$breakpoint}\:hover\:right-#{$i}:hover {
+        right: #{$i}\%;
+      }
+      .#{$breakpoint}\:hover\:bottom-#{$i}:hover {
+        bottom: #{$i}\%;
+      }
+      .#{$breakpoint}\:hover\:left-#{$i}:hover {
+        left: #{$i}\%;
+      }
+    }
+  }
+}
+
+
+@for $i from -500 through 1000 {
   .top-#{$i} {
     top: #{$i}px;
   }
@@ -1628,73 +1970,3 @@
     }
   }
 }
-
-@for $i from 1 through 100 {
-  .opacity-#{$i}\/100 {
-    opacity: #{$i}#{'%'} ;
-  }
-  .top-#{$i}\/100 {
-    top: #{$i}#{'%'} ;
-  }
-  .right-#{$i}\/100 {
-    right: #{$i}#{'%'} ;
-  }
-  .bottom-#{$i}\/100 {
-    bottom: #{$i}#{'%'} ;
-  }
-  .left-#{$i}\/100 {
-    left: #{$i}#{'%'} ;
-  }
-
-  .hover\:opacity-#{$i}\/100:hover {
-    opacity: #{$i}#{'%'} ;
-  }
-  .hover\:top-#{$i}\/100:hover {
-    top: #{$i}#{'%'} ;
-  }
-  .hover\:right-#{$i}\/100:hover {
-    right: #{$i}#{'%'} ;
-  }
-  .hover\:bottom-#{$i}\/100:hover {
-    bottom: #{$i}#{'%'} ;
-  }
-  .hover\:left-#{$i}\/100:hover {
-    left: #{$i}#{'%'} ;
-  }
-
-  @each $breakpoint in map-keys($breakpoints) {
-    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
-      .#{$breakpoint}\:opacity-#{$i}\/100 {
-        opacity: #{$i}#{'%'} ;
-      }
-      .#{$breakpoint}\:top-#{$i}\/100 {
-        top: #{$i}#{'%'} ;
-      }
-      .#{$breakpoint}\:right-#{$i}\/100 {
-        right: #{$i}#{'%'} ;
-      }
-      .#{$breakpoint}\:bottom-#{$i}\/100 {
-        bottom: #{$i}#{'%'} ;
-      }
-      .#{$breakpoint}\:left-#{$i}\/100 {
-        left: #{$i}#{'%'} ;
-      }
-      .#{$breakpoint}\:hover\:opacity-#{$i}\/100:hover {
-        opacity: #{$i}#{'%'} ;
-      }
-      .#{$breakpoint}\:hover\:top-#{$i}\/100:hover {
-        top: #{$i}#{'%'} ;
-      }
-      .#{$breakpoint}\:hover\:right-#{$i}\/100:hover {
-        right: #{$i}#{'%'} ;
-      }
-      .#{$breakpoint}\:hover\:bottom-#{$i}\/100:hover {
-        bottom: #{$i}#{'%'} ;
-      }
-      .#{$breakpoint}\:hover\:left-#{$i}\/100:hover {
-        left: #{$i}#{'%'} ;
-      }
-    }
-  }
-}
-

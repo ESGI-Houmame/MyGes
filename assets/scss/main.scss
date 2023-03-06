@@ -1,17 +1,30 @@
 // import helpers
-@import "helpers/variables";
-@import "helpers/mixins";
-@import "helpers/flex";
-@import "helpers/grid";
-@import "helpers/table";
+@import "helpers/variables",
+        "helpers/mixins",
+        "helpers/flex",
+        "helpers/grid",
+        "helpers/typography",
+        "helpers/placement",
+        "helpers/table";
+
 
 // import components
-@import "components/buttons";
-@import "components/navbar";
-@import "layouts/container";
-@import "components/caroussel";
-@import "components/accordeon";
-
+@import "components/form",
+        "components/buttons",
+        "components/cards",
+        "components/navbar",
+        "layouts/container",
+        "components/footer",
+        "components/scrollList",
+        "components/contactList",
+        "components/contactItem",
+        "components/contactDetail",
+        "components/projetPedagogique",
+        "components/page",
+        "layouts/square-box",
+        "components/support-cours.scss",
+        "components/caroussel",
+        "components/accordeon.scss";
 
 * {
 
@@ -21,86 +34,125 @@
   font-size: 16px;
   font-weight: 400;
   text-decoration: none;
-  color: $light;
+  scroll-behavior: smooth;
+  
+}
+body {
+    background-color: $default;
 }
 
+.main-container {
+    @extend .container;
+    @include w(75);
+    @include py(30);
+
+}
 
 .pointer {
   cursor: pointer;
 }
 
-.divider {
-  background: $ghost;
-  border: 0;
-  min-height: 3px;
-  max-width: 80%;
-  margin: 10px auto;
+//md
+@media screen and (max-width: map-get($breakpoint,'md') ) {
+    .main-container {
+        width: 100%;
+        @include px(30);
+    }
 }
 
-.header-clip {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-
-.bg-img{
-  clip-path: polygon(70% 0%, 70% 100%, 0% 100%, 0 0%)
-}
-
-form {
-  background-color: $ghost;
-  padding: 55px;
-  border-radius: 5px;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px auto;
-  max-width: 600px;
-  height: 450px;
-}
-
-form img{
-  left: 0;
-}
-
-form .desc{
-  font-size: x-small;
-}
-
-label{
-  font-size: x-small;
-  color: $secondary;
-}
-
-label:hover{
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-input[type="text"],
-input[type="password"] {
-  padding: 10px;
-  background-color: $default;
-  margin-bottom: 20px;
-  width: 100%;
-  border: 1px solid $accent;
-  border-radius: 15px;
-}
-
-input[type="submit"] {
-  padding: 10px 20px;
-  background-color: $accent;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background-color: $primary;
-}
-
-@media screen and (min-width: 640px) {
-  .header-clip {
-    clip-path: polygon(0 0, 65% 0, 100% 100%, 0 100%);
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: $default $ghost;
   }
-}
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: $ghost;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: $default;
+    border-radius: 10px;
+    border: 3px solid $ghost;
+  }
+  .divider {
+    background: $ghost;
+    border: 0;
+    min-height: 3px;
+    max-width: 80%;
+    margin: 10px auto;
+  }
+  
+  .header-clip {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  
+  .bg-img{
+    clip-path: polygon(70% 0%, 70% 100%, 0% 100%, 0 0%)
+  }
+  
+  .form-connexion form {
+    background-color: $ghost;
+    padding: 55px;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 600px;
+    height: 450px;
+  }
+  
+  .form-connexion img{
+    left: 0;
+  }
+  
+  .form-connexion .desc{
+    font-size: x-small;
+  }
+  
+  .form-connexion label{
+    font-size: x-small;
+    color: $secondary;
+  }
+  
+  .form-connexion label:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .form-connexion input[type="text"],
+  .form-connexion input[type="password"] {
+    padding: 10px;
+    background-color: $default;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid $accent;
+    border-radius: 15px;
+  }
+  
+  .form-connexion input[type="submit"] {
+    padding: 10px 20px;
+    background-color: $accent;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-connexion input[type="submit"]:hover {
+    background-color: $primary;
+  }
+  
+  @media screen and (min-width: 640px) {
+    .header-clip {
+      clip-path: polygon(0 0, 65% 0, 100% 100%, 0 100%);
+    }
+  }

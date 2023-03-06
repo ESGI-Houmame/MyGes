@@ -1,0 +1,227 @@
+._contact-detail {
+    @include bg('ghost');
+    @include radius('2xl');
+    @include grid-rows(12);
+}
+
+
+
+
+@media (min-width: map-get($breakpoint, "xs")) {
+    .contact-container{
+        @include grid;
+        @include grid-cols(12);
+        @include mt(50);
+        @include gap(10);
+    }
+    ._contact-detail {
+        @include col-span(12);
+        @include mt(10);
+        ._contact-detail-picture{
+            display: flex;
+            @include flex-justify-center;
+        }
+        
+    
+    }
+
+    ._contact-detail-header{
+        grid-template-columns: 80px 1fr;
+
+        ._contact-detail-info{
+            
+            ._contact-detail-social {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                overflow-y:hidden;
+                @include pt(5);
+                @include flex;
+                gap: 30px;
+                color: white;
+                a {
+                    color: white;
+                }
+                i {
+                    display: inline;
+                    @include pr(5);
+                }
+            }
+
+        }
+        
+    }
+}
+
+/************************
+ ***** CONTACT BODY *****
+ ************************/
+
+
+@media (min-width: map-get($breakpoint, "xs")) {
+    ._contact-body-s1{
+        @include row-span(7);
+        @include grid;
+        @include grid-rows(12);
+        ._contact-objet{
+            @include row-span(2);
+            @include radius('md');
+            @include mt(5);
+            @include p(5);
+            @include w(100);
+            @include bg('default');
+            color:$light;
+        }
+        
+        ._contact-msg{
+            @include row-span(10);
+            @include w(100);
+            @include radius('md');
+            @include mt(5);
+            @include p(5);
+            @include bg('default');
+            color:$light;
+        }
+    }
+    
+    ._contact-body-s2{
+        @include row-span(4);
+        @include grid;
+        @include grid-cols(12);
+        @include mt(10);
+        gap: 10px;
+        ._drop-box{
+            @include col-span(12);
+            @include grid;
+            @include grid-rows(6);
+            ._pj-section-title {
+                @include row-span(1);
+                h2 {
+                    @include ft-size-lg;
+                    color: $primary;
+                    font-weight: $font-weight-bold;
+    
+                }
+            }
+            
+            
+            ._dropzone {
+                @include row-span(5);
+                border: 2px dashed $accent;
+                @include relative;
+                height: 100%;
+                width:100%;
+                cursor:pointer;
+
+                &::before{
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    width: 100%;
+                    height: 100%;
+                    color: $accent;
+                    @include flex;
+                    @include flex-justify-center;
+                    @include flex-items-center;
+                    @include ft-w-bold;
+                    @include ft-size-xl;
+                    content:"DROP FILE HERE";
+                }
+                &:hover::before{
+                    content:"FILE"
+                }
+            }
+
+            
+            
+        }
+
+        ._drop-list{
+            @include col-span(12);
+            background: $default;
+            @include p(10);
+            @include radius("4xl");
+            overflow: auto;
+            max-height:  220px;
+            & > ._drop-list-item{
+                background: $ghost;
+                height: 60px;
+                @include p(12);
+                @include mt(10);
+                @include grid;
+                grid-template-columns: 40px auto 40px;
+                @include radius("6xl");
+
+                ._drop-list-item-icon {
+                    background-color: lighten($accent, 40%);
+                    @include radius("xl");
+                    color:$accent;
+                    @include p(7);
+                    text-align: center;
+                    i {
+                        font-size: 1.4em ;
+
+                    }
+                }
+
+                ._drop-list-item-info {
+                    overflow:hidden;
+                    text-overflow: ellipsis;
+                    @include px(10);
+                    @include ft-w-normal;
+                    color: $accent;
+                    @include flex;
+                    @include flex-items-center;
+                }
+
+                ._drop-list-item-action{
+                    font-size: 1em;
+                    text-align:center;
+                    @include flex;
+                    @include flex-justify-center;
+                    @include flex-items-center;
+                    color:$primary;
+                    i {
+                        font-size: 1.4em;
+                    }
+                }
+
+            }
+        }
+    }
+    
+    ._contact-body-s3{
+        @include row-span(1);
+        @include p(5);
+        @include flex;
+        @include flex-justify-center;
+        @include flex-items-center;
+        @include mt(10);
+
+        .btn {
+            max-height: 40px;
+        }
+
+    }
+    
+    
+    
+}
+
+@media (min-width: map-get($breakpoint, "sm")) {
+    ._contact-body-s2 {
+        ._drop-box {
+            @include col-span(6);
+        }
+
+        ._drop-list {
+            @include col-span(6);
+        }
+    }
+}
+@media (min-width:map-get($breakpoint,"lg")){
+    ._contact-detail {
+        @include col-span(6);
+        @include mt(0);
+    }
+}
+

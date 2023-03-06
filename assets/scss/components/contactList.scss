@@ -1,0 +1,23 @@
+
+.contact-box {
+    @include col-span(12);
+    .scroll-list{
+        max-height: 790px;
+
+        .scroll-content{
+            overflow-y: auto;
+            overflow-x: hidden;
+            @include grid;
+            @include gap-x(10);
+        }
+    }
+}
+
+
+
+@media screen and (min-width:map-get($breakpoint,"lg")){
+    .contact-box {
+        grid-column: span 5/span 5;
+    }
+}
+

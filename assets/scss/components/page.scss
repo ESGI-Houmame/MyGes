@@ -1,0 +1,30 @@
+
+@media (max-width: map-get($breakpoint,"md")){
+    .page-title, .page-title > *{
+        @include ft-size-4xl;       
+    }
+}
+
+@media (min-width: map-get($breakpoint,"md")) {
+    .page-title, .page-title > *{
+        @include ft-size-6xl;       
+    }
+}
+
+
+.page-head {
+    @include flex;
+    @include flex-col;
+    .page-title, .page-title > *{
+            @include text-center;
+            @include ft-w-bold;
+    }
+    .page-description, .page-description > * {
+        @include text-center; 
+        @include ft-w-bold;
+        @include ft-size-sm;
+        @include mt(5);
+    }
+}
+
+

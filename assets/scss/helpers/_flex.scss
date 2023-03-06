@@ -1,4 +1,163 @@
 //generate all helper classes for flexbox by classes
+@mixin flex{
+  display: flex;
+}
+
+@mixin flex-row{
+  flex-direction: row;
+}
+
+@mixin flex-row-reverse{
+  flex-direction: row-reverse;
+}
+
+@mixin flex-col{
+  flex-direction: column;
+}
+
+@mixin flex-col-reverse{
+  flex-direction: column-reverse;
+}
+
+@mixin flex-wrap{
+  flex-wrap: wrap;
+}
+
+@mixin flex-wrap-reverse{
+  flex-wrap: wrap-reverse;
+}
+
+@mixin flex-nowrap{
+  flex-wrap: nowrap;
+}
+
+@mixin flex-grow{
+  flex-grow: 1;
+}
+
+@mixin flex-grow-0{
+  flex-grow: 0;
+}
+
+@mixin flex-shrink{
+  flex-shrink: 1;
+}
+
+@mixin flex-shrink-0{
+  flex-shrink: 0;
+}
+
+@mixin flex-no-wrap{
+  flex-wrap: nowrap;
+}
+
+@mixin flex-initial{
+  flex: 0 1 auto;
+}
+
+@mixin flex-1{
+  flex: 1 1 0%;
+}
+
+@mixin flex-auto{
+  flex: 1 1 auto;
+}
+
+@mixin flex-none{
+  flex: none;
+}
+
+@mixin flex-justify-start{
+  justify-content: flex-start;
+}
+
+@mixin flex-justify-end{
+  justify-content: flex-end;
+}
+
+@mixin flex-justify-center{
+  justify-content: center;
+}
+
+@mixin flex-justify-between{
+  justify-content: space-between;
+}
+
+@mixin flex-justify-around{
+  justify-content: space-around;
+}
+
+@mixin flex-justify-evenly{
+  justify-content: space-evenly;
+}
+
+@mixin flex-items-start{
+  align-items: flex-start;
+}
+
+@mixin flex-items-end{
+  align-items: flex-end;
+}
+
+@mixin flex-items-center{
+  align-items: center;
+}
+
+@mixin flex-items-baseline{
+  align-items: baseline;
+}
+
+@mixin flex-items-stretch{
+  align-items: stretch;
+}
+
+@mixin flex-content-start{
+  align-content: flex-start;
+}
+
+@mixin flex-content-end{
+  align-content: flex-end;
+}
+
+@mixin flex-content-center{
+  align-content: center;
+}
+
+@mixin flex-content-between{
+  align-content: space-between;
+}
+
+@mixin flex-content-around{
+  align-content: space-around;
+}
+
+@mixin flex-content-stretch{
+  align-content: stretch;
+}
+
+@mixin flex-self-auto{
+  align-self: auto;
+}
+
+@mixin flex-self-start{
+  align-self: flex-start;
+}
+
+@mixin flex-self-end{
+  align-self: flex-end;
+}
+
+@mixin flex-self-center{
+  align-self: center;
+}
+
+@mixin flex-self-baseline{
+  align-self: baseline;
+}
+
+@mixin flex-self-stretch{
+  align-self: stretch;
+}
 .flex {
   display: flex;
 }
@@ -65,6 +224,22 @@
 
 .flex-none {
   flex: none;
+}
+
+.justify-self-start {
+  justify-self: flex-start;
+}
+
+.justify-self-end {
+  justify-self: flex-end;
+}
+
+.justify-self-center {
+  justify-self: center;
+}
+
+.justify-self-stretch {
+  justify-self: stretch;
 }
 
 .flex-justify-start {
@@ -414,6 +589,22 @@
       justify-content: space-evenly;
     }
 
+    .#{$breakpoint}\:justify-self-start {
+      justify-self: flex-start;
+    }
+    
+    .#{$breakpoint}\:justify-self-end {
+      justify-self: flex-end;
+    }
+    
+    .#{$breakpoint}\:justify-self-center {
+      justify-self: center;
+    }
+    
+    .#{$breakpoint}\:justify-self-stretch {
+      justify-self: stretch;
+    }
+    
     .#{$breakpoint}\:flex-items-start {
       align-items: flex-start;
     }
@@ -483,7 +674,4 @@
     }
   }
 }
-
-
-
 

@@ -1,0 +1,44 @@
+
+.input {
+    & > textarea, & > input{
+        background: inherit;
+        border-radius: inherit;
+        color: inherit;
+        border: none;
+        width: 100%;
+        height: 100%;
+    }
+    @include radius('lg');
+    @include p(10);
+    @include bg('default');
+    color : $light;
+    & > input:focus, & > textarea:focus{
+        border: 0px;
+    }
+}
+
+.search-input {
+    @include ft-size-md;
+    font-weight: $font-weight-bold;
+}
+
+.input-icon {
+    @include grid;
+    @include grid-cols(12);
+    
+    & > div {
+        & > .input-icon {
+
+            font-size: map-get($font-sizes,'xl');
+
+        }
+
+        @include col-span(2);
+        @include p(2);
+        @include text-center;
+    }
+
+    & > input, & > textarea {
+        @include col-span(10);
+    }
+}

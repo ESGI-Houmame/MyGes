@@ -1,4 +1,5 @@
-let accordeonItems = document.querySelectorAll(".accordeon__item__header");
+function accordeon(){
+    let accordeonItems = document.querySelectorAll(".accordeon__item__header");
 
 accordeonItems.forEach((itemHeader) => {
     itemHeader.addEventListener("click", function () {
@@ -15,3 +16,4 @@ accordeonItems.forEach((itemHeader) => {
         }
     });
 })
+}

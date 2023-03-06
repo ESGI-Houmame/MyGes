@@ -1,0 +1,169 @@
+// font-size mixins
+@mixin ft-size-xxs {
+  font-size: $font-size-xxs;
+  }
+  
+  @mixin ft-size-xs {
+  font-size: $font-size-xs;
+  }
+  
+  @mixin ft-size-sm {
+  font-size: $font-size-sm;
+  }
+  
+  @mixin ft-size-md {
+  font-size: $font-size-md;
+  }
+  
+  @mixin ft-size-lg {
+  font-size: $font-size-lg;
+  }
+  
+  @mixin ft-size-xl {
+  font-size: $font-size-xl;
+  }
+  
+  @mixin ft-size-2xl {
+  font-size: $font-size-2xl;
+  }
+  
+  @mixin ft-size-3xl {
+  font-size: $font-size-3xl;
+  }
+  
+  @mixin ft-size-4xl {
+  font-size: $font-size-4xl;
+  }
+  
+  @mixin ft-size-5xl {
+  font-size: $font-size-5xl;
+  }
+  
+  @mixin ft-size-6xl {
+  font-size: $font-size-6xl;
+  }
+  
+  // font family mixin
+  @mixin ft-primary {
+  font-family: $font-family;
+  }
+  // font weight mixins
+  @mixin ft-w-thin {
+  font-weight: $font-weight-thin;
+  }
+  
+  @mixin ft-w-light {
+  font-weight: $font-weight-light;
+  }
+  
+  @mixin ft-w-normal {
+  font-weight: $font-weight-normal;
+  }
+  
+  @mixin ft-w-medium {
+  font-weight: $font-weight-medium;
+  }
+  
+  @mixin ft-w-semibold {
+  font-weight: $font-weight-semibold;
+  }
+  
+  @mixin ft-w-bold {
+  font-weight: $font-weight-bold;
+  }
+  
+  @mixin ft-w-extrabold {
+  font-weight: $font-weight-extrabold;
+  }
+  
+  @mixin ft-w-black {
+  font-weight: $font-weight-black;
+  }
+  
+  // line height mixins
+  @mixin ln-height-none {
+  line-height: $line-height-none;
+  }
+  
+  @mixin ln-height-tight {
+  line-height: $line-height-tight;
+  }
+  
+  @mixin ln-height-snug {
+  line-height: $line-height-snug;
+  }
+  
+  @mixin ln-height-normal {
+  line-height: $line-height-normal;
+  }
+  
+  @mixin ln-height-relaxed {
+  line-height: $line-height-relaxed;
+  }
+  
+  @mixin ln-height-loose {
+  line-height: $line-height-loose;
+  }
+  
+  
+  
+  
+  // letter-spacing mixins
+  @mixin letter-spacing-tighter {
+    letter-spacing: $letter-spacing-tighter;
+    }
+    
+    @mixin letter-spacing-tight {
+    letter-spacing: $letter-spacing-tight;
+    }
+    
+    @mixin letter-spacing-normal {
+    letter-spacing: $letter-spacing-normal;
+    }
+    
+    @mixin letter-spacing-wide {
+    letter-spacing: $letter-spacing-wide;
+    }
+    
+    @mixin letter-spacing-wider {
+    letter-spacing: $letter-spacing-wider;
+    }
+    
+    @mixin letter-spacing-widest {
+    letter-spacing: $letter-spacing-widest;
+    }
+    
+    // Mixin pour text align
+    @mixin text-center {
+    text-align: center;
+    }
+    
+    @mixin text-justify {
+    text-align: justify;
+    }
+    
+    @mixin text-left {
+    text-align: left;
+    }
+    
+    @mixin text-right {
+    text-align: right;
+    }
+    
+// Mixin pour le text-transform
+@mixin text-lowercase {
+  text-transform: lowercase;
+  }
+  
+  @mixin text-uppercase {
+  text-transform: uppercase;
+  }
+  
+  @mixin text-capitalize {
+  text-transform: capitalize;
+  }
+  
+  @mixin text-normalcase {
+  text-transform: none;
+  }
+  

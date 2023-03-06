@@ -1,0 +1,115 @@
+
+.contact-item {
+    max-height: 100px;
+    @include bg('default');
+    @include grid;
+    @include grid-rows(6);
+    @include p(5);
+    @include radius('6xl');
+}
+.contact-item div:nth-child(1){
+    @include grid;
+    @include grid-cols(12);
+    @include row-span(5);
+}
+
+.contact-info-title {
+    color: $primary;
+    @include ft-w-bold;
+}
+.contact-info-desc {
+    color: $accent;
+    font-weight: $font-weight-normal;
+    font-size: $font-size-sm;
+}
+.contact-info  {
+    @include col-span(9);
+    @include flex;
+    @include flex-col;
+    .contact-info-desc {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color:$accent;
+        font-weight: $font-weight-normal;
+        @include ft-size-sm;
+    }
+    
+    @include pl(5);
+}
+
+.contact-img-box{
+    @include flex;
+    @include flex-justify-center;
+    @include col-span(3);
+    height: 100%;
+}
+
+
+.contact-img {
+    object-fit: cover;
+    @include w(100);
+    @include radius("4xl");
+}
+
+.contact-action-box {
+    @include flex;
+    @include  justify-content-end;
+    @include align-items-center;
+    @include row-span(1);
+    @include pb(5);
+}
+.contact-msg-btn {
+    @include ft-w-bold;
+    @include  bg('primary');
+    color: $light;
+    @include p(3);
+    @include px(6);
+    border-radius:0%;
+    @include tl-radius('xs');
+    @include b-radius('6xl');
+    @include tr-radius('6xl'); 
+    cursor:pointer;
+}
+.contact-action-box button{
+    font-size : map-get($font-sizes, 'sm');
+    margin-right: 10px;
+    margin-top: -10px;
+}
+
+@media (max-width:map-get($breakpoint,"sm")) {
+    .contact-info  {
+        .contact-info-desc {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .contact-info-title{
+            font-size: 1em;
+           
+        }
+    }
+   
+
+}
+@media (min-width:map-get($breakpoint,"xs")) {
+
+    .contact-img {
+        width: 3.5em;
+        height: 3.5em;
+    }
+    
+}
+
+@media (min-width:map-get($breakpoint,"sm")) {
+
+    .contact-img {
+        width: 4em;
+        height: 4em;
+    }
+    
+}
